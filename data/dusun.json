@@ -1,0 +1,271 @@
+{
+  "dusun": {
+    "nama": "Dusun Dawang",
+    "desa": "Desa Blongkeng",
+    "kecamatan": "Kec. Ngluwar",
+    "kabupaten": "Kab. Magelang",
+    "provinsi": "Jawa Tengah",
+    "koordinat": { "lat": -7.617, "lng": 110.278 },
+    "luasWilayah": "±85 Ha",
+    "jumlahRT": 5,
+    "jumlahRW": 1,
+    "kepalaDusun": "Bapak [Nama Kepala Dusun]",
+    "ketinggian": "±350 mdpl",
+    "sejarah": "Dusun Dawang merupakan salah satu dusun yang berada di wilayah Desa Blongkeng, Kecamatan Ngluwar, Kabupaten Magelang, Jawa Tengah. Dusun ini terletak di kaki lereng Gunung Merapi yang subur, dikelilingi hamparan sawah dan kebun yang hijau. Nama 'Dawang' konon berasal dari bahasa Jawa kuno yang berarti tempat yang terang dan terbuka, mencerminkan karakter warganya yang ramah dan terbuka terhadap sesama.",
+    "visiMisi": "Mewujudkan Dusun Dawang yang mandiri, sejahtera, dan berdaya saing dengan menjaga kearifan lokal serta memanfaatkan potensi alam secara berkelanjutan.",
+    "batasDusun": {
+      "utara": "Dusun [Nama Dusun Utara]",
+      "selatan": "Dusun [Nama Dusun Selatan]",
+      "timur": "Dusun [Nama Dusun Timur]",
+      "barat": "Dusun [Nama Dusun Barat]"
+    }
+  },
+  "penduduk": {
+    "total": 458,
+    "lakiLaki": 231,
+    "perempuan": 227,
+    "jumlahKK": 124,
+    "kelompokUmur": [
+      { "label": "0–4 th", "laki": 18, "perempuan": 17 },
+      { "label": "5–14 th", "laki": 35, "perempuan": 32 },
+      { "label": "15–24 th", "laki": 42, "perempuan": 40 },
+      { "label": "25–34 th", "laki": 38, "perempuan": 36 },
+      { "label": "35–44 th", "laki": 40, "perempuan": 39 },
+      { "label": "45–54 th", "laki": 32, "perempuan": 33 },
+      { "label": "55–64 th", "laki": 18, "perempuan": 20 },
+      { "label": "65+ th", "laki": 8, "perempuan": 10 }
+    ],
+    "mataPencaharian": [
+      { "label": "Petani", "jumlah": 142 },
+      { "label": "Buruh Tani", "jumlah": 67 },
+      { "label": "Wiraswasta", "jumlah": 48 },
+      { "label": "PNS / TNI / Polri", "jumlah": 12 },
+      { "label": "Pelajar / Mahasiswa", "jumlah": 89 },
+      { "label": "Ibu Rumah Tangga", "jumlah": 72 },
+      { "label": "Lainnya", "jumlah": 28 }
+    ],
+    "pendidikan": [
+      { "label": "Belum Sekolah", "jumlah": 35 },
+      { "label": "SD / Sederajat", "jumlah": 138 },
+      { "label": "SMP / Sederajat", "jumlah": 102 },
+      { "label": "SMA / Sederajat", "jumlah": 119 },
+      { "label": "D3 / S1+", "jumlah": 64 }
+    ],
+    "perRT": [
+      { "rt": "RT 01", "kk": 24, "jiwa": 88 },
+      { "rt": "RT 02", "kk": 26, "jiwa": 95 },
+      { "rt": "RT 03", "kk": 25, "jiwa": 92 },
+      { "rt": "RT 04", "kk": 23, "jiwa": 85 },
+      { "rt": "RT 05", "kk": 26, "jiwa": 98 }
+    ]
+  },
+  "fasilitas": [
+    {
+      "id": 1,
+      "nama": "Balai Dusun Dawang",
+      "kategori": "pemerintahan",
+      "lat": -7.617,
+      "lng": 110.278,
+      "deskripsi": "Pusat kegiatan warga dan pemerintahan dusun",
+      "icon": "building"
+    },
+    {
+      "id": 2,
+      "nama": "Masjid Al-Ikhlas",
+      "kategori": "ibadah",
+      "lat": -7.6168,
+      "lng": 110.2775,
+      "deskripsi": "Masjid utama Dusun Dawang",
+      "icon": "mosque"
+    },
+    {
+      "id": 3,
+      "nama": "Mushola RT 03",
+      "kategori": "ibadah",
+      "lat": -7.6183,
+      "lng": 110.2788,
+      "deskripsi": "Mushola untuk warga RT 03",
+      "icon": "mosque"
+    },
+    {
+      "id": 4,
+      "nama": "Posyandu Dawang",
+      "kategori": "kesehatan",
+      "lat": -7.6175,
+      "lng": 110.2785,
+      "deskripsi": "Pos pelayanan terpadu untuk balita dan ibu hamil",
+      "icon": "health"
+    },
+    {
+      "id": 5,
+      "nama": "SD Negeri Blongkeng",
+      "kategori": "pendidikan",
+      "lat": -7.6162,
+      "lng": 110.2792,
+      "deskripsi": "Sekolah Dasar untuk warga Dusun Dawang",
+      "icon": "school"
+    },
+    {
+      "id": 6,
+      "nama": "Embung / Sumber Air",
+      "kategori": "infrastruktur",
+      "lat": -7.6185,
+      "lng": 110.2765,
+      "deskripsi": "Sumber irigasi untuk lahan pertanian warga",
+      "icon": "water"
+    },
+    {
+      "id": 7,
+      "nama": "Lahan Pertanian Utama",
+      "kategori": "pertanian",
+      "lat": -7.619,
+      "lng": 110.279,
+      "deskripsi": "Area persawahan dan kebun produktif warga",
+      "icon": "farm"
+    },
+    {
+      "id": 8,
+      "nama": "Makam Dusun",
+      "kategori": "umum",
+      "lat": -7.6158,
+      "lng": 110.2768,
+      "deskripsi": "Pemakaman warga Dusun Dawang",
+      "icon": "cemetery"
+    }
+  ],
+  "potensi": [
+    {
+      "judul": "Pertanian & Perkebunan",
+      "deskripsi": "Lahan subur di kaki Merapi menghasilkan padi, sayuran, dan palawija berkualitas tinggi yang menjadi sumber pendapatan utama warga.",
+      "icon": "🌾",
+      "warna": "hijau"
+    },
+    {
+      "judul": "Wisata Alam",
+      "deskripsi": "Pemandangan alam yang indah dengan latar Gunung Merapi, hamparan sawah hijau, dan udara segar berpotensi dikembangkan sebagai desa wisata.",
+      "icon": "🏔️",
+      "warna": "biru"
+    },
+    {
+      "judul": "UMKM Lokal",
+      "deskripsi": "Berbagai usaha mikro warga seperti kerajinan tangan, olahan pangan lokal, dan jasa yang berpotensi untuk dikembangkan lebih lanjut.",
+      "icon": "🏪",
+      "warna": "orange"
+    },
+    {
+      "judul": "Budaya & Tradisi",
+      "deskripsi": "Kearifan lokal berupa gotong royong, kesenian tradisional Jawa, dan tradisi adat yang masih terjaga dengan baik oleh warga.",
+      "icon": "🎭",
+      "warna": "ungu"
+    },
+    {
+      "judul": "SDM Muda Potensial",
+      "deskripsi": "Generasi muda Dusun Dawang yang aktif dan bersemangat, siap menjadi motor penggerak kemajuan dusun di era digital.",
+      "icon": "👨‍👩‍👧‍👦",
+      "warna": "merah"
+    },
+    {
+      "judul": "Sumber Daya Air",
+      "deskripsi": "Ketersediaan air yang melimpah dari aliran sungai dan sumber mata air menjadi aset penting untuk pertanian dan kebutuhan sehari-hari.",
+      "icon": "💧",
+      "warna": "cyan"
+    }
+  ],
+  "prokerKKN": [
+    {
+      "id": 1,
+      "judul": "Pemetaan & WebGIS Dusun Dawang",
+      "kategori": "Teknologi",
+      "emoji": "🗺️",
+      "deskripsi": "Pembuatan peta administrasi Dusun Dawang menggunakan teknologi GPS dan GIS, serta pengembangan website WebGIS sebagai media informasi digital yang dapat diakses oleh seluruh warga dan masyarakat luas melalui QR Code pada peta cetak.",
+      "anggota": ["Nama Anggota 1", "Nama Anggota 2"],
+      "tanggal": "Juli 2025",
+      "durasi": "4 minggu",
+      "output": "Peta cetak + Website WebGIS"
+    },
+    {
+      "id": 2,
+      "judul": "Penyuluhan Kesehatan & Posyandu",
+      "kategori": "Kesehatan",
+      "emoji": "🏥",
+      "deskripsi": "Kegiatan pendampingan posyandu balita dan lansia, penyuluhan Perilaku Hidup Bersih dan Sehat (PHBS), serta pembuatan media edukasi kesehatan untuk warga Dusun Dawang.",
+      "anggota": ["Nama Anggota 3", "Nama Anggota 4"],
+      "tanggal": "Juli 2025",
+      "durasi": "3 minggu",
+      "output": "Poster PHBS + Pendampingan Posyandu"
+    },
+    {
+      "id": 3,
+      "judul": "Literasi Digital untuk Warga",
+      "kategori": "Pendidikan",
+      "emoji": "💻",
+      "deskripsi": "Pelatihan penggunaan smartphone dan media sosial secara bijak untuk ibu-ibu PKK dan warga umum, termasuk pelatihan e-commerce untuk UMKM lokal agar dapat memasarkan produk secara online.",
+      "anggota": ["Nama Anggota 5", "Nama Anggota 6"],
+      "tanggal": "Juli 2025",
+      "durasi": "2 minggu",
+      "output": "Pelatihan Digital + Akun Medsos UMKM"
+    },
+    {
+      "id": 4,
+      "judul": "Penghijauan & Lingkungan Hidup",
+      "kategori": "Lingkungan",
+      "emoji": "🌱",
+      "deskripsi": "Program penanaman pohon di area dusun yang gersang, pembuatan taman kecil di depan balai dusun, serta sosialisasi pengelolaan sampah organik dan anorganik melalui program bank sampah.",
+      "anggota": ["Nama Anggota 7", "Nama Anggota 8"],
+      "tanggal": "Juli 2025",
+      "durasi": "3 minggu",
+      "output": "50+ Pohon Ditanam + Taman Balai"
+    },
+    {
+      "id": 5,
+      "judul": "Bimbel & Pendampingan Belajar",
+      "kategori": "Pendidikan",
+      "emoji": "📚",
+      "deskripsi": "Program bimbingan belajar gratis untuk anak-anak SD di Dusun Dawang, mencakup pelajaran Matematika, Bahasa Indonesia, dan IPA. Dilaksanakan setiap hari di Balai Dusun.",
+      "anggota": ["Nama Anggota 9", "Nama Anggota 10"],
+      "tanggal": "Juli 2025",
+      "durasi": "4 minggu",
+      "output": "200+ Jam Bimbel"
+    },
+    {
+      "id": 6,
+      "judul": "Revitalisasi Produk UMKM Lokal",
+      "kategori": "Ekonomi",
+      "emoji": "🛍️",
+      "deskripsi": "Pendampingan branding dan packaging produk UMKM lokal Dusun Dawang, termasuk desain label produk, foto produk profesional, dan pendaftaran ke platform marketplace online.",
+      "anggota": ["Nama Anggota 1", "Nama Anggota 5"],
+      "tanggal": "Juli 2025",
+      "durasi": "2 minggu",
+      "output": "Branding 5 UMKM Lokal"
+    },
+    {
+      "id": 7,
+      "judul": "Kerja Bakti & Infrastruktur Dusun",
+      "kategori": "Sosial",
+      "emoji": "🔨",
+      "deskripsi": "Kegiatan gotong royong pembersihan dan perbaikan fasilitas umum dusun, meliputi pengecatan balai dusun, perbaikan jalan setapak, dan pembersihan selokan.",
+      "anggota": ["Semua Anggota"],
+      "tanggal": "Juli 2025",
+      "durasi": "2 hari",
+      "output": "Fasilitas Dusun Terawat"
+    }
+  ],
+  "timKKN": {
+    "namaKelompok": "KKN [Nama Kelompok]",
+    "universitas": "[Nama Universitas]",
+    "tahun": "2025",
+    "dosenPembimbing": "Dr. [Nama DPL]",
+    "anggota": [
+      { "nama": "Nama Mahasiswa 1", "nim": "000001", "jurusan": "Teknik Informatika", "foto": "", "peran": "Koordinator" },
+      { "nama": "Nama Mahasiswa 2", "nim": "000002", "jurusan": "Geografi", "foto": "", "peran": "Sekretaris" },
+      { "nama": "Nama Mahasiswa 3", "nim": "000003", "jurusan": "Ilmu Kesehatan Masyarakat", "foto": "", "peran": "Bendahara" },
+      { "nama": "Nama Mahasiswa 4", "nim": "000004", "jurusan": "Kedokteran", "foto": "", "peran": "Anggota" },
+      { "nama": "Nama Mahasiswa 5", "nim": "000005", "jurusan": "Desain Komunikasi Visual", "foto": "", "peran": "Anggota" },
+      { "nama": "Nama Mahasiswa 6", "nim": "000006", "jurusan": "Manajemen", "foto": "", "peran": "Anggota" },
+      { "nama": "Nama Mahasiswa 7", "nim": "000007", "jurusan": "Teknik Sipil", "foto": "", "peran": "Anggota" },
+      { "nama": "Nama Mahasiswa 8", "nim": "000008", "jurusan": "Agribisnis", "foto": "", "peran": "Anggota" },
+      { "nama": "Nama Mahasiswa 9", "nim": "000009", "jurusan": "Pendidikan Guru SD", "foto": "", "peran": "Anggota" },
+      { "nama": "Nama Mahasiswa 10", "nim": "000010", "jurusan": "Hukum", "foto": "", "peran": "Anggota" }
+    ]
+  }
+}
