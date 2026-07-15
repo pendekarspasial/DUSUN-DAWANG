@@ -97,7 +97,22 @@ function closeMenu() {
 hamburger.addEventListener('click', toggleMenu);
 
 function updateActiveNavLink() {
-  const sections = ['profil','peta','kependudukan','perangkat','potensi','galeri','arsip'];
+  const path = window.location.pathname;
+  const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+
+  if (page === 'peta.html') {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    document.getElementById('nav-peta')?.classList.add('active');
+    return;
+  }
+  if (page === 'kkn.html') {
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    document.getElementById('nav-arsip')?.classList.add('active');
+    return;
+  }
+
+  // On index.html
+  const sections = ['hero', 'profil', 'kependudukan'];
   const scrollY = window.scrollY + 100;
 
   sections.forEach(id => {
@@ -431,6 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initGallery();
   loadData();
+  updateActiveNavLink();
 
   // Delay reveal init slightly to allow DOM to settle
   setTimeout(initReveal, 300);
