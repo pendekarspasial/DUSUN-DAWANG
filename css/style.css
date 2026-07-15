@@ -552,7 +552,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 6.5rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.15;
   margin-bottom: 0.6rem;
   animation: fadeInUp 0.8s ease 0.5s both;
 }
@@ -563,6 +563,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: block;
+  padding-bottom: 0.15em; /* Memberikan ruang ekstra di bawah agar huruf descender seperti 'g' tidak terpotong */
 }
 
 .hero-title-sub {
