@@ -400,10 +400,18 @@ async function initMainMap(fasilitas) {
   // ---- Custom layer buttons ----
   document.querySelectorAll('.layer-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.layer-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
       const layer = btn.dataset.layer;
+
+      // Base layers are mutually exclusive
+      if (layer === 'base' || layer === 'satellite') {
+        document.getElementById('btn-base').classList.remove('active');
+        document.getElementById('btn-satellite').classList.remove('active');
+        btn.classList.add('active');
+      } else {
+        // Overlay layers are independent toggles
+        btn.classList.toggle('active');
+      }
+
       switch (layer) {
         case 'base':
           mainMap.addLayer(osmLayer);
@@ -416,16 +424,25 @@ async function initMainMap(fasilitas) {
           mainMap.removeLayer(topoLayer);
           break;
         case 'fasilitas':
-          if (mainMap.hasLayer(fasilitasLayer)) mainMap.removeLayer(fasilitasLayer);
-          else mainMap.addLayer(fasilitasLayer);
+          if (mainMap.hasLayer(fasilitasLayer)) {
+            mainMap.removeLayer(fasilitasLayer);
+          } else {
+            mainMap.addLayer(fasilitasLayer);
+          }
           break;
         case 'lahan':
-          if (mainMap.hasLayer(rtLayer)) mainMap.removeLayer(rtLayer);
-          else mainMap.addLayer(rtLayer);
+          if (mainMap.hasLayer(rtLayer)) {
+            mainMap.removeLayer(rtLayer);
+          } else {
+            mainMap.addLayer(rtLayer);
+          }
           break;
         case 'infra':
-          if (mainMap.hasLayer(perangkatLayer)) mainMap.removeLayer(perangkatLayer);
-          else mainMap.addLayer(perangkatLayer);
+          if (mainMap.hasLayer(perangkatLayer)) {
+            mainMap.removeLayer(perangkatLayer);
+          } else {
+            mainMap.addLayer(perangkatLayer);
+          }
           break;
       }
     });

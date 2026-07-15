@@ -12,10 +12,12 @@ async function loadData() {
   try {
     const res = await fetch('data/dusun.json');
     DUSUN_DATA = await res.json();
+    window.DUSUN_DATA = DUSUN_DATA;
     initWithData();
   } catch (e) {
     console.warn('Could not load dusun.json, using fallback data');
     DUSUN_DATA = getFallbackData();
+    window.DUSUN_DATA = DUSUN_DATA;
     initWithData();
   }
 }
