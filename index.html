@@ -74,7 +74,14 @@
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
+  
+  <!-- ============ PAGE SLIDER ============ -->
+  <div class="page-slider">
+    <div class="page-slides-wrapper" id="slides-wrapper">
+      
+      <!-- SLIDE 1: HERO -->
+      <div class="page-slide" id="slide-hero">
+        <!-- ============ HERO ============ -->
   <section id="hero">
     <!-- Batik background layers -->
     <div class="hero-batik-bg"></div>
@@ -141,7 +148,12 @@
     </div>
   </section>
 
-  <!-- ============ PROFIL ============ -->
+  
+      </div>
+      
+      <!-- SLIDE 2: PROFIL & KEPENDUDUKAN -->
+      <div class="page-slide" id="slide-profile">
+        <!-- ============ PROFIL ============ -->
   <section id="profil" class="section">
     <div class="container">
       <div class="section-header">
@@ -249,7 +261,100 @@
     </div>
   </section>
 
-  <!-- ============ STORYMAP INTERAKTIF ============ -->
+  
+        <!-- ============ KEPENDUDUKAN ============ -->
+  <section id="kependudukan" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow eyebrow-earth">👥 Data Kependudukan</span>
+        <div class="batik-ornament"><span class="batik-ornament-icon">✦</span></div>
+        <h2 class="section-title">Profil Demografis Dusun Dawang</h2>
+        <p class="section-desc">Data kependudukan Dusun Dawang mencakup distribusi usia, mata pencaharian, dan tingkat pendidikan warga.</p>
+      </div>
+
+      <!-- Top Stats -->
+      <div class="kependudukan-top">
+        <div class="kep-stat-card terr reveal delay-1">
+          <div class="kep-stat-icon">👨‍👩‍👧‍👦</div>
+          <div class="kep-stat-num" data-count="458">0</div>
+          <div class="kep-stat-lbl">Total Penduduk</div>
+        </div>
+        <div class="kep-stat-card earth-c reveal delay-2">
+          <div class="kep-stat-icon">🏠</div>
+          <div class="kep-stat-num" data-count="124">0</div>
+          <div class="kep-stat-lbl">Kepala Keluarga</div>
+        </div>
+        <div class="kep-stat-card forest reveal delay-3">
+          <div class="kep-stat-icon">👨</div>
+          <div class="kep-stat-num" data-count="231">0</div>
+          <div class="kep-stat-lbl">Laki-Laki</div>
+        </div>
+        <div class="kep-stat-card gold-c reveal delay-4">
+          <div class="kep-stat-icon">👩</div>
+          <div class="kep-stat-num" data-count="227">0</div>
+          <div class="kep-stat-lbl">Perempuan</div>
+        </div>
+      </div>
+
+      <!-- Charts Grid -->
+      <div class="charts-grid">
+        <div class="chart-card reveal delay-1">
+          <div class="chart-title">Distribusi Jenis Kelamin</div>
+          <div class="chart-sub">Perbandingan penduduk laki-laki dan perempuan</div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart-gender"></canvas>
+          </div>
+        </div>
+        <div class="chart-card reveal delay-2">
+          <div class="chart-title">Tingkat Pendidikan</div>
+          <div class="chart-sub">Distribusi pendidikan terakhir warga</div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart-pendidikan"></canvas>
+          </div>
+        </div>
+        <div class="chart-card chart-card-wide reveal delay-1">
+          <div class="chart-title">Mata Pencaharian Warga</div>
+          <div class="chart-sub">Distribusi pekerjaan utama warga Dusun Dawang</div>
+          <div class="chart-canvas-wrap" style="height:220px;">
+            <canvas id="chart-pekerjaan"></canvas>
+          </div>
+        </div>
+        <div class="chart-card chart-card-wide reveal delay-2">
+          <div class="chart-title">Piramida Penduduk</div>
+          <div class="chart-sub">Distribusi kelompok umur laki-laki dan perempuan</div>
+          <div class="chart-canvas-wrap" style="height:280px;">
+            <canvas id="chart-piramida"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- RT Table -->
+      <div class="rt-table-wrap reveal">
+        <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;">Data per Rukun Tetangga</h3>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.25rem;">Rincian jumlah KK dan jiwa setiap RT di Dusun Dawang</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Wilayah</th>
+              <th>Jumlah KK</th>
+              <th>Jumlah Jiwa</th>
+              <th>Rata-rata/KK</th>
+            </tr>
+          </thead>
+          <tbody id="rt-table-body">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  
+      </div>
+      
+      <!-- SLIDE 3: STORYMAP -->
+      <div class="page-slide" id="slide-storymap">
+        <!-- ============ STORYMAP INTERAKTIF ============ -->
   <section id="peta" class="storymap-section">
     <!-- Immersive Split Screen Container -->
     <div class="storymap-container">
@@ -339,94 +444,12 @@
     </div>
   </section>
 
-  <!-- ============ KEPENDUDUKAN ============ -->
-  <section id="kependudukan" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow eyebrow-earth">👥 Data Kependudukan</span>
-        <div class="batik-ornament"><span class="batik-ornament-icon">✦</span></div>
-        <h2 class="section-title">Profil Demografis Dusun Dawang</h2>
-        <p class="section-desc">Data kependudukan Dusun Dawang mencakup distribusi usia, mata pencaharian, dan tingkat pendidikan warga.</p>
+  
       </div>
-
-      <!-- Top Stats -->
-      <div class="kependudukan-top">
-        <div class="kep-stat-card terr reveal delay-1">
-          <div class="kep-stat-icon">👨‍👩‍👧‍👦</div>
-          <div class="kep-stat-num" data-count="458">0</div>
-          <div class="kep-stat-lbl">Total Penduduk</div>
-        </div>
-        <div class="kep-stat-card earth-c reveal delay-2">
-          <div class="kep-stat-icon">🏠</div>
-          <div class="kep-stat-num" data-count="124">0</div>
-          <div class="kep-stat-lbl">Kepala Keluarga</div>
-        </div>
-        <div class="kep-stat-card forest reveal delay-3">
-          <div class="kep-stat-icon">👨</div>
-          <div class="kep-stat-num" data-count="231">0</div>
-          <div class="kep-stat-lbl">Laki-Laki</div>
-        </div>
-        <div class="kep-stat-card gold-c reveal delay-4">
-          <div class="kep-stat-icon">👩</div>
-          <div class="kep-stat-num" data-count="227">0</div>
-          <div class="kep-stat-lbl">Perempuan</div>
-        </div>
-      </div>
-
-      <!-- Charts Grid -->
-      <div class="charts-grid">
-        <div class="chart-card reveal delay-1">
-          <div class="chart-title">Distribusi Jenis Kelamin</div>
-          <div class="chart-sub">Perbandingan penduduk laki-laki dan perempuan</div>
-          <div class="chart-canvas-wrap">
-            <canvas id="chart-gender"></canvas>
-          </div>
-        </div>
-        <div class="chart-card reveal delay-2">
-          <div class="chart-title">Tingkat Pendidikan</div>
-          <div class="chart-sub">Distribusi pendidikan terakhir warga</div>
-          <div class="chart-canvas-wrap">
-            <canvas id="chart-pendidikan"></canvas>
-          </div>
-        </div>
-        <div class="chart-card chart-card-wide reveal delay-1">
-          <div class="chart-title">Mata Pencaharian Warga</div>
-          <div class="chart-sub">Distribusi pekerjaan utama warga Dusun Dawang</div>
-          <div class="chart-canvas-wrap" style="height:220px;">
-            <canvas id="chart-pekerjaan"></canvas>
-          </div>
-        </div>
-        <div class="chart-card chart-card-wide reveal delay-2">
-          <div class="chart-title">Piramida Penduduk</div>
-          <div class="chart-sub">Distribusi kelompok umur laki-laki dan perempuan</div>
-          <div class="chart-canvas-wrap" style="height:280px;">
-            <canvas id="chart-piramida"></canvas>
-          </div>
-        </div>
-      </div>
-
-      <!-- RT Table -->
-      <div class="rt-table-wrap reveal">
-        <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;">Data per Rukun Tetangga</h3>
-        <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.25rem;">Rincian jumlah KK dan jiwa setiap RT di Dusun Dawang</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Wilayah</th>
-              <th>Jumlah KK</th>
-              <th>Jumlah Jiwa</th>
-              <th>Rata-rata/KK</th>
-            </tr>
-          </thead>
-          <tbody id="rt-table-body">
-            <!-- filled by JS -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PERANGKAT DESA ============ -->
+      
+      <!-- SLIDE 4: KEHIDUPAN DUSUN (POTENSI & PERANGKAT) -->
+      <div class="page-slide" id="slide-village-life">
+        <!-- ============ PERANGKAT DESA ============ -->
   <section id="perangkat" class="section">
     <div class="container">
       <div class="section-header">
@@ -442,7 +465,8 @@
     </div>
   </section>
 
-  <!-- ============ POTENSI ============ -->
+  
+        <!-- ============ POTENSI ============ -->
   <section id="potensi" class="section">
     <div class="container">
       <div class="section-header">
@@ -458,7 +482,12 @@
     </div>
   </section>
 
-  <!-- ============ GALERI ============ -->
+  
+      </div>
+      
+      <!-- SLIDE 5: KKN & GALERI -->
+      <div class="page-slide" id="slide-kkn-archives">
+        <!-- ============ GALERI ============ -->
   <section id="galeri" class="section section-dark">
     <div class="container">
       <div class="section-header">
@@ -530,7 +559,8 @@
     </div>
   </section>
 
-  <!-- ============ ARSIP KKN ============ -->
+  
+        <!-- ============ ARSIP KKN ============ -->
   <section id="arsip" class="section">
     <div class="container">
       <div class="section-header">
@@ -590,7 +620,8 @@
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
+  
+        <!-- ============ FOOTER ============ -->
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
@@ -661,8 +692,33 @@
     </div>
   </footer>
 
-  <!-- Back to Top -->
-  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Kembali ke atas">↑</button>
+      </div> <!-- Closes last page-slide -->
+    </div> <!-- Closes slides-wrapper -->
+  </div> <!-- Closes page-slider -->
+
+  <!-- Floating Slide Navigation -->
+  <div class="floating-slide-nav">
+    <div class="dot-nav-item active" data-slide="0" title="Beranda"><span>Beranda</span></div>
+    <div class="dot-nav-item" data-slide="1" title="Profil & Info"><span>Profil</span></div>
+    <div class="dot-nav-item" data-slide="2" title="Peta Interaktif"><span>WebGIS</span></div>
+    <div class="dot-nav-item" data-slide="3" title="Kehidupan Dusun"><span>Kehidupan</span></div>
+    <div class="dot-nav-item" data-slide="4" title="KKN & Galeri"><span>Arsip KKN</span></div>
+  </div>
+
+  <!-- Floating Page Nav Controls -->
+  <div class="floating-page-controls">
+    <button class="page-ctrl-btn" id="ctrl-prev" title="Sebelumnya">◀</button>
+    <div class="page-ctrl-indicator"><span id="ctrl-current">1</span> / 5</div>
+    <button class="page-ctrl-btn" id="ctrl-next" title="Berikutnya">▶</button>
+  </div>
+
+  <!-- Immersive Transition Overlay -->
+  <div class="slide-transition-overlay" id="transition-overlay">
+    <div class="transition-batik-icon">✦</div>
+    <div class="transition-progress-bar">
+      <div class="transition-progress-line"></div>
+    </div>
+  </div>
 
   <!-- Lightbox -->
   <div id="lightbox">
@@ -670,7 +726,7 @@
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />
   </div>
 
-  <!-- ============ SCRIPTS ============ -->
+<!-- ============ SCRIPTS ============ -->
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <!-- Chart.js -->
@@ -679,5 +735,6 @@
   <script src="js/main.js"></script>
   <script src="js/map.js"></script>
   <script src="js/charts.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 </html>
