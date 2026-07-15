@@ -2352,3 +2352,251 @@ tbody tr:hover td { background: rgba(201,106,58,0.03); }
   display: none !important;
 }
 
+
+
+/* ==========================================================================
+   HORIZONTAL PAGE SLIDER SYSTEM
+   ========================================================================== */
+body {
+  overflow: hidden !important; /* Nonaktifkan scrollbar utama halaman */
+  background: var(--dark);
+}
+
+.page-slider {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.page-slides-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 500vw; /* 5 slide * 100vw */
+  height: 100vh;
+  transition: transform 0.85s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+.page-slide {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto; /* Aktifkan scroll vertikal di dalam slide */
+  overflow-x: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Kustomisasi scrollbar internal slide */
+.page-slide::-webkit-scrollbar {
+  width: 8px;
+}
+.page-slide::-webkit-scrollbar-track {
+  background: rgba(26, 13, 6, 0.95);
+}
+.page-slide::-webkit-scrollbar-thumb {
+  background: rgba(232, 184, 109, 0.22);
+  border-radius: 4px;
+}
+.page-slide::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ---- Floating Slide Navigation (Dots on Right Side) ---- */
+.floating-slide-nav {
+  position: fixed;
+  right: 2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.dot-nav-item {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(250, 240, 230, 0.2);
+  cursor: pointer;
+  position: relative;
+  transition: all var(--t-normal);
+  border: 1px solid rgba(232, 184, 109, 0.2);
+}
+
+.dot-nav-item span {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26, 13, 6, 0.95);
+  border: 1px solid rgba(232, 184, 109, 0.25);
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--t-fast);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.dot-nav-item:hover span {
+  opacity: 1;
+  right: 22px;
+}
+
+.dot-nav-item.active {
+  background: var(--primary);
+  border-color: var(--primary-light);
+  transform: scale(1.35);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* ---- Floating Page Controls (Bottom Right Buttons) ---- */
+.floating-page-controls {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(26, 13, 6, 0.92);
+  border: 1px solid rgba(232, 184, 109, 0.25);
+  border-radius: var(--r-full);
+  padding: 6px 12px;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s ease;
+}
+
+/* Sembunyikan kontrol saat berada di peta (slide 2) agar tidak bertumpuk */
+.floating-page-controls.hide-on-map {
+  opacity: 0.15;
+  pointer-events: none;
+}
+.floating-page-controls.hide-on-map:hover {
+  opacity: 0.95;
+  pointer-events: auto;
+}
+
+.page-ctrl-btn {
+  background: rgba(232, 184, 109, 0.06);
+  border: 1px solid rgba(232, 184, 109, 0.2);
+  color: var(--gold);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  transition: all var(--t-fast);
+}
+
+.page-ctrl-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary-light);
+  color: var(--white);
+  box-shadow: 0 0 8px var(--primary-glow);
+}
+
+.page-ctrl-indicator {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(250, 240, 230, 0.6);
+  min-width: 45px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Immersive Transition Overlay ---- */
+.slide-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  background-image: var(--batik-kawung);
+  background-size: 80px 80px;
+}
+
+.slide-transition-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 20%, rgba(26,13,6,0.95) 100%);
+  pointer-events: none;
+}
+
+.slide-transition-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.transition-batik-icon {
+  font-size: 3rem;
+  color: var(--gold);
+  text-shadow: 0 0 15px rgba(232, 184, 109, 0.6);
+  animation: spin 3s linear infinite;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.transition-progress-bar {
+  width: 180px;
+  height: 2.5px;
+  background: rgba(250, 240, 230, 0.1);
+  border-radius: var(--r-full);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.transition-progress-line {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 100%;
+  background: var(--gradient-primary);
+  transform: translateX(-100%);
+}
+
+.slide-transition-overlay.active .transition-progress-line {
+  animation: loadProgress 0.75s ease-in-out forwards;
+}
+
+@keyframes loadProgress {
+  0% { transform: translateX(-100%); }
+  60% { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Sembunyikan floating dot pada layar kecil / mobile */
+@media (max-width: 768px) {
+  .floating-slide-nav {
+    display: none;
+  }
+  .floating-page-controls {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

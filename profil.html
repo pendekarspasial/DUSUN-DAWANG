@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil & Info | Dusun Dawang</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Google Fonts & Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/map.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-batik">✦</div>
+    <div class="preloader-bar"><div class="preloader-progress"></div></div>
+    <div class="preloader-text">DUSUN DAWANG</div>
+  </div>
+
+  <!-- Persistent Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo">🗺️</div>
+        <div>
+          <span class="brand-title">Dusun Dawang</span>
+          <span class="brand-subtitle">NGLUWAR · MAGELANG</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link" id="nav-hero">Beranda</a></li>
+        <li><a href="profil.html" class="nav-link" id="nav-profil">Profil</a></li>
+        <li><a href="peta.html" class="nav-link" id="nav-peta">Peta</a></li>
+        <li><a href="kkn.html" class="nav-link nav-cta" id="nav-arsip">Arsip KKN</a></li>
+      </ul>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="index.html" class="nav-link" onclick="closeMenu()">🏠 Beranda</a>
+      <a href="profil.html" class="nav-link" onclick="closeMenu()">📖 Profil Dusun</a>
+      <a href="peta.html" class="nav-link" onclick="closeMenu()">🗺️ Peta Interaktif</a>
+      <a href="kkn.html" class="nav-link" onclick="closeMenu()">📋 Arsip KKN</a>
+    </div>
+  </nav>
+
+  <!-- ============ MAIN CONTENT WRAPPER ============ -->
+  <main id="page-content">
+    <!-- ============ PROFIL ============ -->
+  <section id="profil" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow eyebrow-primary">📖 Profil Dusun</span>
+        <div class="batik-ornament"><span class="batik-ornament-icon">✦</span></div>
+        <h2 class="section-title">Mengenal Dusun Dawang</h2>
+        <p class="section-desc">Sebuah dusun yang kaya akan nilai budaya dan potensi alam, terletak di kaki Gunung Merapi yang subur.</p>
+      </div>
+
+      <div class="profil-grid">
+        <!-- Left: Text Content -->
+        <div class="profil-text-content reveal-left">
+          <div class="profil-meta">
+            <span class="meta-chip">🏡 Desa Blongkeng</span>
+            <span class="meta-chip">📍 Kec. Ngluwar</span>
+            <span class="meta-chip">🗺️ Kab. Magelang</span>
+            <span class="meta-chip">🌋 Lereng Merapi</span>
+          </div>
+
+          <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--text);margin-bottom:1rem;font-weight:600;">Sejarah & Asal Usul</h3>
+          <p class="profil-desc" id="sejarah-text">
+            Dusun Dawang merupakan salah satu dusun yang berada di wilayah Desa Blongkeng, Kecamatan Ngluwar, Kabupaten Magelang. Dusun ini terletak di kaki lereng Gunung Merapi yang subur, dikelilingi hamparan sawah dan kebun yang hijau.
+            <br><br>
+            Nama <em>"Dawang"</em> konon berasal dari bahasa Jawa kuno yang berarti tempat yang terang dan terbuka, mencerminkan karakter warganya yang ramah dan terbuka terhadap sesama serta lingkungan sekitar.
+          </p>
+
+          <div class="profil-stats">
+            <div class="profil-stat-card">
+              <div class="profil-stat-icon">🏘️</div>
+              <div class="profil-stat-val">5</div>
+              <div class="profil-stat-lbl">Rukun Tetangga</div>
+            </div>
+            <div class="profil-stat-card">
+              <div class="profil-stat-icon">🌾</div>
+              <div class="profil-stat-val">±85 Ha</div>
+              <div class="profil-stat-lbl">Luas Wilayah</div>
+            </div>
+            <div class="profil-stat-card">
+              <div class="profil-stat-icon">🏔️</div>
+              <div class="profil-stat-val">±350</div>
+              <div class="profil-stat-lbl">mdpl Ketinggian</div>
+            </div>
+          </div>
+
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;color:var(--text);margin-bottom:1rem;font-weight:600;">Batas Wilayah Dusun</h3>
+          <div class="batas-grid">
+            <div class="batas-item">
+              <div class="batas-icon batas-icon-u">⬆️</div>
+              <div>
+                <div class="batas-dir">Utara</div>
+                <div class="batas-val" id="batas-utara">Dusun [Utara]</div>
+              </div>
+            </div>
+            <div class="batas-item">
+              <div class="batas-icon batas-icon-s">⬇️</div>
+              <div>
+                <div class="batas-dir">Selatan</div>
+                <div class="batas-val" id="batas-selatan">Dusun [Selatan]</div>
+              </div>
+            </div>
+            <div class="batas-item">
+              <div class="batas-icon batas-icon-t">➡️</div>
+              <div>
+                <div class="batas-dir">Timur</div>
+                <div class="batas-val" id="batas-timur">Dusun [Timur]</div>
+              </div>
+            </div>
+            <div class="batas-item">
+              <div class="batas-icon batas-icon-b">⬅️</div>
+              <div>
+                <div class="batas-dir">Barat</div>
+                <div class="batas-val" id="batas-barat">Dusun [Barat]</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Map Preview + Info -->
+        <div class="profil-visual reveal-right">
+          <div class="profil-map-preview" id="profil-mini-map"></div>
+
+          <div style="margin-top:1.5rem;padding:1.25rem;background:var(--white);border:1px solid rgba(0,0,0,0.06);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);">
+            <div style="font-size:0.8rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;text-transform:uppercase;letter-spacing:0.5px;">Informasi Administratif</div>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:0.85rem;">
+                <span style="color:var(--text-muted);">Desa</span>
+                <span style="font-weight:600;color:var(--text);" id="info-desa">Desa Blongkeng</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:0.85rem;">
+                <span style="color:var(--text-muted);">Kecamatan</span>
+                <span style="font-weight:600;color:var(--text);" id="info-kec">Ngluwar</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:0.5rem 0;border-bottom:1px solid rgba(0,0,0,0.04);font-size:0.85rem;">
+                <span style="color:var(--text-muted);">Kabupaten</span>
+                <span style="font-weight:600;color:var(--text);" id="info-kab">Kab. Magelang</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding:0.5rem 0;font-size:0.85rem;">
+                <span style="color:var(--text-muted);">Provinsi</span>
+                <span style="font-weight:600;color:var(--text);">Jawa Tengah</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+        <!-- ============ KEPENDUDUKAN ============ -->
+  <section id="kependudukan" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow eyebrow-earth">👥 Data Kependudukan</span>
+        <div class="batik-ornament"><span class="batik-ornament-icon">✦</span></div>
+        <h2 class="section-title">Profil Demografis Dusun Dawang</h2>
+        <p class="section-desc">Data kependudukan Dusun Dawang mencakup distribusi usia, mata pencaharian, dan tingkat pendidikan warga.</p>
+      </div>
+
+      <!-- Top Stats -->
+      <div class="kependudukan-top">
+        <div class="kep-stat-card terr reveal delay-1">
+          <div class="kep-stat-icon">👨‍👩‍👧‍👦</div>
+          <div class="kep-stat-num" data-count="458">0</div>
+          <div class="kep-stat-lbl">Total Penduduk</div>
+        </div>
+        <div class="kep-stat-card earth-c reveal delay-2">
+          <div class="kep-stat-icon">🏠</div>
+          <div class="kep-stat-num" data-count="124">0</div>
+          <div class="kep-stat-lbl">Kepala Keluarga</div>
+        </div>
+        <div class="kep-stat-card forest reveal delay-3">
+          <div class="kep-stat-icon">👨</div>
+          <div class="kep-stat-num" data-count="231">0</div>
+          <div class="kep-stat-lbl">Laki-Laki</div>
+        </div>
+        <div class="kep-stat-card gold-c reveal delay-4">
+          <div class="kep-stat-icon">👩</div>
+          <div class="kep-stat-num" data-count="227">0</div>
+          <div class="kep-stat-lbl">Perempuan</div>
+        </div>
+      </div>
+
+      <!-- Charts Grid -->
+      <div class="charts-grid">
+        <div class="chart-card reveal delay-1">
+          <div class="chart-title">Distribusi Jenis Kelamin</div>
+          <div class="chart-sub">Perbandingan penduduk laki-laki dan perempuan</div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart-gender"></canvas>
+          </div>
+        </div>
+        <div class="chart-card reveal delay-2">
+          <div class="chart-title">Tingkat Pendidikan</div>
+          <div class="chart-sub">Distribusi pendidikan terakhir warga</div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart-pendidikan"></canvas>
+          </div>
+        </div>
+        <div class="chart-card chart-card-wide reveal delay-1">
+          <div class="chart-title">Mata Pencaharian Warga</div>
+          <div class="chart-sub">Distribusi pekerjaan utama warga Dusun Dawang</div>
+          <div class="chart-canvas-wrap" style="height:220px;">
+            <canvas id="chart-pekerjaan"></canvas>
+          </div>
+        </div>
+        <div class="chart-card chart-card-wide reveal delay-2">
+          <div class="chart-title">Piramida Penduduk</div>
+          <div class="chart-sub">Distribusi kelompok umur laki-laki dan perempuan</div>
+          <div class="chart-canvas-wrap" style="height:280px;">
+            <canvas id="chart-piramida"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- RT Table -->
+      <div class="rt-table-wrap reveal">
+        <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;">Data per Rukun Tetangga</h3>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.25rem;">Rincian jumlah KK dan jiwa setiap RT di Dusun Dawang</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Wilayah</th>
+              <th>Jumlah KK</th>
+              <th>Jumlah Jiwa</th>
+              <th>Rata-rata/KK</th>
+            </tr>
+          </thead>
+          <tbody id="rt-table-body">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  
+      </div>
+      
+      <!-- SLIDE 3: STORYMAP -->
+      <div class="page-slide" id="slide-storymap">
+        
+<!-- ============ KEPENDUDUKAN ============ -->
+  <section id="kependudukan" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow eyebrow-earth">👥 Data Kependudukan</span>
+        <div class="batik-ornament"><span class="batik-ornament-icon">✦</span></div>
+        <h2 class="section-title">Profil Demografis Dusun Dawang</h2>
+        <p class="section-desc">Data kependudukan Dusun Dawang mencakup distribusi usia, mata pencaharian, dan tingkat pendidikan warga.</p>
+      </div>
+
+      <!-- Top Stats -->
+      <div class="kependudukan-top">
+        <div class="kep-stat-card terr reveal delay-1">
+          <div class="kep-stat-icon">👨‍👩‍👧‍👦</div>
+          <div class="kep-stat-num" data-count="458">0</div>
+          <div class="kep-stat-lbl">Total Penduduk</div>
+        </div>
+        <div class="kep-stat-card earth-c reveal delay-2">
+          <div class="kep-stat-icon">🏠</div>
+          <div class="kep-stat-num" data-count="124">0</div>
+          <div class="kep-stat-lbl">Kepala Keluarga</div>
+        </div>
+        <div class="kep-stat-card forest reveal delay-3">
+          <div class="kep-stat-icon">👨</div>
+          <div class="kep-stat-num" data-count="231">0</div>
+          <div class="kep-stat-lbl">Laki-Laki</div>
+        </div>
+        <div class="kep-stat-card gold-c reveal delay-4">
+          <div class="kep-stat-icon">👩</div>
+          <div class="kep-stat-num" data-count="227">0</div>
+          <div class="kep-stat-lbl">Perempuan</div>
+        </div>
+      </div>
+
+      <!-- Charts Grid -->
+      <div class="charts-grid">
+        <div class="chart-card reveal delay-1">
+          <div class="chart-title">Distribusi Jenis Kelamin</div>
+          <div class="chart-sub">Perbandingan penduduk laki-laki dan perempuan</div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart-gender"></canvas>
+          </div>
+        </div>
+        <div class="chart-card reveal delay-2">
+          <div class="chart-title">Tingkat Pendidikan</div>
+          <div class="chart-sub">Distribusi pendidikan terakhir warga</div>
+          <div class="chart-canvas-wrap">
+            <canvas id="chart-pendidikan"></canvas>
+          </div>
+        </div>
+        <div class="chart-card chart-card-wide reveal delay-1">
+          <div class="chart-title">Mata Pencaharian Warga</div>
+          <div class="chart-sub">Distribusi pekerjaan utama warga Dusun Dawang</div>
+          <div class="chart-canvas-wrap" style="height:220px;">
+            <canvas id="chart-pekerjaan"></canvas>
+          </div>
+        </div>
+        <div class="chart-card chart-card-wide reveal delay-2">
+          <div class="chart-title">Piramida Penduduk</div>
+          <div class="chart-sub">Distribusi kelompok umur laki-laki dan perempuan</div>
+          <div class="chart-canvas-wrap" style="height:280px;">
+            <canvas id="chart-piramida"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- RT Table -->
+      <div class="rt-table-wrap reveal">
+        <h3 style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.25rem;">Data per Rukun Tetangga</h3>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.25rem;">Rincian jumlah KK dan jiwa setiap RT di Dusun Dawang</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Wilayah</th>
+              <th>Jumlah KK</th>
+              <th>Jumlah Jiwa</th>
+              <th>Rata-rata/KK</th>
+            </tr>
+          </thead>
+          <tbody id="rt-table-body">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  
+      </div>
+      
+      <!-- SLIDE 3: STORYMAP -->
+      <div class="page-slide" id="slide-storymap">
+        <!-- ============ STORYMAP INTERAKTIF ============ -->
+  <section id="peta" class="storymap-section">
+    <!-- Immersive Split Screen Container -->
+    <div class="storymap-container">
+      
+      <!-- Left side: Scrollable narrative content -->
+      <div class="storymap-sidebar">
+        <div class="storymap-sidebar-inner">
+          <div class="section-header" style="text-align: left; padding: 0 1rem; margin-bottom: 2rem;">
+            <span class="section-eyebrow eyebrow-dark">🗺️ Immersive StoryMap</span>
+            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--gold);">Jelajah Dusun Dawang</h2>
+            <p class="section-desc" style="max-width: 100%; font-size: 0.85rem; color: rgba(250,240,230,0.6);">Gulir (scroll) ke bawah untuk membaca kisah perjalanan dan melihat data geospasial secara interaktif.</p>
+          </div>
+
+          <!-- Story steps/chapters -->
+          <div class="story-chapters">
+            
+            <div class="story-chapter active" data-step="welcome">
+              <span class="chapter-number">Bab 01</span>
+              <h3>Selamat Datang di Dawang</h3>
+              <p>Dusun Dawang terletak di Desa Blongkeng, Kecamatan Ngluwar, Kabupaten Magelang, Jawa Tengah. Dikelilingi oleh keindahan alam pedesaan yang asri, dusun ini berbatasan langsung dengan hamparan persawahan hijau yang subur di kaki lereng Gunung Merapi.</p>
+              <div class="chapter-badge">📍 Batas Dusun</div>
+            </div>
+
+            <div class="story-chapter" data-step="kantor">
+              <span class="chapter-number">Bab 02</span>
+              <h3>Pusat Administrasi & Sosial</h3>
+              <p>Menuju pusat dusun, kita menemui <strong>Balai Dusun Dawang</strong>. Tempat ini berfungsi sebagai jantung kegiatan administrasi, kemasyarakatan, rapat warga, posyandu balita, hingga kegiatan sosial keagamaan yang menyatukan seluruh elemen warga.</p>
+              <div class="chapter-badge">🏛️ Balai Dusun</div>
+            </div>
+
+            <div class="story-chapter" data-step="ibadah">
+              <span class="chapter-number">Bab 03</span>
+              <h3>Sarana Ibadah & Toleransi</h3>
+              <p>Warga Dawang dikenal sangat memegang teguh kerukunan umat beragama. <strong>Masjid Al-Ikhlas</strong> berdiri kokoh sebagai sarana ibadah utama, serta terdapat beberapa musholla RT yang aktif digunakan sebagai pusat kegiatan ibadah sehari-hari.</p>
+              <div class="chapter-badge">🕌 Masjid Al-Ikhlas</div>
+            </div>
+
+            <div class="story-chapter" data-step="sawah">
+              <span class="chapter-number">Bab 04</span>
+              <h3>Potensi Lahan Sawah & Pertanian</h3>
+              <p>Sebagian besar mata pencaharian warga adalah petani. Lahan persawahan yang subur membentang luas di sekeliling wilayah pemukiman dusun, didukung irigasi dari sumber air embung lokal untuk mengairi padi dan tanaman holtikultura.</p>
+              <div class="chapter-badge">🌾 Lahan Pertanian</div>
+            </div>
+
+            <div class="story-chapter" data-step="penduduk">
+              <span class="chapter-number">Bab 05</span>
+              <h3>Pembagian Wilayah RT</h3>
+              <p>Secara administratif, Dusun Dawang dibagi menjadi 5 wilayah Rukun Tetangga (RT 01 sampai RT 05) di bawah naungan 1 Rukun Warga (RW). Masing-masing RT memiliki batas wilayah geospasial tersendiri dengan keunikan warganya masing-masing.</p>
+              <div class="chapter-badge">🗃️ Batas Wilayah RT</div>
+            </div>
+
+            <div class="story-chapter" data-step="tetangga">
+              <span class="chapter-number">Bab 06</span>
+              <h3>Dusun Tetangga Desa Blongkeng</h3>
+              <p>Dusun Dawang merupakan bagian dari Desa Blongkeng yang terdiri dari total 8 dusun tetangga lainnya (seperti Sabrangkali, Caruban, Ngentak, dll.). Keberadaan peta spasial ini memperkuat koordinasi pembangunan antar dusun.</p>
+              <div class="chapter-badge">🏡 Batas Desa Blongkeng</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Sticky map container -->
+      <div class="storymap-content">
+        <!-- Map -->
+        <div id="main-map"></div>
+        
+        <!-- Legend overlay on map -->
+        <div class="storymap-legend-overlay">
+          <h4>Keterangan Peta</h4>
+          <div class="legend-items">
+            <div class="legend-item"><div class="legend-color" style="background:#C96A3A;"></div> <span>Dusun Dawang</span></div>
+            <div class="legend-item"><div class="legend-color" style="background:#E8B86D;"></div> <span>Desa Blongkeng</span></div>
+            <div class="legend-item"><div class="legend-color" style="background:#386641;"></div> <span>Batas RT</span></div>
+            <div class="legend-item"><div class="legend-color" style="background:#E8B86D;opacity:0.6;"></div> <span>Lahan Sawah</span></div>
+            <div class="legend-item"><div class="legend-color" style="background:#C96A3A;opacity:0.5;"></div> <span>Permukiman</span></div>
+          </div>
+        </div>
+
+        <!-- Layer controls floating on map -->
+        <div class="storymap-controls-overlay">
+          <button class="map-overlay-btn active" data-layer="base" id="btn-base">🗺️ Peta</button>
+          <button class="map-overlay-btn" data-layer="satellite" id="btn-satellite">🛰️ Citra Satelit</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
+      </div>
+      
+      <!-- SLIDE 4: KEHIDUPAN DUSUN (POTENSI & PERANGKAT) -->
+      <div class="page-slide" id="slide-village-life">
+        
+  </main>
+
+  <!-- Immersive Transition Overlay -->
+  <div class="slide-transition-overlay" id="transition-overlay">
+    <div class="transition-batik-icon">✦</div>
+    <div class="transition-progress-bar">
+      <div class="transition-progress-line"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- App Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
