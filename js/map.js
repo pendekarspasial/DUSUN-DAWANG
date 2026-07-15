@@ -586,4 +586,137 @@ document.addEventListener('DOMContentLoaded', () => {
   const miniEl = document.getElementById('profil-mini-map');
   if (mapEl)  mapObserver.observe(mapEl);
   if (miniEl) mapObserver.observe(miniEl);
+
+  // ---- Immersive StoryMap Scroll Handler ----
+  initStoryMapScrolling();
 });
+
+// Map coordinates config for each story chapter
+const CHAPTER_STEPS = {
+  'welcome': {
+    center: [-7.63739, 110.2494],
+    zoom: 16,
+    layersOn: ['🏘️ Batas Dusun Dawang'],
+    layersOff: ['🗂️ Pembagian Dusun', '🗃️ Batas RT (Dawang)', '🏡 Batas Desa Blongkeng', '🌾 Tutupan Lahan']
+  },
+  'kantor': {
+    center: [-7.63739, 110.2494],
+    zoom: 18,
+    layersOn: ['🏘️ Batas Dusun Dawang', '📍 Fasilitas Umum'],
+    layersOff: ['🗂️ Pembagian Dusun', '🗃️ Batas RT (Dawang)', '🏡 Batas Desa Blongkeng', '🌾 Tutupan Lahan'],
+    popupText: 'Balai Dusun Dawang'
+  },
+  'ibadah': {
+    center: [-7.63719, 110.2489],
+    zoom: 18,
+    layersOn: ['🏘️ Batas Dusun Dawang', '📍 Fasilitas Umum'],
+    layersOff: ['🗂️ Pembagian Dusun', '🗃️ Batas RT (Dawang)', '🏡 Batas Desa Blongkeng', '🌾 Tutupan Lahan'],
+    popupText: 'Masjid Al-Ikhlas'
+  },
+  'sawah': {
+    center: [-7.63739, 110.2494],
+    zoom: 16,
+    layersOn: ['🏘️ Batas Dusun Dawang', '🌾 Tutupan Lahan'],
+    layersOff: ['🗂️ Pembagian Dusun', '🗃️ Batas RT (Dawang)', '🏡 Batas Desa Blongkeng'],
+    popupText: 'Sawah'
+  },
+  'penduduk': {
+    center: [-7.63739, 110.2494],
+    zoom: 16,
+    layersOn: ['🏘️ Batas Dusun Dawang', '🗃️ Batas RT (Dawang)'],
+    layersOff: ['🗂️ Pembagian Dusun', '🏡 Batas Desa Blongkeng', '🌾 Tutupan Lahan']
+  },
+  'tetangga': {
+    center: [-7.63739, 110.2494],
+    zoom: 15,
+    layersOn: ['🏘️ Batas Dusun Dawang', '🏡 Batas Desa Blongkeng', '🗂️ Pembagian Dusun'],
+    layersOff: ['🗃️ Batas RT (Dawang)', '🌾 Tutupan Lahan']
+  }
+};
+
+function initStoryMapScrolling() {
+  const chapters = document.querySelectorAll('.story-chapter');
+  const sidebar = document.querySelector('.storymap-sidebar');
+  if (!chapters.length || !sidebar) return;
+
+  const observerOptions = {
+    root: sidebar,
+    rootMargin: '-20% 0px -40% 0px', // Trigger when card occupies center of scroll view
+    threshold: 0.2
+  };
+
+  const chapterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remove active class from all chapters
+        chapters.forEach(c => c.classList.remove('active'));
+        
+        // Mark current as active
+        entry.target.classList.add('active');
+        
+        const step = entry.target.dataset.step;
+        handleStoryStep(step);
+      }
+    });
+  }, observerOptions);
+
+  chapters.forEach(chapter => chapterObserver.observe(chapter));
+}
+
+function handleStoryStep(step) {
+  const config = CHAPTER_STEPS[step];
+  if (!config || !mainMap) return;
+
+  // Fly/pan map to center with smooth animations
+  mainMap.flyTo(config.center, config.zoom, {
+    animate: true,
+    duration: 1.5
+  });
+
+  // Handle layer toggles
+  if (config.layersOn) {
+    config.layersOn.forEach(layerName => {
+      const layer = overlayLayers[layerName];
+      if (layer && !mainMap.hasLayer(layer)) {
+        mainMap.addLayer(layer);
+      }
+    });
+  }
+
+  if (config.layersOff) {
+    config.layersOff.forEach(layerName => {
+      const layer = overlayLayers[layerName];
+      if (layer && mainMap.hasLayer(layer)) {
+        mainMap.removeLayer(layer);
+      }
+    });
+  }
+
+  // Open Popups automatically if specified
+  if (config.popupText) {
+    setTimeout(() => {
+      mainMap.eachLayer((layer) => {
+        if (layer.getPopup) {
+          const popup = layer.getPopup();
+          if (popup && popup.getContent() && popup.getContent().includes(config.popupText)) {
+            layer.openPopup();
+          }
+        }
+      });
+    }, 1500); // wait for flyTo to finish
+  } else {
+    mainMap.closePopup();
+  }
+}
+
+// Add simple style controls event listener for immersive controls overlay
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.map-overlay-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.map-overlay-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const layer = btn.dataset.layer;
+      const baseBtn = document.querySelector('.layer-btn[data-layer="' + layer + '"]');
+      if (baseBtn) baseBtn.click();
+    });
+  });
