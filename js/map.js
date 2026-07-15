@@ -476,7 +476,7 @@ async function initMiniMap(koordinat) {
   }).addTo(miniMap);
 
   // Add boundary
-  const boundaryGeoJSON = await loadBoundary();
+  const boundaryGeoJSON = await loadGeoJSON('wgs84_area_dawang.geojson') || await loadGeoJSON('wgs84_aoi_dawang.geojson');
   if (boundaryGeoJSON) {
     L.geoJSON(boundaryGeoJSON, {
       style: {
