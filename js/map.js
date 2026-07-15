@@ -373,6 +373,23 @@ async function initMainMap(fasilitas) {
     }).addTo(dusunLayer);
   }
 
+  // ---- Sawah / Lahan Layer ----
+  const lahanLayer = L.layerGroup();
+  const sawahGeoJSON = await loadGeoJSON('wgs84_sawah.geojson') || await loadGeoJSON('wgs84_sawag.geojson');
+  if (sawahGeoJSON) {
+    L.geoJSON(sawahGeoJSON, {
+      style: { color: '#E8B86D', weight: 1, fillColor: '#E8B86D', fillOpacity: 0.25 }
+    }).bindPopup('<div class="popup-inner"><div class="popup-kategori" style="color:#E8B86D;">Tutupan Lahan</div><div class="popup-nama">Sawah</div><div class="popup-desc">Lahan persawahan Dusun Dawang</div></div>')
+      .addTo(lahanLayer);
+  }
+  const rumahGeoJSON = await loadGeoJSON('wgs84_rumah.geojson');
+  if (rumahGeoJSON) {
+    L.geoJSON(rumahGeoJSON, {
+      style: { color: '#C96A3A', weight: 1, fillColor: '#C96A3A', fillOpacity: 0.2 }
+    }).bindPopup('<div class="popup-inner"><div class="popup-kategori" style="color:#C96A3A;">Permukiman</div><div class="popup-nama">Bangunan</div></div>')
+      .addTo(lahanLayer);
+  }
+
   // ---- Store overlay layers ----
   overlayLayers = {
     '🏘️ Batas Dusun Dawang':    boundaryLayer,
