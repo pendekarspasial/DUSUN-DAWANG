@@ -94,22 +94,7 @@ function closeMenu() {
 hamburger.addEventListener('click', toggleMenu);
 
 function initScrollSpy() {
-  const path = window.location.pathname;
-  const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
-
-  if (page === 'peta.html') {
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-    document.getElementById('nav-peta')?.classList.add('active');
-    return;
-  }
-  if (page === 'kkn.html') {
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-    document.getElementById('nav-arsip')?.classList.add('active');
-    return;
-  }
-
-  // On index.html
-  const sectionIds = ['hero', 'profil', 'kependudukan'];
+  const sectionIds = ['hero', 'profil', 'peta', 'kependudukan', 'perangkat', 'potensi', 'galeri', 'arsip'];
   const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null);
   
   if (sections.length === 0) return;
@@ -126,6 +111,7 @@ function initScrollSpy() {
         const id = entry.target.getAttribute('id');
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         
+        // Highlight active navbar link
         const navLink = document.getElementById('nav-' + id);
         if (navLink) {
           navLink.classList.add('active');
