@@ -77,9 +77,6 @@ window.addEventListener('scroll', () => {
   if (btt) {
     btt.classList.toggle('visible', window.scrollY > 500);
   }
-
-  // Active nav link
-  updateActiveNavLink();
 });
 
 function toggleMenu() {
@@ -96,7 +93,7 @@ function closeMenu() {
 
 hamburger.addEventListener('click', toggleMenu);
 
-function updateActiveNavLink() {
+function initScrollSpy() {
   const path = window.location.pathname;
   const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
 
@@ -112,22 +109,32 @@ function updateActiveNavLink() {
   }
 
   // On index.html
-  const sections = ['hero', 'profil', 'kependudukan'];
-  const scrollY = window.scrollY + 100;
+  const sectionIds = ['hero', 'profil', 'kependudukan'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(el => el !== null);
+  
+  if (sections.length === 0) return;
 
-  sections.forEach(id => {
-    const section = document.getElementById(id);
-    const navLink = document.getElementById('nav-' + id);
-    if (!section || !navLink) return;
+  const observerOptions = {
+    root: null,
+    rootMargin: '-30% 0px -60% 0px', // Trigger when section occupies core viewport
+    threshold: 0
+  };
 
-    const top = section.offsetTop;
-    const bottom = top + section.offsetHeight;
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        
+        const navLink = document.getElementById('nav-' + id);
+        if (navLink) {
+          navLink.classList.add('active');
+        }
+      }
+    });
+  }, observerOptions);
 
-    if (scrollY >= top && scrollY < bottom) {
-      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      navLink.classList.add('active');
-    }
-  });
+  sections.forEach(sec => spyObserver.observe(sec));
 }
 
 // ---- Particle Canvas (Hero) ----
@@ -446,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initGallery();
   loadData();
-  updateActiveNavLink();
+  initScrollSpy();
 
   // Delay reveal init slightly to allow DOM to settle
   setTimeout(initReveal, 300);
