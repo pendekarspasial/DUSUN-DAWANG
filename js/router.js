@@ -1,50 +1,70 @@
 /* ==========================================================================
-   ROUTER.JS — AJAX Page Router with Immersive Transition Effect
-   Supports: Zero-refresh AJAX dynamic content loading, Page transitions,
-             Fallback to standard page load for file:// scheme (offline)
+   ROUTER.JS — AJAX Page Router with hash scroll handling
+   Supports: 3-page architecture, zero-refresh page loading,
+             smooth scrolling to page section hashes, local file:/// fallback
    ========================================================================== */
 
 let isPageTransitioning = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize the router
+  // Initialize router interceptors
   initRouter();
   
-  // Set initial active state of navbar based on current page
+  // Highlight active menu on load
   highlightNavbar();
+
+  // If there's a hash on initial load, scroll to it
+  if (window.location.hash) {
+    setTimeout(() => {
+      scrollToHash(window.location.hash);
+    }, 500);
+  }
 });
 
 function initRouter() {
-  // If open locally via file:/// protocol, fall back to standard HTML navigation
-  // because browsers block fetch() requests on local file paths due to CORS.
+  // If open locally via file:/// protocol, fall back to standard routing
   if (window.location.protocol === 'file:') {
     console.log('Router: Local file system detected. Falling back to standard browser routing.');
     return;
   }
 
-  // Intercept clicks on links that are relative and point to other pages
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a');
     if (!link) return;
 
-    const href = link.getAttribute('href');
+    let href = link.getAttribute('href');
     if (!href) return;
 
-    // Check if it is a local page transition (e.g. index.html, profil.html, peta.html, kkn.html)
+    // Check if it is a relative local page link
     if (
-      href.endsWith('.html') ||
-      href === './' ||
-      href === '/' ||
-      (!href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:'))
+      href.startsWith('http') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      link.getAttribute('target') === '_blank'
     ) {
-      e.preventDefault();
-      
-      // Resolve path
-      const targetUrl = new URL(href, window.location.href).href;
-      
-      // Navigate using AJAX
-      navigateToPage(targetUrl);
+      return; // Ignore external links, mailto, tel, etc.
     }
+
+    // Resolve resolved target URL details
+    const targetUrl = new URL(href, window.location.href);
+    const targetPathname = targetUrl.pathname.substring(targetUrl.pathname.lastIndexOf('/') + 1) || 'index.html';
+    const currentPathname = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) || 'index.html';
+
+    // Scenario A: Clicked on a hash link pointing to the CURRENT page (e.g. '#' or '#profil' or 'index.html#profil' while on index.html)
+    if (targetPathname === currentPathname) {
+      if (targetUrl.hash) {
+        e.preventDefault();
+        window.history.pushState(null, document.title, targetUrl.hash);
+        scrollToHash(targetUrl.hash);
+        highlightNavbar();
+        closeMobileMenu();
+      }
+      return;
+    }
+
+    // Scenario B: Clicked on a link pointing to a DIFFERENT page (e.g. peta.html, kkn.html, index.html#profil from peta.html)
+    e.preventDefault();
+    navigateToPage(targetUrl.href);
   });
 
   // Handle browser back/forward buttons
@@ -69,12 +89,11 @@ function navigateToPage(url, pushState = true) {
   isPageTransitioning = true;
   const overlay = document.getElementById('transition-overlay');
   
-  // 1. Show transition overlay (Batik Loading Overlay)
   if (overlay) {
     overlay.classList.add('active');
   }
 
-  // 2. Fetch the target page in the background after overlay transitions in (350ms)
+  // Fetch target page
   setTimeout(() => {
     fetch(url)
       .then(res => {
@@ -82,16 +101,14 @@ function navigateToPage(url, pushState = true) {
         return res.text();
       })
       .then(html => {
-        // Parse fetched HTML
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        // Extract content inside <main id="page-content">
         const newContent = doc.getElementById('page-content');
         const currentContent = document.getElementById('page-content');
 
         if (newContent && currentContent) {
-          // Replace page content
+          // Replace content
           currentContent.innerHTML = newContent.innerHTML;
 
           // Update Document Title
@@ -102,35 +119,33 @@ function navigateToPage(url, pushState = true) {
             window.history.pushState(null, doc.title, url);
           }
 
-          // Force page scroll to top
-          window.scrollTo(0, 0);
-
-          // Remove new preloader if parsed, we don't need it on AJAX transition
+          // Close preloader
           const preloader = document.getElementById('preloader');
-          if (preloader) {
-            preloader.remove();
-          }
+          if (preloader) preloader.remove();
 
           // Highlight navbar active link
           highlightNavbar();
+          closeMobileMenu();
 
-          // Close mobile menu if open
-          const navMobile = document.getElementById('nav-mobile');
-          const hamburger = document.getElementById('nav-hamburger');
-          if (navMobile) navMobile.classList.remove('active');
-          if (hamburger) hamburger.classList.remove('active');
-
-          // 3. Re-run initializers for scripts
+          // Re-initialize page specific script components
           reinitializeScriptsForCurrentPage();
+
+          // Scroll to target hash or top of page
+          const targetUrl = new URL(url);
+          if (targetUrl.hash) {
+            setTimeout(() => {
+              scrollToHash(targetUrl.hash);
+            }, 100);
+          } else {
+            window.scrollTo(0, 0);
+          }
         }
       })
       .catch(err => {
         console.error('Failed to load page dynamically:', err);
-        // Fallback to standard page load if AJAX fetch fails
         window.location.href = url;
       })
       .finally(() => {
-        // 4. Remove transition overlay
         setTimeout(() => {
           if (overlay) {
             overlay.classList.remove('active');
@@ -141,22 +156,54 @@ function navigateToPage(url, pushState = true) {
   }, 350);
 }
 
+function scrollToHash(hash) {
+  const targetId = hash.substring(1);
+  const element = document.getElementById(targetId);
+  if (element) {
+    // If it is inside main page-content container (some pages have vertical scrolls)
+    const contentContainer = document.getElementById('page-content');
+    
+    // We scroll both window and page-content to be perfectly safe
+    window.scrollTo({
+      top: element.offsetTop - 80,
+      behavior: 'smooth'
+    });
+    
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
+function closeMobileMenu() {
+  const navMobile = document.getElementById('nav-mobile');
+  const hamburger = document.getElementById('nav-hamburger');
+  if (navMobile) navMobile.classList.remove('active');
+  if (hamburger) hamburger.classList.remove('active');
+}
+
 function highlightNavbar() {
   const path = window.location.pathname;
   const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+  const hash = window.location.hash;
 
   // Remove active from all nav-links
   document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.remove('active');
   });
 
-  // Add active based on current page
   if (page === 'index.html' || page === '') {
-    const el = document.getElementById('nav-hero');
-    if (el) el.classList.add('active');
-  } else if (page === 'profil.html') {
-    const el = document.getElementById('nav-profil');
-    if (el) el.classList.add('active');
+    if (hash === '#profil') {
+      const el = document.getElementById('nav-profil');
+      if (el) el.classList.add('active');
+    } else if (hash === '#kependudukan') {
+      const el = document.getElementById('nav-kependudukan');
+      if (el) el.classList.add('active');
+    } else {
+      const el = document.getElementById('nav-hero');
+      if (el) el.classList.add('active');
+    }
   } else if (page === 'peta.html') {
     const el = document.getElementById('nav-peta');
     if (el) el.classList.add('active');
@@ -172,25 +219,22 @@ function reinitializeScriptsForCurrentPage() {
 
   console.log('Re-initializing scripts for:', page);
 
-  // Common initializers
-  // Re-run ScrollReveal or fade reveal animations
+  // Common scroll reveal trigger
   if (typeof initReveal === 'function') {
     setTimeout(initReveal, 100);
   }
 
   if (page === 'index.html' || page === '') {
-    // Re-initialize particles canvas on hero page
+    // Re-initialize particles canvas
     if (typeof initParticles === 'function') {
       initParticles();
     }
-  }
-
-  else if (page === 'profil.html') {
-    // Re-initialize charts and mini-map
+    
+    // Re-initialize charts and mini-map (since they are now on index.html!)
     if (typeof loadData === 'function') {
       loadData();
     }
-    // We need to wait for DUSUN_DATA to load or trigger manually
+    
     setTimeout(() => {
       if (window.DUSUN_DATA) {
         if (typeof initMiniMap === 'function') {
@@ -200,11 +244,11 @@ function reinitializeScriptsForCurrentPage() {
           initAllCharts();
         }
       }
-    }, 400);
+    }, 450);
   }
 
   else if (page === 'peta.html') {
-    // Reset map variables so mainMap is re-created cleanly
+    // Reset map variable cleanly
     window.mainMap = null;
     
     // Re-initialize Leaflet map
@@ -213,7 +257,6 @@ function reinitializeScriptsForCurrentPage() {
         initMainMap(window.DUSUN_DATA.fasilitas || []);
       }
     } else {
-      // Wait for data-ready event or check DUSUN_DATA
       document.addEventListener('data-ready', () => {
         if (typeof initMainMap === 'function' && window.DUSUN_DATA) {
           initMainMap(window.DUSUN_DATA.fasilitas || []);
@@ -223,7 +266,7 @@ function reinitializeScriptsForCurrentPage() {
   }
 
   else if (page === 'kkn.html') {
-    // Re-run lightbox gallery initialization and load data
+    // Re-initialize gallery lightboxes and data cards
     if (typeof loadData === 'function') {
       loadData();
     }
