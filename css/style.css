@@ -2046,3 +2046,140 @@ tbody tr:hover td { background: rgba(201,106,58,0.03); }
   .tim-grid     { grid-template-columns: repeat(2, 1fr); }
   .galeri-grid  { columns: 1; }
 }
+
+/* ============================================
+   PERANGKAT DESA SECTION
+   ============================================ */
+.perangkat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.perangkat-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(201,106,58,0.12);
+  transition: transform var(--t-normal), box-shadow var(--t-normal);
+  cursor: pointer;
+}
+
+.perangkat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.perangkat-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--cream-mid);
+  position: relative;
+}
+
+.perangkat-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.perangkat-card:hover .perangkat-img-wrap img {
+  transform: scale(1.07);
+}
+
+.perangkat-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-earth);
+  font-size: 3.5rem;
+}
+
+.perangkat-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.perangkat-jabatan {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(201,106,58,0.10);
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(201,106,58,0.2);
+}
+
+.perangkat-nama {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.perangkat-wilayah {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.perangkat-kontak {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--primary);
+  font-weight: 600;
+  background: rgba(201,106,58,0.08);
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+  text-decoration: none;
+  transition: background var(--t-fast), color var(--t-fast);
+  border: 1px solid rgba(201,106,58,0.15);
+}
+
+.perangkat-kontak:hover {
+  background: var(--primary);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .perangkat-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+/* ============================================
+   LEAFLET CUSTOM TOOLTIP — Pembagian Dusun
+   ============================================ */
+.dusun-tooltip {
+  background: rgba(59, 35, 20, 0.90) !important;
+  border: 1px solid rgba(232, 184, 109, 0.5) !important;
+  border-radius: 8px !important;
+  color: #E8B86D !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 4px 10px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4) !important;
+  letter-spacing: 0.3px !important;
+  pointer-events: none !important;
+  white-space: nowrap !important;
+}
+
+.dusun-tooltip::before {
+  display: none !important;
+}
+

@@ -51,6 +51,7 @@
         <li><a href="#profil"      class="nav-link" id="nav-profil">Profil</a></li>
         <li><a href="#peta"        class="nav-link" id="nav-peta">Peta</a></li>
         <li><a href="#kependudukan" class="nav-link" id="nav-kependudukan">Kependudukan</a></li>
+        <li><a href="#perangkat"   class="nav-link" id="nav-perangkat">Perangkat</a></li>
         <li><a href="#potensi"     class="nav-link" id="nav-potensi">Potensi</a></li>
         <li><a href="#galeri"      class="nav-link" id="nav-galeri">Galeri</a></li>
         <li><a href="#arsip"       class="nav-link nav-cta" id="nav-arsip">Arsip KKN</a></li>
@@ -66,6 +67,7 @@
       <a href="#profil"       class="nav-link" onclick="closeMenu()">📖 Profil Dusun</a>
       <a href="#peta"         class="nav-link" onclick="closeMenu()">🗺️ Peta Interaktif</a>
       <a href="#kependudukan" class="nav-link" onclick="closeMenu()">👥 Kependudukan</a>
+      <a href="#perangkat"    class="nav-link" onclick="closeMenu()">👤 Perangkat Desa</a>
       <a href="#potensi"      class="nav-link" onclick="closeMenu()">🌟 Potensi Dusun</a>
       <a href="#galeri"       class="nav-link" onclick="closeMenu()">📸 Galeri</a>
       <a href="#arsip"        class="nav-link" onclick="closeMenu()">📋 Arsip KKN</a>
@@ -266,13 +268,13 @@
           🛰️ Citra Satelit
         </button>
         <button class="layer-btn" data-layer="fasilitas" id="btn-fasilitas">
-          <span class="layer-btn-dot dot-fasilitas"></span> Fasilitas Umum
+          <span class="layer-btn-dot dot-fasilitas"></span> Fasilitas
         </button>
         <button class="layer-btn" data-layer="lahan" id="btn-lahan">
-          <span class="layer-btn-dot dot-lahan"></span> Tutupan Lahan
+          <span class="layer-btn-dot dot-lahan"></span> Batas RT
         </button>
         <button class="layer-btn" data-layer="infra" id="btn-infra">
-          <span class="layer-btn-dot dot-infra"></span> Infrastruktur
+          <span class="layer-btn-dot dot-infra"></span> Perangkat Desa
         </button>
       </div>
 
@@ -284,28 +286,28 @@
       <!-- Legend -->
       <div class="peta-legend reveal" id="map-legend">
         <div class="legend-item">
-          <div class="legend-color" style="background:#52B788;"></div>
-          <span class="legend-label">Batas Administrasi</span>
+          <div class="legend-color" style="background:#C96A3A;"></div>
+          <span class="legend-label">Batas Dusun Dawang</span>
         </div>
         <div class="legend-item">
-          <div class="legend-color" style="background:#E9C46A;"></div>
+          <div class="legend-color" style="background:#E8B86D;"></div>
+          <span class="legend-label">Batas Desa Blongkeng</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background:#386641;"></div>
+          <span class="legend-label">Batas RT</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background:#E8B86D;"></div>
           <span class="legend-label">Lahan Sawah</span>
         </div>
         <div class="legend-item">
-          <div class="legend-color" style="background:#2D6A4F;"></div>
-          <span class="legend-label">Kebun / Tegalan</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background:#F4A261;"></div>
-          <span class="legend-label">Permukiman</span>
+          <div class="legend-color" style="background:#C96A3A;"></div>
+          <span class="legend-label">Permukiman / Bangunan</span>
         </div>
         <div class="legend-item">
           <div class="legend-color" style="background:#0A9396;"></div>
           <span class="legend-label">Fasilitas Umum</span>
-        </div>
-        <div class="legend-item">
-          <div class="legend-color" style="background:#94D2BD;"></div>
-          <span class="legend-label">Sungai / Air</span>
         </div>
       </div>
     </div>
@@ -394,6 +396,22 @@
             <!-- filled by JS -->
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PERANGKAT DESA ============ -->
+  <section id="perangkat" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow eyebrow-earth">👤 Perangkat Desa</span>
+        <div class="batik-ornament"><span class="batik-ornament-icon">✦</span></div>
+        <h2 class="section-title">Kontak Perangkat Dusun Dawang</h2>
+        <p class="section-desc">Daftar perangkat desa dan RT/RW yang dapat dihubungi oleh warga Dusun Dawang.</p>
+      </div>
+
+      <div class="perangkat-grid" id="perangkat-grid">
+        <!-- filled by JS -->
       </div>
     </div>
   </section>

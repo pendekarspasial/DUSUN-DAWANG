@@ -34,6 +34,7 @@ function initWithData() {
   renderBatasDusun();
   renderInfoAdmin();
   renderRTTable();
+  renderPerangkatGrid();
   renderPotensiGrid();
   renderProkerGrid();
   renderTimGrid();
@@ -94,7 +95,7 @@ function closeMenu() {
 hamburger.addEventListener('click', toggleMenu);
 
 function updateActiveNavLink() {
-  const sections = ['profil','peta','kependudukan','potensi','galeri','arsip'];
+  const sections = ['profil','peta','kependudukan','perangkat','potensi','galeri','arsip'];
   const scrollY = window.scrollY + 100;
 
   sections.forEach(id => {
@@ -241,8 +242,40 @@ function initGallery() {
   }
 }
 
-// ---- Render Functions (from JSON data) ----
+// ---- Render Perangkat Desa Grid ----
+function renderPerangkatGrid() {
+  const grid = document.getElementById('perangkat-grid');
+  if (!grid) return;
+  const perangkat = DUSUN_DATA?.perangkat || [];
+  if (!perangkat.length) {
+    grid.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:2rem;">Data perangkat desa akan segera ditambahkan.</p>';
+    return;
+  }
 
+  grid.innerHTML = perangkat.map((p, i) => {
+    const imgHtml = p.foto
+      ? `<img src="${p.foto}" alt="${p.nama}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=perangkat-img-placeholder>👤</div>'" />`
+      : `<div class="perangkat-img-placeholder">👤</div>`;
+    const kontakHtml = p.kontak && !p.kontak.includes('xxx')
+      ? `<a href="tel:${p.kontak.replace(/\s|-/g,'')}" class="perangkat-kontak">📞 ${p.kontak}</a>`
+      : `<span class="perangkat-kontak" style="cursor:default;">📞 Hubungi via RW</span>`;
+    return `
+      <div class="perangkat-card reveal delay-${(i % 4) + 1}">
+        <div class="perangkat-img-wrap">${imgHtml}</div>
+        <div class="perangkat-body">
+          <div class="perangkat-jabatan">${p.jabatan}</div>
+          <div class="perangkat-nama">${p.nama}</div>
+          <div class="perangkat-wilayah">📍 ${p.wilayah || 'Dusun Dawang'}</div>
+          ${kontakHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  initReveal();
+}
+
+// ---- Render Batas Dusun ----
 function renderBatasDusun() {
   const b = DUSUN_DATA?.dusun?.batasDusun;
   if (!b) return;
