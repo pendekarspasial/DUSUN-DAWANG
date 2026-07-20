@@ -10,7 +10,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/DUSUN-DAWANG/', // Required for GitHub Pages repo path
+  base: './', // Relative base path ensures assets load regardless of GitHub Pages repo casing or domain
   build: {
     outDir: 'dist',
     sourcemap: false,
