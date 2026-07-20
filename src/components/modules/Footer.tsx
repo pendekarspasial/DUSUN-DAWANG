@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Mail, Phone, QrCode, Download, Heart, ShieldCheck, Compass } from 'lucide-react';
 import { DusunInfo } from '../../types';
+import { getAssetUrl } from '../../utils/path';
 
 interface FooterProps {
   dusun: DusunInfo;
@@ -67,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
 
           <div className="space-y-1.5 text-[11px]">
             <a
-              href="/Data_geojson/wgs84_aoi_dawang.geojson"
+              href={getAssetUrl('Data_geojson/wgs84_aoi_dawang.geojson')}
               download
               className="flex items-center justify-between p-2 rounded-xl bg-dawang-card/60 hover:bg-dawang-card text-dawang-sand transition-colors border border-white/5"
             >
@@ -76,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
             </a>
 
             <a
-              href="/Data_geojson/wgs84_aoi_rt.geojson"
+              href={getAssetUrl('Data_geojson/wgs84_aoi_rt.geojson')}
               download
               className="flex items-center justify-between p-2 rounded-xl bg-dawang-card/60 hover:bg-dawang-card text-dawang-sand transition-colors border border-white/5"
             >
@@ -85,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
             </a>
 
             <a
-              href="/Data_geojson/wgs84_rumah.geojson"
+              href={getAssetUrl('Data_geojson/wgs84_rumah.geojson')}
               download
               className="flex items-center justify-between p-2 rounded-xl bg-dawang-card/60 hover:bg-dawang-card text-dawang-sand transition-colors border border-white/5"
             >
@@ -94,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
             </a>
 
             <a
-              href="/Data_geojson/wgs84_sawah.geojson"
+              href={getAssetUrl('Data_geojson/wgs84_sawah.geojson')}
               download
               className="flex items-center justify-between p-2 rounded-xl bg-dawang-card/60 hover:bg-dawang-card text-dawang-sand transition-colors border border-white/5"
             >

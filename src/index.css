@@ -33,12 +33,12 @@
 @layer utilities {
   /* Batik overlay patterns */
   .bg-batik-tile {
-    background-image: url('/assets/images/batik_tile.png');
+    background-image: url('../public/assets/images/batik_tile.png');
     background-repeat: repeat;
     background-size: 240px;
   }
   .bg-batik-hero {
-    background-image: url('/assets/images/batik_hero.png');
+    background-image: url('../public/assets/images/batik_hero.png');
     background-size: cover;
     background-position: center;
   }

@@ -15,6 +15,7 @@ import { VisualGalleryModule } from './components/modules/VisualGalleryModule';
 import { Footer } from './components/modules/Footer';
 import { defaultVillageData } from './data/villageData';
 import { VillageData } from './types';
+import { getAssetUrl } from './utils/path';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('cerita');
@@ -24,14 +25,14 @@ export const App: React.FC = () => {
 
   // Load JSON data from public/data/dusun.json if available
   useEffect(() => {
-    fetch('/data/dusun.json')
+    fetch(getAssetUrl('data/dusun.json'))
       .then((res) => {
         if (!res.ok) throw new Error('dusun.json fetch error');
         return res.json();
       })
       .then((data) => {
         if (data && data.dusun) {
-          setVillageData((prev) => ({
+          setVillageData((prev: VillageData) => ({
             ...prev,
             dusun: { ...prev.dusun, ...data.dusun },
             penduduk: data.penduduk ? { ...prev.penduduk, ...data.penduduk } : prev.penduduk,

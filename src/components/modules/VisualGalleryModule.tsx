@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Camera, Eye, X, ZoomIn } from 'lucide-react';
+import { getAssetUrl } from '../../utils/path';
 
 export const VisualGalleryModule: React.FC = () => {
   const [activeImage, setActiveImage] = useState<{ src: string; title: string; category: string } | null>(null);
@@ -43,7 +44,7 @@ export const VisualGalleryModule: React.FC = () => {
             className="group relative rounded-2xl overflow-hidden glass-card border border-white/10 aspect-video sm:aspect-square cursor-pointer shadow-2.5d-sm hover:shadow-2.5d-md transition-all duration-300"
           >
             <img
-              src={item.src}
+              src={getAssetUrl(item.src)}
               alt={item.title}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"
@@ -81,7 +82,7 @@ export const VisualGalleryModule: React.FC = () => {
             </button>
 
             <img
-              src={activeImage.src}
+              src={getAssetUrl(activeImage.src)}
               alt={activeImage.title}
               className="max-h-[75vh] w-auto rounded-2xl border border-white/20 shadow-2.5d-lg object-contain"
             />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, GraduationCap, UserCheck, Sparkles, BookOpen } from 'lucide-react';
 import { TimKKNInfo } from '../../types';
+import { getAssetUrl } from '../../utils/path';
 
 interface KKNProfileModuleProps {
   timKKN: TimKKNInfo;
@@ -56,7 +57,7 @@ export const KKNProfileModule: React.FC<KKNProfileModuleProps> = ({ timKKN }) =>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl overflow-hidden bg-dawang-surface border border-white/10 flex-shrink-0">
                   <img
-                    src={student.foto || '/fotorumah/Kadus.jpg.jpg'}
+                    src={getAssetUrl(student.foto || '/fotorumah/Kadus.jpg.jpg')}
                     alt={student.nama}
                     className="w-full h-full object-cover"
                     loading="lazy"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Compass, Download, Eye, Layers, X, FileText, CheckCircle2 } from 'lucide-react';
+import { getAssetUrl } from '../../utils/path';
 
 interface ThematicMapItem {
   id: string;
@@ -122,7 +123,7 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
             {/* Thumbnail Header */}
             <div className="relative aspect-video overflow-hidden bg-dawang-surface">
               <img
-                src={map.thumbnail}
+                src={getAssetUrl(map.thumbnail)}
                 alt={map.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
@@ -221,7 +222,7 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                href={`/Data_geojson/${selectedMap.geojsonFile}`}
+                href={getAssetUrl(`Data_geojson/${selectedMap.geojsonFile}`)}
                 download
                 className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-dawang-clay text-white text-xs font-bold shadow-2.5d-sm hover:brightness-110 active:scale-95 transition-all"
               >

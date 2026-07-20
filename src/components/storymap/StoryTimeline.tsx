@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BookOpen, MapPin, ChevronRight, Sparkles, Droplet, Landmark, Cpu } from 'lucide-react';
+import { getAssetUrl } from '../../utils/path';
 
 interface StoryTimelineProps {
   onFocusMapLocation?: (lat: number, lng: number, zoom: number) => void;
@@ -159,7 +160,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
               <div className="md:col-span-5 relative">
                 <div className="relative rounded-2xl overflow-hidden shadow-2.5d-md border border-white/15 aspect-video md:aspect-square">
                   <img
-                    src={chap.image}
+                    src={getAssetUrl(chap.image)}
                     alt={chap.title}
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                     loading="lazy"

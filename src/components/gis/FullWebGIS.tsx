@@ -4,6 +4,7 @@ import { FloatingSearchBar } from './FloatingSearchBar';
 import { FloatingMapControls } from './FloatingMapControls';
 import { BottomSheetDetail } from './BottomSheetDetail';
 import { MapLayerConfig, GeoJSONFeatureProperties, FasilitasItem } from '../../types';
+import { getAssetUrl } from '../../utils/path';
 
 interface FullWebGISProps {
   fasilitas: FasilitasItem[];
@@ -113,7 +114,7 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
         return;
       }
 
-      fetch(`/Data_geojson/${cfg.file}`)
+      fetch(getAssetUrl(`Data_geojson/${cfg.file}`))
         .then((res) => {
           if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
           return res.json();
