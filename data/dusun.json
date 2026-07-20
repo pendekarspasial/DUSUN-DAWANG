@@ -251,21 +251,21 @@
     }
   ],
   "timKKN": {
-    "namaKelompok": "KKN [Nama Kelompok]",
-    "universitas": "[Nama Universitas]",
-    "tahun": "2025",
-    "dosenPembimbing": "Dr. [Nama DPL]",
+    "namaKelompok": "KKN Bela Negara Periode II 2026 — Angkatan 84.180",
+    "universitas": "UPN \"Veteran\" Yogyakarta",
+    "tahun": "2026",
+    "dosenPembimbing": "—",
     "anggota": [
-      { "nama": "Nama Mahasiswa 1", "nim": "000001", "jurusan": "Teknik Informatika", "foto": "", "peran": "Koordinator" },
-      { "nama": "Nama Mahasiswa 2", "nim": "000002", "jurusan": "Geografi", "foto": "", "peran": "Sekretaris" },
-      { "nama": "Nama Mahasiswa 3", "nim": "000003", "jurusan": "Ilmu Kesehatan Masyarakat", "foto": "", "peran": "Bendahara" },
-      { "nama": "Nama Mahasiswa 4", "nim": "000004", "jurusan": "Kedokteran", "foto": "", "peran": "Anggota" },
-      { "nama": "Nama Mahasiswa 5", "nim": "000005", "jurusan": "Desain Komunikasi Visual", "foto": "", "peran": "Anggota" },
-      { "nama": "Nama Mahasiswa 6", "nim": "000006", "jurusan": "Manajemen", "foto": "", "peran": "Anggota" },
-      { "nama": "Nama Mahasiswa 7", "nim": "000007", "jurusan": "Teknik Sipil", "foto": "", "peran": "Anggota" },
-      { "nama": "Nama Mahasiswa 8", "nim": "000008", "jurusan": "Agribisnis", "foto": "", "peran": "Anggota" },
-      { "nama": "Nama Mahasiswa 9", "nim": "000009", "jurusan": "Pendidikan Guru SD", "foto": "", "peran": "Anggota" },
-      { "nama": "Nama Mahasiswa 10", "nim": "000010", "jurusan": "Hukum", "foto": "", "peran": "Anggota" }
+      { "nama": "Christopher Daniel Simbolon", "nim": "—", "jurusan": "Teknik Geomatika", "foto": "assets/images/kkn/christopher.jpg", "peran": "Ketua", "prokerUtama": "Koordinasi & Pemetaan Spasial" },
+      { "nama": "Pashya Syachrila", "nim": "—", "jurusan": "Teknik Industri", "foto": "assets/images/kkn/pashya.jpg", "peran": "Sekretaris", "prokerUtama": "Dokumentasi & Administrasi" },
+      { "nama": "Dini Aminarti", "nim": "—", "jurusan": "Akuntansi", "foto": "assets/images/kkn/dini.jpg", "peran": "Bendahara", "prokerUtama": "Pengelolaan Keuangan Tim" },
+      { "nama": "Eka Putri Prabaningrum", "nim": "—", "jurusan": "Hubungan Masyarakat", "foto": "assets/images/kkn/eka.jpg", "peran": "Humas", "prokerUtama": "Komunikasi & Relasi Warga" },
+      { "nama": "Hafshah Afifah Khairunnisa", "nim": "—", "jurusan": "Manajemen", "foto": "assets/images/kkn/hafshah.jpg", "peran": "Humas", "prokerUtama": "Sosialisasi & Publikasi" },
+      { "nama": "Dwiatma Meilany Putri", "nim": "—", "jurusan": "Teknik Perminyakan", "foto": "assets/images/kkn/dwiatma.jpg", "peran": "PDD", "prokerUtama": "Publikasi, Dokumentasi & Desain" },
+      { "nama": "Gregorius Dennis A", "nim": "—", "jurusan": "Manajemen", "foto": "assets/images/kkn/gregorius.jpg", "peran": "PDD", "prokerUtama": "Desain Grafis & Media" },
+      { "nama": "Adhiimu Ayundha Artha Wijaya", "nim": "—", "jurusan": "Ekonomi Pembangunan", "foto": "assets/images/kkn/adhiimu.jpg", "peran": "Logistik", "prokerUtama": "Sarana & Prasarana" },
+      { "nama": "Ferdy Adinata Prabaswara", "nim": "—", "jurusan": "Teknik Geofisika", "foto": "assets/images/kkn/ferdy.jpg", "peran": "Logistik", "prokerUtama": "Perlengkapan & Pengadaan" },
+      { "nama": "Satria Rikhan Ganendra", "nim": "—", "jurusan": "Sistem Informasi", "foto": "assets/images/kkn/satria.jpg", "peran": "Logistik", "prokerUtama": "Sistem Informasi & Teknologi" }
     ]
   }
 }
