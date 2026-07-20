@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>UTM → WGS84 Converter — Dusun Dawang</title>
+<style>
+  body { font-family: monospace; padding: 20px; background: #1a0d06; color: #e8b86d; }
+  h2 { color: #c96a3a; }
+  button { background: #c96a3a; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 6px; font-size: 14px; margin: 5px; }
+  button:hover { background: #e0885a; }
+  pre { background: #2c1810; padding: 15px; border-radius: 8px; max-height: 300px; overflow: auto; font-size: 11px; border: 1px solid #e8b86d33; }
+  .ok { color: #52b788; } .warn { color: #e8b86d; }
+  a { color: #e8b86d; }
+</style>
+</head>
+<body>
+<h2>🗺️ UTM Zone 49S → WGS84 Converter</h2>
+<p>Klik tombol untuk konversi dan download GeoJSON WGS84:</p>
+
+<button onclick="runConvert('area_dawang.geojson','wgs84_area_dawang.geojson')">📥 Konversi area_dawang.geojson</button>
+<button onclick="runConvert('area_blongkeng.geojson','wgs84_area_blongkeng.geojson')">📥 Konversi area_blongkeng.geojson</button>
+<button onclick="runConvert('pembagian_dusun.geojson','wgs84_pembagian_dusun.geojson')">📥 Konversi pembagian_dusun.geojson ⭐</button>
+<button onclick="runConvert('aoi_rt.geojson','wgs84_aoi_rt.geojson')">📥 Konversi aoi_rt.geojson (RT boundaries)</button>
+<button onclick="runConvert('aoi_dawang.geojson','wgs84_aoi_dawang2.geojson')">📥 Konversi aoi_dawang.geojson</button>
+<button onclick="runConvert('rumah.geojson','wgs84_rumah.geojson')">📥 Konversi rumah.geojson</button>
+<button onclick="runConvert('sawah.geojson','wgs84_sawah.geojson')">📥 Konversi sawah.geojson</button>
+<button onclick="runConvert('sawag.geojson','wgs84_sawag.geojson')">📥 Konversi sawag.geojson</button>
+<button onclick="convertAll()" style="background:#386641;">🚀 Konversi SEMUA Sekaligus</button>
+
+<div id="log"></div>
+
+<script>
+/* =========================================
+   UTM Zone 49S (EPSG:32749) → WGS84
+   ========================================= */
+function utmToWgs84(E, N) {
+  const a  = 6378137.0;
+  const f  = 1/298.257223563;
+  const k0 = 0.9996;
+  const E0 = 500000.0;
+  const N0 = 10000000.0;           // southern hemisphere
+  const lon0 = 111.0 * Math.PI/180; // zone 49 central meridian
+
+  const e2 = 2*f - f*f;
+  const Nv = N - N0;
+  const M  = Nv / k0;
+  const mu = M / (a*(1 - e2/4 - 3*e2*e2/64 - 5*e2*e2*e2/256));
+
+  const e1   = (1 - Math.sqrt(1-e2))/(1 + Math.sqrt(1-e2));
+  const phi1 = mu
+    + (3*e1/2 - 27*e1**3/32)*Math.sin(2*mu)
+    + (21*e1**2/16 - 55*e1**4/32)*Math.sin(4*mu)
+    + (151*e1**3/96)*Math.sin(6*mu)
+    + (1097*e1**4/512)*Math.sin(8*mu);
+
+  const sp=Math.sin(phi1), cp=Math.cos(phi1), tp=sp/cp;
+  const N1 = a/Math.sqrt(1 - e2*sp*sp);
+  const T1 = tp*tp;
+  const C1 = e2/(1-e2)*cp*cp;
+  const R1 = a*(1-e2)/Math.pow(1-e2*sp*sp,1.5);
+  const D  = (E - E0)/(N1*k0);
+
+  const lat = phi1
+    - (N1*tp/R1)*(D*D/2
+      - (5 + 3*T1 + 10*C1 - 4*C1*C1 - 9*(e2/(1-e2)))*D**4/24
+      + (61 + 90*T1 + 298*C1 + 45*T1*T1 - 252*(e2/(1-e2)) - 3*C1*C1)*D**6/720);
+  const lng = lon0 + (D
+    - (1 + 2*T1 + C1)*D**3/6
+    + (5 - 2*C1 + 28*T1 - 3*C1*C1 + 8*(e2/(1-e2)) + 24*T1*T1)*D**5/120)/cp;
+
+  return [parseFloat((lat*180/Math.PI).toFixed(8)), parseFloat((lng*180/Math.PI).toFixed(8))];
+}
+
+function convertCoord(c) {
+  const [lat, lng] = utmToWgs84(c[0], c[1]);
+  return [lng, lat]; // GeoJSON: [lng, lat]
+}
+
+function convertGeom(g) {
+  if (!g) return g;
+  const clone = JSON.parse(JSON.stringify(g));
+  const t = clone.type;
+  if (t === 'Point') clone.coordinates = convertCoord(clone.coordinates);
+  else if (t==='MultiPoint'||t==='LineString') clone.coordinates = clone.coordinates.map(convertCoord);
+  else if (t==='MultiLineString'||t==='Polygon') clone.coordinates = clone.coordinates.map(r=>r.map(convertCoord));
+  else if (t==='MultiPolygon') clone.coordinates = clone.coordinates.map(p=>p.map(r=>r.map(convertCoord)));
+  return clone;
+}
+
+function log(msg, cls='ok') {
+  const d = document.getElementById('log');
+  d.innerHTML += `<p class="${cls}">${msg}</p>`;
+}
+
+async function runConvert(inputFile, outputFile) {
+  log(`⏳ Memuat ${inputFile}...`, 'warn');
+  try {
+    const res = await fetch(inputFile);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const raw = await res.json();
+
+    // Remove UTM CRS
+    delete raw.crs;
+    delete raw.xy_coordinate_resolution;
+
+    // Convert features
+    let count = 0;
+    raw.features.forEach(f => {
+      if (f.geometry) {
+        f.geometry = convertGeom(f.geometry);
+        count++;
+      }
+    });
+
+    // Sample first coordinate
+    const sample = raw.features[0]?.geometry?.coordinates;
+    let sampleStr = '';
+    try {
+      // Get first point regardless of geometry type
+      let pt = sample;
+      while (Array.isArray(pt[0])) pt = pt[0];
+      sampleStr = `Sample: lng=${pt[0].toFixed(4)}, lat=${pt[1].toFixed(4)}`;
+    } catch(e) {}
+
+    const json = JSON.stringify(raw, null, 2);
+    const blob = new Blob([json], {type:'application/json'});
+    const url  = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = outputFile; a.click();
+    URL.revokeObjectURL(url);
+
+    log(`✅ ${inputFile} → ${outputFile} (${count} features) ${sampleStr}`);
+  } catch(e) {
+    log(`❌ Error: ${e.message}`, 'warn');
+  }
+}
+async function convertAll() {
+  const files = [
+    ['area_dawang.geojson',       'wgs84_area_dawang.geojson'],
+    ['area_blongkeng.geojson',    'wgs84_area_blongkeng.geojson'],
+    ['pembagian_dusun.geojson',   'wgs84_pembagian_dusun.geojson'],
+    ['aoi_rt.geojson',            'wgs84_aoi_rt.geojson'],
+    ['aoi_dawang.geojson',        'wgs84_aoi_dawang.geojson'],
+    ['rumah.geojson',             'wgs84_rumah.geojson'],
+    ['sawah.geojson',             'wgs84_sawah.geojson'],
+    ['sawag.geojson',             'wgs84_sawag.geojson'],
+  ];
+  log('🚀 Memulai konversi semua file...', 'warn');
+  for (const [inp, out] of files) {
+    await runConvert(inp, out);
+    await new Promise(r => setTimeout(r, 400)); // jeda antar download
+  }
+  log('✅ Semua file selesai dikonversi! Simpan semua ke folder Data_geojson/');
+}
+</script>
+</body>
+</html>
