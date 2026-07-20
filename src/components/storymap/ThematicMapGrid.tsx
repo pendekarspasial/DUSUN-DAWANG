@@ -98,7 +98,11 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
   ];
 
   return (
-    <section id="peta-tematik" className="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
+    <section id="peta-tematik" className="relative py-16 px-4 sm:px-6 bg-gradient-to-b from-[#141311] via-[#14181f] to-[#141311] border-y border-white/5 overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-900/15 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-10">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dawang-gold/20 border border-dawang-gold/40 text-dawang-gold text-xs font-semibold mb-3">
@@ -241,6 +245,7 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
           </div>
         </div>
       )}
+      </div>
     </section>
   );
 };

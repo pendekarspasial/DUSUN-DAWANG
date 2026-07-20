@@ -211,7 +211,7 @@
       "kategori": "Lingkungan",
       "emoji": "🌱",
       "deskripsi": "Penanaman bibit tanaman buah & pohon peneduh di sepanjang jalan dusun, serta sosialisasi pemilahan sampah organik.",
-      "anggota": ["Ferdy Adinata Prabaswara", "Adhiimu Ayundha Artha Wijaya"],
+      "anggota": ["Ferdy Adinata Prabaswara", "Adhiimu Ayunda Artha Wijaya"],
       "tanggal": "Januari 2026",
       "durasi": "3 Minggu",
       "output": "Bibit Ditanam + Tong Sampah Organik"
@@ -241,7 +241,7 @@
       { "nama": "Hafshah Afifah Khairunnisa", "nim": "—", "jurusan": "Manajemen", "foto": "assets/images/kkn/hafshah.jpg", "peran": "Humas", "prokerUtama": "Sosialisasi & Publikasi" },
       { "nama": "Dwiatma Meilany Putri", "nim": "—", "jurusan": "Teknik Perminyakan", "foto": "assets/images/kkn/dwiatma.jpg", "peran": "PDD", "prokerUtama": "Publikasi, Dokumentasi & Desain" },
       { "nama": "Gregorius Dennis A", "nim": "—", "jurusan": "Manajemen", "foto": "assets/images/kkn/gregorius.jpg", "peran": "PDD", "prokerUtama": "Desain Grafis & Media" },
-      { "nama": "Adhiimu Ayundha Artha Wijaya", "nim": "—", "jurusan": "Ekonomi Pembangunan", "foto": "assets/images/kkn/adhiimu.jpg", "peran": "Logistik", "prokerUtama": "Sarana & Prasarana" },
+      { "nama": "Adhiimu Ayunda Artha Wijaya", "nim": "—", "jurusan": "Ekonomi Pembangunan", "foto": "assets/images/kkn/adhiimu.jpg", "peran": "Logistik", "prokerUtama": "Sarana & Prasarana" },
       { "nama": "Ferdy Adinata Prabaswara", "nim": "—", "jurusan": "Teknik Geofisika", "foto": "assets/images/kkn/ferdy.jpg", "peran": "Logistik", "prokerUtama": "Perlengkapan & Pengadaan" },
       { "nama": "Satria Rikhan Ganendra", "nim": "—", "jurusan": "Sistem Informasi", "foto": "assets/images/kkn/satria.jpg", "peran": "Logistik", "prokerUtama": "Sistem Informasi & Teknologi" }
     ]

@@ -112,7 +112,7 @@ export const App: React.FC = () => {
           </EB>
         </main>
       ) : (
-        <main className="space-y-4 pb-16">
+        <main className="w-full pb-16">
           <EB name="MobileHero">
             <MobileHero
               dusun={villageData.dusun}

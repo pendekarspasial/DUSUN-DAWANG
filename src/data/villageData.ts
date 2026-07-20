@@ -309,7 +309,7 @@ export const defaultVillageData: VillageData = {
         prokerUtama: "Desain Grafis & Media"
       },
       {
-        nama: "Adhiimu Ayundha Artha Wijaya",
+        nama: "Adhiimu Ayunda Artha Wijaya",
         nim: "—",
         jurusan: "Ekonomi Pembangunan",
         foto: "assets/images/kkn/adhiimu.jpg",
