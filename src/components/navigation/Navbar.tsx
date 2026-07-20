@@ -1,5 +1,6 @@
 import React from 'react';
 import { Map, BookOpen, Users, Sparkles, FolderArchive, Compass } from 'lucide-react';
+import { getAssetUrl } from '../../utils/path';
 
 interface NavbarProps {
   activeTab: string;
@@ -40,8 +41,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => handleNavClick('hero')} 
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-dawang-clay to-dawang-paddy flex items-center justify-center shadow-2.5d-sm group-hover:scale-105 transition-transform duration-300">
-            <span className="text-xl">🗺️</span>
+          <div className="w-10 h-10 rounded-xl bg-white/10 p-1 border border-white/20 flex items-center justify-center shadow-2.5d-sm group-hover:scale-105 transition-transform duration-300">
+            <img src={getAssetUrl('assets/images/logo_kab_magelang.png')} alt="Logo Kab Magelang" className="w-full h-full object-contain" />
           </div>
           <div>
             <div className="flex items-center gap-2">

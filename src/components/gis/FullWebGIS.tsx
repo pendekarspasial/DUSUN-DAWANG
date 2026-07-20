@@ -59,7 +59,7 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
     if (!mapContainerRef.current || mapRef.current) return;
 
     const map = L.map(mapContainerRef.current, {
-      center: [-7.6170, 110.2780],
+      center: [-7.6380, 110.2480],
       zoom: 17,
       zoomControl: false,
       attributionControl: false,
@@ -170,6 +170,8 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
 
           if (initialFocusFile && cfg.file === initialFocusFile) {
             mapRef.current.fitBounds(layer.getBounds(), { padding: [20, 20] });
+          } else if (!initialFocusFile && cfg.id === 'aoi_dawang') {
+            mapRef.current.fitBounds(layer.getBounds(), { padding: [30, 30] });
           }
         })
         .catch((err) => console.warn(`GeoJSON fetch warning [${cfg.file}]:`, err));

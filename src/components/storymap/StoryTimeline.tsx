@@ -12,48 +12,48 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
   const chapters = [
     {
       id: 1,
-      title: "Bab I: Akar Sejarah & Kearifan Dawang",
+      title: "Bagian I: Akar Sejarah & Kearifan Dawang",
       subtitle: "Warisan Luhur di Kaki Merapi",
       icon: Landmark,
       badge: "Sejarah & Nilai",
       color: "from-dawang-clay to-dawang-clayLight",
-      coords: { lat: -7.6170, lng: 110.2780, zoom: 17 },
+      coords: { lat: -7.6380, lng: 110.2480, zoom: 17 },
       description: "Dusun Dawang berdiri kukuh dengan nilai kebersamaan dan tradisi Jawa. Istilah 'Dawang' menggambarkan tempat yang padhang (terang benderang), menandakan pandangan hidup warga yang senantiasa terbuka, guyub rukun, dan berdaya dalam suasana kehangatan desa.",
       image: "/fotorumah/Kadus.jpg.jpg",
       details: ["Balai Dusun sebagai pusat musyawarah warga", "Tradisi Nyadran dan Gotong Royong bulanan", "Penjagaan nilai-nilai luhur Jawa sangkan paraning dumadi"]
     },
     {
       id: 2,
-      title: "Bab II: Demografi & Harmoni Warga",
+      title: "Bagian II: Demografi & Harmoni Warga",
       subtitle: "Masyarakat Produktif & Guyub Rukun",
       icon: BookOpen,
       badge: "Masyarakat",
       color: "from-dawang-gold to-dawang-goldLight",
-      coords: { lat: -7.6168, lng: 110.2775, zoom: 18 },
+      coords: { lat: -7.6380, lng: 110.2480, zoom: 18 },
       description: "Dihuni oleh 458 jiwa yang tersebar di 5 RT dan 1 RW, mayoritas warga bergerak di bidang pertanian produktif, UMKM olahan pangan, dan perdagangan. Hubungan antar-RT terjalin sangat erat melalui kegiatan posyandu, pkk, dan kerja bakti rutin.",
       image: "/fotorumah/RT1.jpg.jpg",
       details: ["124 Kepala Keluarga dalam 5 wilayah RT", "Posyandu aktif untuk anak & lansia", "Kegiatan keagamaan di Masjid Al-Ikhlas & Musholla RT 03"]
     },
     {
       id: 3,
-      title: "Bab III: Sawah Subur & Irigasi Merapi",
+      title: "Bagian III: Sawah Subur & Irigasi Merapi",
       subtitle: "Lanskap Hijau Pendukung Ketahanan Pangan",
       icon: Droplet,
       badge: "Pertanian & Alam",
       color: "from-dawang-paddy to-dawang-paddyGold",
-      coords: { lat: -7.6190, lng: 110.2790, zoom: 17 },
+      coords: { lat: -7.6380, lng: 110.2480, zoom: 17 },
       description: "Tanah vulkanik kaya hara yang dialiri saluran irigasi alami dari lereng Merapi menjadikan hamparan sawah Dusun Dawang menghasilkan padi dan sayuran organik melimpah. Pertanian menjadi denyut nadi perekonomian utama warga.",
       image: "/fotorumah/RT2.jpg.jpg",
       details: ["±85 Hektar total luas wilayah pertanian & pemukiman", "Sistem saluran irigasi tradisional terjaga rapi", "Kelompok tani aktif pengembang benih lokal"]
     },
     {
       id: 4,
-      title: "Bab IV: Pemetaan Digital Dusun Dawang",
+      title: "Bagian IV: Pemetaan Digital Dusun Dawang",
       subtitle: "Masa Depan Dusun Berdaya Teknologi",
       icon: Cpu,
       badge: "Peta Digital",
       color: "from-[#2563eb] to-[#60a5fa]",
-      coords: { lat: -7.6170, lng: 110.2780, zoom: 16 },
+      coords: { lat: -7.6380, lng: 110.2480, zoom: 16 },
       description: "Program KKN Bela Negara UPN Veteran Yogyakarta 2026 menghadirkan pemetaan wilayah digital dan peta interaktif berbasis QR Code. Seluruh batas wilayah, fasilitas umum, persawahan, dan rumah warga kini dapat diakses secara digital di HP.",
       image: "/fotorumah/RT3.jpg.jpg",
       details: ["Pemetaan wilayah & batas RT presisi tinggi", "Peta Digital Interaktif berbasis QR Code papan informasi", "Arsip Digital KKN & Monografi Desa terintegrasi"]
@@ -76,7 +76,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
             Perjalanan Dusun Dawang
           </h2>
           <p className="text-xs sm:text-sm text-dawang-goldLight font-medium mt-2">
-            Telusuri setiap babak cerita sejarah, masyarakat, persawahan, hingga digitalisasi spasial.
+            Telusuri setiap bagian cerita sejarah, masyarakat, persawahan, hingga digitalisasi desa.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className={`text-[10px] font-black uppercase tracking-wider ${isActive ? 'text-dawang-gold' : 'text-dawang-sandDim'}`}>
-                    Bab 0{chap.id}
+                    Bagian 0{chap.id}
                   </span>
                   <Icon className={`w-4 h-4 ${isActive ? 'text-dawang-gold' : 'text-dawang-sandDim'}`} />
                 </div>
@@ -126,7 +126,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
                     <span className="px-3 py-1 rounded-full text-xs font-extrabold bg-dawang-clay text-white shadow-md">
                       {chap.badge}
                     </span>
-                    <span className="text-xs text-dawang-gold font-bold">Bab {chap.id} Dari 4</span>
+                    <span className="text-xs text-dawang-gold font-bold">Bagian {chap.id} Dari 4</span>
                   </div>
 
                   <h3 className="font-serif font-bold text-2xl sm:text-3xl text-dawang-sand">
@@ -156,7 +156,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-dawang-clay to-dawang-clayLight text-white font-bold text-xs shadow-lg hover:brightness-110 active:scale-95 transition-all mt-4"
                     >
                       <MapPin className="w-4 h-4 animate-bounce" />
-                      <span>Lihat Lokasi Bab Ini di Peta Interaktif</span>
+                      <span>Lihat Lokasi Bagian Ini di Peta Interaktif</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
                   )}
