@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
           </div>
 
           <p className="text-xs text-dawang-sandMuted leading-relaxed">
-            Portal StoryMap & WebGIS Interaktif resmi Dusun Dawang. Dikembangkan sebagai sarana transparansi informasi spasial kependudukan, potensi pertanian, dan dokumen digital KKN 2025.
+            Portal Peta Digital & Cerita Interaktif resmi Dusun Dawang. Dikembangkan sebagai sarana transparansi informasi kependudukan, potensi pertanian, dan dokumen digital KKN.
           </p>
 
           {/* Mobile QR Card */}
@@ -39,7 +39,7 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
                   <div className="w-3 h-3 bg-dawang-gold rounded-sm" />
                   <div className="w-3 h-3 bg-dawang-clay rounded-sm" />
                 </div>
-                <div className="text-[8px] font-mono text-center text-white font-bold">QR GIS</div>
+                <div className="text-[8px] font-mono text-center text-white font-bold">QR PETA</div>
                 <div className="flex justify-between">
                   <div className="w-3 h-3 bg-dawang-paddyGold rounded-sm" />
                   <div className="w-3 h-3 bg-dawang-gold rounded-sm" />

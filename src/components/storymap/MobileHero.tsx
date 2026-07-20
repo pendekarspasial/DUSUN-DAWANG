@@ -46,7 +46,7 @@ export const MobileHero: React.FC<MobileHeroProps> = ({
 
         {/* Subtitle Description */}
         <p className="max-w-xl text-xs sm:text-base text-dawang-sandMuted leading-relaxed mb-8">
-          Portal StoryMap & WebGIS Interaktif yang menyajikan narasi sejarah, demografi kependudukan, potensi pertanian, serta informasi spasial lengkap Dusun Dawang.
+          Portal Peta Digital & Cerita Interaktif yang menyajikan narasi sejarah, demografi kependudukan, potensi pertanian, serta informasi peta wilayah Dusun Dawang.
         </p>
 
         {/* Quick-Action CTA Buttons for Mobile QR Visitors */}
@@ -56,7 +56,7 @@ export const MobileHero: React.FC<MobileHeroProps> = ({
             className="flex items-center justify-center gap-3 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-dawang-clay to-dawang-clayLight text-white font-bold text-sm shadow-2.5d-md hover:brightness-110 active:scale-98 transition-all"
           >
             <Map className="w-5 h-5 animate-pulse" />
-            <span>Buka WebGIS Interaktif</span>
+            <span>Buka Peta Interaktif Dusun</span>
           </button>
 
           <button

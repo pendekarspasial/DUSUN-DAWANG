@@ -120,13 +120,13 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/30 border-2 border-blue-400/60 text-blue-300 text-xs font-extrabold tracking-wide mb-3 shadow-lg">
             <Layers className="w-4 h-4 text-cyan-300 animate-pulse" />
-            <span>KOLEKSI KARTOGRAFI DIGITAL</span>
+            <span>KOLEKSI PETA DIGITAL DUSUN</span>
           </div>
           <h2 className="font-serif font-bold text-3xl sm:text-5xl text-dawang-sand tracking-wide drop-shadow-md">
-            Galeri Peta Tematik Spasial
+            Peta Digital Dusun Dawang
           </h2>
           <p className="text-xs sm:text-sm text-blue-200/80 font-medium mt-2">
-            Koleksi peta tematik resmi hasil survei lapangan dan digitasi geospasial Dusun Dawang.
+            Koleksi peta wilayah, rumah warga, persawahan, dan lokasi fasilitas umum Dusun Dawang.
           </p>
         </div>
 
@@ -176,17 +176,17 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
                   className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-blue-600/40 hover:bg-blue-600 text-white text-xs font-bold border border-blue-400/50 shadow-md transition-all active:scale-95"
                 >
                   <Eye className="w-3.5 h-3.5" />
-                  <span>Pratinjau</span>
+                  <span>Lihat Detail</span>
                 </button>
 
                 {onSelectMapForGis && (
                   <button
                     onClick={() => onSelectMapForGis(mapItem.geojsonFile)}
-                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs shadow-md hover:brightness-110 active:scale-95 transition-all"
-                    title="Buka Peta Ini di Full WebGIS Interaktif"
+                    className="flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-xl bg-cyan-500 text-slate-950 font-extrabold text-xs shadow-md hover:brightness-110 active:scale-95 transition-all"
+                    title="Buka Peta Ini di Peta Interaktif"
                   >
                     <Compass className="w-4 h-4" />
-                    <span className="hidden sm:inline">GIS</span>
+                    <span>Buka Peta</span>
                   </button>
                 )}
               </div>

@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             <Map className="w-4 h-4 animate-pulse-subtle" />
-            <span>{gisMode ? 'Tutup Peta GIS' : 'Buka WebGIS'}</span>
+            <span>{gisMode ? 'Tutup Peta' : 'Peta Interaktif Dusun'}</span>
           </button>
         </div>
 

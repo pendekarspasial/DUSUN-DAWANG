@@ -48,15 +48,15 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
     },
     {
       id: 4,
-      title: "Bab IV: Digitalisasi Spasial & WebGIS",
+      title: "Bab IV: Pemetaan Digital Dusun Dawang",
       subtitle: "Masa Depan Dusun Berdaya Teknologi",
       icon: Cpu,
-      badge: "Inovasi GIS",
+      badge: "Peta Digital",
       color: "from-[#2563eb] to-[#60a5fa]",
       coords: { lat: -7.6170, lng: 110.2780, zoom: 16 },
-      description: "Program KKN Bela Negara UPN Veteran Yogyakarta 2026 menghadirkan inovasi pemetaan spasial presisi tinggi dan platform WebGIS StoryMap berbasis QR Code. Seluruh batas wilayah, fasilitas umum, dan persil bangunan kini dapat diakses secara digital.",
+      description: "Program KKN Bela Negara UPN Veteran Yogyakarta 2026 menghadirkan pemetaan wilayah digital dan peta interaktif berbasis QR Code. Seluruh batas wilayah, fasilitas umum, persawahan, dan rumah warga kini dapat diakses secara digital di HP.",
       image: "/fotorumah/RT3.jpg.jpg",
-      details: ["Pemetaan Geospasial WGS84 presisi tinggi", "Interaktif WebGIS berbasis QR Code papan informasi", "Arsip Digital KKN & Monografi Desa terintegrasi"]
+      details: ["Pemetaan wilayah & batas RT presisi tinggi", "Peta Digital Interaktif berbasis QR Code papan informasi", "Arsip Digital KKN & Monografi Desa terintegrasi"]
     }
   ];
 
@@ -156,7 +156,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-dawang-clay to-dawang-clayLight text-white font-bold text-xs shadow-lg hover:brightness-110 active:scale-95 transition-all mt-4"
                     >
                       <MapPin className="w-4 h-4 animate-bounce" />
-                      <span>Lihat Lokasi Bab Ini di Peta WebGIS</span>
+                      <span>Lihat Lokasi Bab Ini di Peta Interaktif</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
                   )}
