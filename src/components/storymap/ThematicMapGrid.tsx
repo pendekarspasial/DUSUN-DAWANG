@@ -28,8 +28,8 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
       title: 'Peta Batas Administrasi & Wilayah RT 01-05',
       category: 'Administrasi',
       scale: '1 : 2.500',
-      year: '2025',
-      author: 'Tim KKN Dusun Dawang',
+      year: '2026',
+      author: 'Tim KKN UPN "Veteran" Yk',
       description: 'Peta pembagian wilayah RT 01 hingga RT 05 Dusun Dawang beserta lokasi Balai Dusun dan titik strategis desa.',
       thumbnail: '/fotorumah/Kadus.jpg.jpg',
       geojsonFile: 'wgs84_aoi_rt.geojson',
@@ -38,46 +38,46 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
     {
       id: 'tutupan-lahan',
       title: 'Peta Tutupan Lahan & Persil Bangunan',
-      category: 'Penggunaan Lahan',
-      scale: '1 : 2.500',
-      year: '2025',
-      author: 'Tim KKN Dusun Dawang',
-      description: 'Peta hasil digitasi persil rumah warga, area bangunan umum, dan vegetasi pekarangan.',
+      category: 'Spasial & Bangunan',
+      scale: '1 : 1.500',
+      year: '2026',
+      author: 'Tim KKN UPN "Veteran" Yk',
+      description: 'Hasil pemetaan drone dan GPS lapang mencakup 124 persil rumah warga dan area terbangun Dusun Dawang.',
       thumbnail: '/fotorumah/RT1.jpg.jpg',
       geojsonFile: 'wgs84_rumah.geojson',
       format: 'GeoJSON / SHP / PDF'
     },
     {
       id: 'sawah-irigasi',
-      title: 'Peta Sebaran Lahan Pertanian & Irigasi',
-      category: 'Pertanian',
-      scale: '1 : 3.000',
-      year: '2025',
-      author: 'Tim KKN Dusun Dawang',
-      description: 'Peta area persawahan produktif, jenis lahan tanam, dan jaringan saluran irigasi alami dari lereng Merapi.',
+      title: 'Peta Lahan Pertanian & Jaringan Irigasi',
+      category: 'Pertanian & Air',
+      scale: '1 : 2.000',
+      year: '2026',
+      author: 'Tim KKN UPN "Veteran" Yk',
+      description: 'Pemetaan ±85 Ha area persawahan produktif dan jalur irigasi alami pendukung ketahanan pangan dusun.',
       thumbnail: '/fotorumah/RT2.jpg.jpg',
       geojsonFile: 'wgs84_sawah.geojson',
       format: 'GeoJSON / PDF'
     },
     {
-      id: 'fasilitas-umum',
-      title: 'Peta Fasilitas Publik & Perangkat Desa',
-      category: 'Infrastruktur',
-      scale: '1 : 2.500',
-      year: '2025',
-      author: 'Tim KKN Dusun Dawang',
-      description: 'Peta titik lokasi masjid, posyandu, sekolah dasar, makam dusun, dan kediaman tokoh perangkat desa.',
+      id: 'fasilitas-perangkat',
+      title: 'Peta Persebaran Fasilitas & Perangkat Desa',
+      category: 'Fasilitas Umum',
+      scale: '1 : 2.000',
+      year: '2026',
+      author: 'Tim KKN UPN "Veteran" Yk',
+      description: 'Sebaran titik Balai Dusun, Masjid Al-Ikhlas, Posyandu, sekolah, serta lokasi fasilitas umum warga.',
       thumbnail: '/fotorumah/Masjid.jpg.jpg',
       geojsonFile: 'wgs84_perangkatdesa.geojson',
-      format: 'GeoJSON / PNG'
+      format: 'GeoJSON / KML / PDF'
     },
     {
-      id: 'area-blongkeng',
-      title: 'Peta Posisi Dusun di Desa Blongkeng',
-      category: 'Kawasan Desa',
+      id: 'konteks-blongkeng',
+      title: 'Peta Regional Desa Blongkeng & Dawang',
+      category: 'Regional',
       scale: '1 : 10.000',
-      year: '2025',
-      author: 'Tim KKN Dusun Dawang',
+      year: '2026',
+      author: 'Tim KKN UPN "Veteran" Yk',
       description: 'Peta konteks keberadaan Dusun Dawang di wilayah batas Desa Blongkeng, Kecamatan Ngluwar.',
       thumbnail: '/fotorumah/RT3.jpg.jpg',
       geojsonFile: 'wgs84_area_blongkeng.geojson',
@@ -88,9 +88,9 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
       title: 'Peta Zona Pembagian Dusun Dawang',
       category: 'Perencanaan',
       scale: '1 : 3.000',
-      year: '2025',
-      author: 'Tim KKN Dusun Dawang',
-      description: 'Peta zonasi potensi pengembanan desa wisata, kawasan pertanian terlindungi, dan pemukiman.',
+      year: '2026',
+      author: 'Tim KKN UPN "Veteran" Yk',
+      description: 'Peta zonasi potensi pengembangan desa wisata, kawasan pertanian terlindungi, dan pemukiman.',
       thumbnail: '/fotorumah/RT4.jpg.jpg',
       geojsonFile: 'wgs84_pembagian_dusun.geojson',
       format: 'GeoJSON / PDF'
@@ -98,153 +98,155 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
   ];
 
   return (
-    <section id="peta-tematik" className="relative py-16 px-4 sm:px-6 bg-gradient-to-b from-[#141311] via-[#14181f] to-[#141311] border-y border-white/5 overflow-hidden">
+    <section id="peta-tematik" className="relative py-20 px-4 sm:px-6 bg-gradient-to-b from-[#0c121d] via-[#121c2a] to-[#0c121d] border-y-2 border-blue-500/50 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-blue-900/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dawang-gold/20 border border-dawang-gold/40 text-dawang-gold text-xs font-semibold mb-3">
-          <Layers className="w-3.5 h-3.5" />
-          <span>Koleksi Kartografi Digital</span>
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600/30 border-2 border-blue-400/60 text-blue-300 text-xs font-extrabold tracking-wide mb-3 shadow-lg">
+            <Layers className="w-4 h-4 text-cyan-300 animate-pulse" />
+            <span>KOLEKSI KARTOGRAFI DIGITAL</span>
+          </div>
+          <h2 className="font-serif font-bold text-3xl sm:text-5xl text-dawang-sand tracking-wide drop-shadow-md">
+            Galeri Peta Tematik Spasial
+          </h2>
+          <p className="text-xs sm:text-sm text-blue-200/80 font-medium mt-2">
+            Koleksi peta tematik resmi hasil survei lapangan dan digitasi geospasial Dusun Dawang.
+          </p>
         </div>
-        <h2 className="font-serif font-bold text-2xl sm:text-4xl text-dawang-sand tracking-wide">
-          Galeri Peta Tematik Spasial
-        </h2>
-        <p className="text-xs sm:text-sm text-dawang-sandMuted mt-2">
-          Koleksi peta tematik resmi hasil survei lapangan dan digitasi geospasial Dusun Dawang.
-        </p>
-      </div>
 
-      {/* Grid of Maps */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {maps.map((map) => (
-          <div
-            key={map.id}
-            className="glass-card rounded-2xl overflow-hidden border border-white/10 shadow-2.5d-sm hover:shadow-2.5d-md hover:border-dawang-gold/50 transition-all duration-300 flex flex-col group"
-          >
-            {/* Thumbnail Header */}
-            <div className="relative aspect-video overflow-hidden bg-dawang-surface">
-              <img
-                src={getAssetUrl(map.thumbnail)}
-                alt={map.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dawang-dark via-transparent to-transparent" />
-              
-              <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-dawang-dark/80 backdrop-blur-md border border-white/10 text-[10px] font-bold text-dawang-gold uppercase">
-                {map.category}
-              </span>
-
-              <span className="absolute bottom-3 right-3 text-[10px] font-mono text-dawang-sandMuted bg-dawang-card/90 px-2 py-0.5 rounded">
-                Skala {map.scale}
-              </span>
-            </div>
-
-            {/* Content Body */}
-            <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+        {/* Maps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {maps.map((mapItem) => (
+            <div
+              key={mapItem.id}
+              className="glass-card rounded-2xl overflow-hidden border-2 border-white/15 shadow-[0_10px_25px_rgba(0,0,0,0.5)] hover:border-cyan-400/60 hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between"
+            >
               <div>
-                <h3 className="font-bold text-sm text-dawang-sand group-hover:text-dawang-gold transition-colors line-clamp-2">
-                  {map.title}
-                </h3>
-                <p className="text-xs text-dawang-sandMuted line-clamp-2 mt-1">
-                  {map.description}
-                </p>
+                {/* Thumbnail */}
+                <div className="relative h-44 w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={getAssetUrl(mapItem.thumbnail)}
+                    alt={mapItem.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e131b] via-transparent to-transparent" />
+                  
+                  {/* Category Pill */}
+                  <span className="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-extrabold bg-blue-600 text-white shadow-md border border-blue-300/40">
+                    {mapItem.category}
+                  </span>
+
+                  <span className="absolute bottom-3 right-3 text-[10px] font-bold text-cyan-300 bg-[#0e131b]/90 px-2.5 py-1 rounded-lg border border-cyan-500/30">
+                    Skala {mapItem.scale}
+                  </span>
+                </div>
+
+                {/* Info */}
+                <div className="p-4 space-y-2">
+                  <h3 className="font-bold text-sm text-dawang-sand leading-snug group-hover:text-cyan-300 transition-colors">
+                    {mapItem.title}
+                  </h3>
+                  <p className="text-xs text-dawang-sandMuted line-clamp-2 leading-relaxed">
+                    {mapItem.description}
+                  </p>
+                </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-2 pt-2 border-t border-white/5">
+              <div className="p-4 pt-0 flex items-center gap-2">
                 <button
-                  onClick={() => setSelectedMap(map)}
-                  className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-dawang-card hover:bg-dawang-border text-dawang-sand text-xs font-semibold border border-white/10 active:scale-95 transition-all"
+                  onClick={() => setSelectedMap(mapItem)}
+                  className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-blue-600/40 hover:bg-blue-600 text-white text-xs font-bold border border-blue-400/50 shadow-md transition-all active:scale-95"
                 >
-                  <Eye className="w-3.5 h-3.5 text-dawang-gold" />
-                  <span>Detail Peta</span>
+                  <Eye className="w-3.5 h-3.5" />
+                  <span>Pratinjau</span>
                 </button>
 
                 {onSelectMapForGis && (
                   <button
-                    onClick={() => onSelectMapForGis(map.geojsonFile)}
-                    className="flex items-center justify-center p-2 rounded-xl bg-dawang-clay hover:bg-dawang-clayLight text-white text-xs font-bold active:scale-95 transition-all"
-                    title="Buka di WebGIS"
+                    onClick={() => onSelectMapForGis(mapItem.geojsonFile)}
+                    className="flex items-center justify-center gap-1 py-2.5 px-3 rounded-xl bg-cyan-500 text-slate-950 font-bold text-xs shadow-md hover:brightness-110 active:scale-95 transition-all"
+                    title="Buka Peta Ini di Full WebGIS Interaktif"
                   >
                     <Compass className="w-4 h-4" />
+                    <span className="hidden sm:inline">GIS</span>
                   </button>
                 )}
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Detail Bottom Sheet / Modal */}
-      {selectedMap && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
-          <div className="w-full max-w-lg glass-bottom-sheet sm:glass-card-elevated sm:rounded-3xl p-6 space-y-4 max-h-[85vh] overflow-y-auto animate-in slide-in-from-bottom duration-300">
-            
-            <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5 text-dawang-gold" />
-                <h3 className="font-bold text-sm text-dawang-sand">Metadata Peta Tematik</h3>
-              </div>
-              <button
-                onClick={() => setSelectedMap(null)}
-                className="p-1 rounded-lg text-dawang-sandDim hover:text-white bg-dawang-card"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <h4 className="font-serif font-bold text-lg text-dawang-sand">{selectedMap.title}</h4>
-            <p className="text-xs text-dawang-sandMuted leading-relaxed">{selectedMap.description}</p>
-
-            <div className="grid grid-cols-2 gap-2 text-xs bg-dawang-card/80 p-3 rounded-xl border border-white/5">
-              <div>
-                <span className="text-[10px] text-dawang-sandDim block">Kategori</span>
-                <span className="font-semibold text-dawang-sand">{selectedMap.category}</span>
-              </div>
-              <div>
-                <span className="text-[10px] text-dawang-sandDim block">Skala Kartografi</span>
-                <span className="font-semibold text-dawang-sand">{selectedMap.scale}</span>
-              </div>
-              <div>
-                <span className="text-[10px] text-dawang-sandDim block">Tahun Pembuatan</span>
-                <span className="font-semibold text-dawang-sand">{selectedMap.year}</span>
-              </div>
-              <div>
-                <span className="text-[10px] text-dawang-sandDim block">Penyusun Data</span>
-                <span className="font-semibold text-dawang-sand">{selectedMap.author}</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2 text-xs text-dawang-paddyGold bg-dawang-paddy/20 p-2.5 rounded-xl border border-dawang-paddy/30">
-              <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-              <span>Sistem Koordinat Terverifikasi: WGS 84 / UTM Zone 49S</span>
-            </div>
-
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href={getAssetUrl(`Data_geojson/${selectedMap.geojsonFile}`)}
-                download
-                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-dawang-clay text-white text-xs font-bold shadow-2.5d-sm hover:brightness-110 active:scale-95 transition-all"
-              >
-                <Download className="w-4 h-4" />
-                <span>Unduh File GeoJSON ({selectedMap.format.split(' ')[0]})</span>
-              </a>
-
-              <button
-                onClick={() => setSelectedMap(null)}
-                className="px-4 py-3 rounded-xl glass-card text-xs text-dawang-sand font-semibold hover:bg-dawang-card"
-              >
-                Tutup
-              </button>
-            </div>
-
-          </div>
+          ))}
         </div>
-      )}
+
+        {/* Selected Map Modal */}
+        {selectedMap && (
+          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+            <div className="glass-card-elevated rounded-3xl max-w-xl w-full p-6 border-2 border-cyan-400/50 shadow-2xl relative space-y-4">
+              
+              <button
+                onClick={() => setSelectedMap(null)}
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              <div className="flex items-center gap-2 text-cyan-400 text-xs font-bold">
+                <FileText className="w-4 h-4" />
+                <span>Detail Kartografi Digital</span>
+              </div>
+
+              <h3 className="font-serif font-bold text-xl text-dawang-sand">
+                {selectedMap.title}
+              </h3>
+
+              <div className="grid grid-cols-2 gap-2 text-xs bg-[#0e131b]/90 p-3 rounded-2xl border border-white/10">
+                <div>
+                  <span className="text-dawang-sandDim block">Kategori</span>
+                  <span className="font-bold text-cyan-300">{selectedMap.category}</span>
+                </div>
+                <div>
+                  <span className="text-dawang-sandDim block">Skala Cetak</span>
+                  <span className="font-bold text-dawang-sand">{selectedMap.scale}</span>
+                </div>
+                <div>
+                  <span className="text-dawang-sandDim block">Tahun Survei</span>
+                  <span className="font-bold text-dawang-sand">{selectedMap.year}</span>
+                </div>
+                <div>
+                  <span className="text-dawang-sandDim block">Penyusun</span>
+                  <span className="font-bold text-dawang-sand">{selectedMap.author}</span>
+                </div>
+              </div>
+
+              <p className="text-xs text-dawang-sandMuted leading-relaxed">
+                {selectedMap.description}
+              </p>
+
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href={getAssetUrl(`Data_geojson/${selectedMap.geojsonFile}`)}
+                  download
+                  className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-cyan-500 text-slate-950 text-xs font-extrabold shadow-lg hover:brightness-110 active:scale-95 transition-all"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Unduh File GeoJSON ({selectedMap.format.split(' ')[0]})</span>
+                </a>
+
+                <button
+                  onClick={() => setSelectedMap(null)}
+                  className="px-4 py-3 rounded-xl glass-card text-xs text-dawang-sand font-semibold hover:bg-dawang-card"
+                >
+                  Tutup
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

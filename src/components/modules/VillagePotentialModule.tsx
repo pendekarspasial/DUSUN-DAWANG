@@ -10,106 +10,108 @@ export const VillagePotentialModule: React.FC<VillagePotentialModuleProps> = ({ 
   const [selectedPotensi, setSelectedPotensi] = useState<PotensiItem | null>(null);
 
   return (
-    <section id="potensi" className="relative py-16 px-4 sm:px-6 bg-gradient-to-b from-[#141311] via-[#1c1813] to-[#141311] border-y border-white/5 overflow-hidden">
+    <section id="potensi" className="relative py-20 px-4 sm:px-6 bg-gradient-to-b from-[#19150d] via-[#261f12] to-[#19150d] border-y-2 border-[#d4a359]/60 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-amber-900/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-amber-600/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dawang-clay/20 border border-dawang-clay/40 text-dawang-clayLight text-xs font-semibold mb-3">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Keunggulan & Kekayaan Alam</span>
-        </div>
-        <h2 className="font-serif font-bold text-2xl sm:text-4xl text-dawang-sand tracking-wide">
-          Potensi & Pesona Dusun
-        </h2>
-        <p className="text-xs sm:text-sm text-dawang-sandMuted mt-2">
-          Aset penting pendukung kemandirian pangan, wisata budaya, dan pengembangan ekonomi warga.
-        </p>
-      </div>
-
-      {/* Grid Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {potensi.map((item, idx) => (
-          <div
-            key={idx}
-            className="glass-card rounded-2xl p-6 border border-white/10 shadow-2.5d-sm hover:shadow-2.5d-md hover:border-dawang-gold/50 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
-            onClick={() => setSelectedPotensi(item)}
-          >
-            <div className="space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-dawang-card flex items-center justify-center text-2xl shadow-2.5d-sm group-hover:scale-110 transition-transform">
-                {item.icon}
-              </div>
-
-              <h3 className="font-serif font-bold text-lg text-dawang-sand group-hover:text-dawang-gold transition-colors">
-                {item.judul}
-              </h3>
-
-              <p className="text-xs text-dawang-sandMuted line-clamp-3 leading-relaxed">
-                {item.deskripsi}
-              </p>
-            </div>
-
-            <div className="pt-4 mt-2 border-t border-white/5 flex items-center justify-between text-xs text-dawang-gold font-bold">
-              <span>Pelajari Potensi</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </div>
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d4a359] text-slate-950 border-2 border-[#f5cb78] text-xs font-black tracking-wide mb-3 shadow-lg">
+            <Sparkles className="w-4 h-4 text-slate-950 animate-spin" />
+            <span>KEUNGGULAN & KEKAYAAN ALAM</span>
           </div>
-        ))}
-      </div>
+          <h2 className="font-serif font-bold text-3xl sm:text-5xl text-dawang-sand tracking-wide drop-shadow-md">
+            Potensi & Pesona Dusun
+          </h2>
+          <p className="text-xs sm:text-sm text-dawang-goldLight font-medium mt-2">
+            Aset penting pendukung kemandirian pangan, wisata budaya, dan pengembangan ekonomi warga.
+          </p>
+        </div>
 
-      {/* Bottom Sheet Modal */}
-      {selectedPotensi && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4">
-          <div className="w-full max-w-md glass-bottom-sheet sm:glass-card-elevated sm:rounded-3xl p-6 space-y-4 max-h-[85vh] overflow-y-auto animate-in slide-in-from-bottom duration-300">
-            
-            <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <div className="flex items-center gap-3">
-                <span className="text-3xl">{selectedPotensi.icon}</span>
-                <div>
-                  <h3 className="font-serif font-bold text-lg text-dawang-sand">{selectedPotensi.judul}</h3>
-                  <p className="text-xs text-dawang-gold">Potensi Utama Dusun Dawang</p>
+        {/* Potensi Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {potensi.map((item, idx) => (
+            <div
+              key={idx}
+              className="glass-card rounded-2xl p-6 border-2 border-white/15 shadow-[0_10px_25px_rgba(0,0,0,0.5)] hover:border-dawang-gold hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="w-14 h-14 rounded-2xl bg-[#141311] border-2 border-dawang-gold/40 flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                    {item.icon}
+                  </div>
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-dawang-gold bg-[#141311]/80 px-2.5 py-1 rounded-lg border border-dawang-gold/30">
+                    Potensi 0{idx + 1}
+                  </span>
                 </div>
+
+                <h3 className="font-serif font-bold text-lg text-dawang-sand group-hover:text-dawang-gold transition-colors">
+                  {item.judul}
+                </h3>
+
+                <p className="text-xs text-dawang-sandMuted leading-relaxed line-clamp-3">
+                  {item.deskripsi}
+                </p>
               </div>
+
               <button
-                onClick={() => setSelectedPotensi(null)}
-                className="p-1.5 rounded-xl text-dawang-sandDim hover:text-white bg-dawang-card"
+                onClick={() => setSelectedPotensi(item)}
+                className="mt-5 inline-flex items-center justify-between w-full pt-3 border-t border-white/10 text-xs font-bold text-dawang-gold hover:text-white transition-colors"
               >
-                <X className="w-5 h-5" />
+                <span>Pelajari Selengkapnya</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-
-            {selectedPotensi.foto && (
-              <div className="rounded-xl overflow-hidden aspect-video bg-dawang-surface border border-white/10">
-                <img src={selectedPotensi.foto} alt={selectedPotensi.judul} className="w-full h-full object-cover" />
-              </div>
-            )}
-
-            <p className="text-xs sm:text-sm text-dawang-sandMuted leading-relaxed">
-              {selectedPotensi.deskripsi}
-            </p>
-
-            <div className="bg-dawang-card/80 p-3.5 rounded-xl border border-white/5 space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-dawang-paddyGold font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Rencana Pengembangan Berkelanjutan</span>
-              </div>
-              <p className="text-dawang-sandDim text-[11px]">
-                Dukungan fasilitas infrastruktur spasial dan promosi WebGIS ditujukan agar potensi ini menarik kemitraan investor, wisatawan, dan akademisi.
-              </p>
-            </div>
-
-            <button
-              onClick={() => setSelectedPotensi(null)}
-              className="w-full py-3 rounded-xl bg-dawang-clay text-white text-xs font-bold shadow-2.5d-sm hover:brightness-110"
-            >
-              Tutup Modal Detail
-            </button>
-
-          </div>
+          ))}
         </div>
-      )}
+
+        {/* Modal Detail */}
+        {selectedPotensi && (
+          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
+            <div className="glass-card-elevated rounded-3xl max-w-lg w-full p-6 border-2 border-dawang-gold/60 shadow-2xl relative space-y-4">
+              
+              <button
+                onClick={() => setSelectedPotensi(null)}
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              <div className="flex items-center gap-3">
+                <div className="w-14 h-14 rounded-2xl bg-[#141311] border-2 border-dawang-gold flex items-center justify-center text-3xl shadow-lg">
+                  {selectedPotensi.icon}
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-dawang-gold uppercase">Potensi Unggulan</span>
+                  <h3 className="font-serif font-bold text-xl text-dawang-sand">{selectedPotensi.judul}</h3>
+                </div>
+              </div>
+
+              <p className="text-xs text-dawang-sandMuted leading-relaxed bg-[#141311]/90 p-4 rounded-2xl border border-white/10">
+                {selectedPotensi.deskripsi}
+              </p>
+
+              <div className="space-y-2 pt-2">
+                <h4 className="text-xs font-bold text-dawang-sand flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-dawang-gold" />
+                  Rekomendasi Pengembangan
+                </h4>
+                <p className="text-xs text-dawang-sandDim leading-relaxed">
+                  Pengembangan lebih lanjut potensi ini dikolaborasikan bersama perangkat desa, Pokdarwis, serta tim KKN melalui pemetaan digital dan pemberdayaan masyarakat.
+                </p>
+              </div>
+
+              <button
+                onClick={() => setSelectedPotensi(null)}
+                className="w-full py-3 rounded-xl bg-dawang-gold text-slate-950 text-xs font-extrabold shadow-lg hover:brightness-110"
+              >
+                Tutup Modal Detail
+              </button>
+
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
