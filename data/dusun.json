@@ -9,15 +9,15 @@
     "luasWilayah": "±85 Ha",
     "jumlahRT": 5,
     "jumlahRW": 1,
-    "kepalaDusun": "Bapak [Nama Kepala Dusun]",
+    "kepalaDusun": "Bapak Subardi",
     "ketinggian": "±350 mdpl",
     "sejarah": "Dusun Dawang merupakan salah satu dusun yang berada di wilayah Desa Blongkeng, Kecamatan Ngluwar, Kabupaten Magelang, Jawa Tengah. Dusun ini terletak di kaki lereng Gunung Merapi yang subur, dikelilingi hamparan sawah dan kebun yang hijau. Nama 'Dawang' konon berasal dari bahasa Jawa kuno yang berarti tempat yang terang dan terbuka, mencerminkan karakter warganya yang ramah dan terbuka terhadap sesama.",
     "visiMisi": "Mewujudkan Dusun Dawang yang mandiri, sejahtera, dan berdaya saing dengan menjaga kearifan lokal serta memanfaatkan potensi alam secara berkelanjutan.",
     "batasDusun": {
-      "utara": "Dusun [Nama Dusun Utara]",
-      "selatan": "Dusun [Nama Dusun Selatan]",
-      "timur": "Dusun [Nama Dusun Timur]",
-      "barat": "Dusun [Nama Dusun Barat]"
+      "utara": "Dusun Karangnongko",
+      "selatan": "Dusun Blongkeng III",
+      "timur": "Sungai Krasak / Batas DIY",
+      "barat": "Persawahan Blongkeng I"
     }
   },
   "penduduk": {
@@ -175,79 +175,57 @@
     {
       "id": 1,
       "judul": "Pemetaan & WebGIS Dusun Dawang",
-      "kategori": "Teknologi",
+      "kategori": "Teknologi & Spasial",
       "emoji": "🗺️",
-      "deskripsi": "Pembuatan peta administrasi Dusun Dawang menggunakan teknologi GPS dan GIS, serta pengembangan website WebGIS sebagai media informasi digital yang dapat diakses oleh seluruh warga dan masyarakat luas melalui QR Code pada peta cetak.",
-      "anggota": ["Nama Anggota 1", "Nama Anggota 2"],
-      "tanggal": "Juli 2025",
-      "durasi": "4 minggu",
-      "output": "Peta cetak + Website WebGIS"
+      "deskripsi": "Pembuatan peta cetak administrasi Dusun Dawang serta pengembangan WebGIS StoryMap interaktif berbasis QR Code.",
+      "anggota": ["Christopher Daniel Simbolon", "Satria Rikhan Ganendra"],
+      "tanggal": "Januari 2026",
+      "durasi": "4 Minggu",
+      "output": "Peta Cetak A0 + Website WebGIS StoryMap"
     },
     {
       "id": 2,
-      "judul": "Penyuluhan Kesehatan & Posyandu",
+      "judul": "Penyuluhan Kesehatan, PHBS & Pendampingan Posyandu",
       "kategori": "Kesehatan",
       "emoji": "🏥",
-      "deskripsi": "Kegiatan pendampingan posyandu balita dan lansia, penyuluhan Perilaku Hidup Bersih dan Sehat (PHBS), serta pembuatan media edukasi kesehatan untuk warga Dusun Dawang.",
-      "anggota": ["Nama Anggota 3", "Nama Anggota 4"],
-      "tanggal": "Juli 2025",
-      "durasi": "3 minggu",
-      "output": "Poster PHBS + Pendampingan Posyandu"
+      "deskripsi": "Pendampingan rutin posyandu balita & lansia, sosialisasi Perilaku Hidup Bersih & Sehat (PHBS), serta pemeriksaan kesehatan.",
+      "anggota": ["Dini Aminarti", "Eka Putri Prabaningrum"],
+      "tanggal": "Januari 2026",
+      "durasi": "3 Minggu",
+      "output": "Buku Edukasi Kesehatan + Checking Kit"
     },
     {
       "id": 3,
-      "judul": "Literasi Digital untuk Warga",
-      "kategori": "Pendidikan",
+      "judul": "Digitalisasi UMKM & Pelatihan Pemasaran Digital",
+      "kategori": "Pendidikan & Ekonomi",
       "emoji": "💻",
-      "deskripsi": "Pelatihan penggunaan smartphone dan media sosial secara bijak untuk ibu-ibu PKK dan warga umum, termasuk pelatihan e-commerce untuk UMKM lokal agar dapat memasarkan produk secara online.",
-      "anggota": ["Nama Anggota 5", "Nama Anggota 6"],
-      "tanggal": "Juli 2025",
-      "durasi": "2 minggu",
-      "output": "Pelatihan Digital + Akun Medsos UMKM"
+      "deskripsi": "Pelatihan fotografi produk HP, pembuatan akun Google Maps Business, serta pembuatan kemasan menarik untuk UMKM Dusun Dawang.",
+      "anggota": ["Hafshah Afifah Khairunnisa", "Gregorius Dennis A"],
+      "tanggal": "Januari 2026",
+      "durasi": "2 Minggu",
+      "output": "Label Produk Baru + Pinning Google Maps"
     },
     {
       "id": 4,
-      "judul": "Penghijauan & Lingkungan Hidup",
+      "judul": "Penghijauan Dusun & Edukasi Pengelolaan Sampah",
       "kategori": "Lingkungan",
       "emoji": "🌱",
-      "deskripsi": "Program penanaman pohon di area dusun yang gersang, pembuatan taman kecil di depan balai dusun, serta sosialisasi pengelolaan sampah organik dan anorganik melalui program bank sampah.",
-      "anggota": ["Nama Anggota 7", "Nama Anggota 8"],
-      "tanggal": "Juli 2025",
-      "durasi": "3 minggu",
-      "output": "50+ Pohon Ditanam + Taman Balai"
+      "deskripsi": "Penanaman bibit tanaman buah & pohon peneduh di sepanjang jalan dusun, serta sosialisasi pemilahan sampah organik.",
+      "anggota": ["Ferdy Adinata Prabaswara", "Adhiimu Ayundha Artha Wijaya"],
+      "tanggal": "Januari 2026",
+      "durasi": "3 Minggu",
+      "output": "Bibit Ditanam + Tong Sampah Organik"
     },
     {
       "id": 5,
-      "judul": "Bimbel & Pendampingan Belajar",
+      "judul": "Bimbingan Belajar & Pojok Baca Anak Dawang",
       "kategori": "Pendidikan",
       "emoji": "📚",
-      "deskripsi": "Program bimbingan belajar gratis untuk anak-anak SD di Dusun Dawang, mencakup pelajaran Matematika, Bahasa Indonesia, dan IPA. Dilaksanakan setiap hari di Balai Dusun.",
-      "anggota": ["Nama Anggota 9", "Nama Anggota 10"],
-      "tanggal": "Juli 2025",
-      "durasi": "4 minggu",
-      "output": "200+ Jam Bimbel"
-    },
-    {
-      "id": 6,
-      "judul": "Revitalisasi Produk UMKM Lokal",
-      "kategori": "Ekonomi",
-      "emoji": "🛍️",
-      "deskripsi": "Pendampingan branding dan packaging produk UMKM lokal Dusun Dawang, termasuk desain label produk, foto produk profesional, dan pendaftaran ke platform marketplace online.",
-      "anggota": ["Nama Anggota 1", "Nama Anggota 5"],
-      "tanggal": "Juli 2025",
-      "durasi": "2 minggu",
-      "output": "Branding 5 UMKM Lokal"
-    },
-    {
-      "id": 7,
-      "judul": "Kerja Bakti & Infrastruktur Dusun",
-      "kategori": "Sosial",
-      "emoji": "🔨",
-      "deskripsi": "Kegiatan gotong royong pembersihan dan perbaikan fasilitas umum dusun, meliputi pengecatan balai dusun, perbaikan jalan setapak, dan pembersihan selokan.",
-      "anggota": ["Semua Anggota"],
-      "tanggal": "Juli 2025",
-      "durasi": "2 hari",
-      "output": "Fasilitas Dusun Terawat"
+      "deskripsi": "Program les gratis matematika & bahasa Inggris interaktif untuk anak SD, serta pengadaan koleksi buku di Balai Dusun Dawang.",
+      "anggota": ["Pashya Syachrila", "Dwiatma Meilany Putri"],
+      "tanggal": "Januari 2026",
+      "durasi": "4 Minggu",
+      "output": "Pojok Baca Balai Dusun + Modul Les"
     }
   ],
   "timKKN": {
