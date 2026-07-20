@@ -72,6 +72,42 @@ export const App: React.FC = () => {
       .catch((err) => console.log('Using default inline village data fallback:', err));
   }, []);
 
+  // Scroll Spy to automatically highlight bottom nav / navbar items as user scrolls
+  useEffect(() => {
+    if (gisMode) return;
+
+    const sectionTabMap: { id: string; tab: string }[] = [
+      { id: 'cerita', tab: 'cerita' },
+      { id: 'alur-narasi', tab: 'cerita' },
+      { id: 'peta-tematik', tab: 'cerita' },
+      { id: 'demografi', tab: 'demografi' },
+      { id: 'potensi', tab: 'potensi' },
+      { id: 'tim-kkn', tab: 'arsip-kkn' },
+      { id: 'arsip-kkn', tab: 'arsip-kkn' },
+      { id: 'galeri', tab: 'arsip-kkn' },
+    ];
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+
+      for (let i = sectionTabMap.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionTabMap[i].id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveTab(sectionTabMap[i].tab);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [gisMode]);
+
   const handleOpenGisWithFile = (file?: string) => {
     setSelectedGeoJsonFile(file);
     setGisMode(true);
