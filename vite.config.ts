@@ -10,10 +10,29 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: './', // Relative base path ensures assets load regardless of GitHub Pages repo casing or domain
+  base: './',
   build: {
     outDir: 'dist',
     sourcemap: false,
-    chunkSizeWarningLimit: 1000,
+    // Fixed filenames (no content hash) so index.html always references
+    // the same asset paths — prevents GitHub Pages CDN cache mismatches
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/app.js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: (assetInfo) => {
+          // Keep images with their original names for easy debugging
+          const name = assetInfo.name || '';
+          if (/\.(png|jpg|jpeg|gif|svg|webp)$/.test(name)) {
+            return `assets/${name}`;
+          }
+          // CSS gets a fixed name too
+          if (/\.css$/.test(name)) {
+            return 'assets/app.css';
+          }
+          return 'assets/[name]';
+        },
+      },
+    },
   },
 });

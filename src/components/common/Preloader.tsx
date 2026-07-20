@@ -1,56 +1,103 @@
 import React, { useEffect, useState } from 'react';
 
 export const Preloader: React.FC = () => {
-  const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(timer);
-          setTimeout(() => setLoading(false), 300);
-          return 100;
-        }
-        return prev + 25;
-      });
-    }, 120);
+    // Hard guarantee: always disappear after 1.5s max
+    const fadeTimer = setTimeout(() => {
+      setOpacity(0);
+    }, 1200);
 
-    return () => clearInterval(timer);
+    const hideTimer = setTimeout(() => {
+      setVisible(false);
+    }, 1700);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(hideTimer);
+    };
   }, []);
 
-  if (!loading) return null;
+  if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-dawang-dark flex flex-col items-center justify-center p-4 transition-opacity duration-500">
-      {/* Background Batik Accent */}
-      <div className="absolute inset-0 bg-batik-tile opacity-10 pointer-events-none" />
-
-      <div className="relative z-10 flex flex-col items-center max-w-xs text-center">
-        {/* Animated Badge Icon */}
-        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-dawang-clay to-dawang-paddy flex items-center justify-center text-3xl shadow-2.5d-lg mb-4 animate-float-slow">
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        background: '#141311',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        transition: 'opacity 0.5s ease',
+        opacity: opacity,
+        pointerEvents: opacity < 1 ? 'none' : 'all',
+      }}
+    >
+      <div style={{ textAlign: 'center' }}>
+        {/* Icon */}
+        <div style={{
+          fontSize: '3rem',
+          marginBottom: '1rem',
+          animation: 'preloaderFloat 2s ease-in-out infinite',
+        }}>
           🗺️
         </div>
 
-        <h1 className="font-serif font-bold text-2xl text-dawang-sand tracking-wide mb-1">
+        {/* Title */}
+        <h1 style={{
+          fontFamily: '"Playfair Display", serif',
+          fontSize: '1.5rem',
+          fontWeight: 'bold',
+          color: '#f9f6f0',
+          marginBottom: '0.25rem',
+        }}>
           Dusun Dawang
         </h1>
-        <p className="text-xs text-dawang-gold font-medium mb-6 uppercase tracking-wider">
+
+        <p style={{
+          fontSize: '0.7rem',
+          color: '#d4a359',
+          fontFamily: '"Plus Jakarta Sans", sans-serif',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          marginBottom: '1.5rem',
+        }}>
           Desa Blongkeng · Ngluwar · Magelang
         </p>
 
-        {/* Progress Bar */}
-        <div className="w-full h-2 bg-dawang-card rounded-full overflow-hidden border border-white/10 mb-2">
-          <div
-            className="h-full bg-gradient-to-r from-dawang-clay via-dawang-gold to-dawang-paddyLight transition-all duration-300 rounded-full"
-            style={{ width: `${progress}%` }}
-          />
+        {/* Progress bar */}
+        <div style={{
+          width: '200px',
+          height: '4px',
+          background: '#24231f',
+          borderRadius: '999px',
+          overflow: 'hidden',
+          margin: '0 auto',
+        }}>
+          <div style={{
+            height: '100%',
+            background: 'linear-gradient(to right, #c2593f, #d4a359)',
+            borderRadius: '999px',
+            animation: 'preloaderFill 1.2s ease-out forwards',
+          }} />
         </div>
-
-        <p className="text-[11px] text-dawang-sandDim animate-pulse">
-          Memuat StoryMap & Peta Spasial ({progress}%)...
-        </p>
       </div>
+
+      <style>{`
+        @keyframes preloaderFloat {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        @keyframes preloaderFill {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+      `}</style>
     </div>
   );
 };

@@ -247,21 +247,91 @@ export const defaultVillageData: VillageData = {
     }
   ],
   timKKN: {
-    namaKelompok: "Tim KKN Dusun Dawang",
-    universitas: "Universitas Gadjah Mada / PTN Mitra",
-    tahun: "2025",
-    dosenPembimbing: "Dr. Ir. Haryo Sutomo, M.Sc.",
+    namaKelompok: "KKN Bela Negara Periode II 2026 — Angkatan 84.180",
+    universitas: "UPN \"Veteran\" Yogyakarta",
+    tahun: "2026",
+    dosenPembimbing: "—",
     anggota: [
-      { nama: "Subhan Arfi", nim: "21/478901/TK/52101", jurusan: "Teknik Geodesi & Geomatika", foto: "/fotorumah/Kadus.jpg.jpg", peran: "Ketua Tim & Koor WebGIS", prokerUtama: "Pemetaan Spasial & WebGIS" },
-      { nama: "Nabila Putri", nim: "21/479102/GE/09212", jurusan: "Pembangunan Wilayah", foto: "/fotorumah/Kades.jpeg.jpg", peran: "Sekretaris & Analis Spasial", prokerUtama: "Monografi & Demografi" },
-      { nama: "Rizky Ananda", nim: "21/480210/KU/23412", jurusan: "Kedokteran Masyarakat", foto: "/fotorumah/Kades1.jpg", peran: "Bendahara & Koor Kesehatan", prokerUtama: "Posyandu & PHBS" },
-      { nama: "Siti Nurhaliza", nim: "21/481304/KM/12093", jurusan: "Gizi Kesehatan", foto: "/fotorumah/RT1.jpg.jpg", peran: "Divisi Acara & Edukasi", prokerUtama: "Pencegahan Stunting" },
-      { nama: "Farhan Ramadhan", nim: "21/482119/EK/88712", jurusan: "Manajemen & Bisnis", foto: "/fotorumah/RT2.jpg.jpg", peran: "Divisi Humas & Ekonomi", prokerUtama: "Branding & Pelatihan UMKM" },
-      { nama: "Diah Ayu", nim: "21/483441/SR/44201", jurusan: "Desain Komunikasi Visual", foto: "/fotorumah/RT3.jpg.jpg", peran: "Divisi Kreatif & Desain", prokerUtama: "Desain Media & Papan Informasi" },
-      { nama: "Ahmad Fauzi", nim: "21/484092/TP/33091", jurusan: "Teknik Pertanian", foto: "/fotorumah/RT4.jpg.jpg", peran: "Divisi Logistik & Lingkungan", prokerUtama: "Irigasi & Penghijauan" },
-      { nama: "Tri Wahyuni", nim: "21/485203/PN/11928", jurusan: "Agribisnis", foto: "/fotorumah/RW.jpg.jpg", peran: "Divisi Kewirausahaan", prokerUtama: "Pemasaran Hasil Tani" },
-      { nama: "Larasati Intan", nim: "21/486110/KG/00291", jurusan: "Pendidikan Anak Usia Dini", foto: "/fotorumah/Masjid.jpg.jpg", peran: "Divisi Pendidikan", prokerUtama: "Bimbel & Pojok Baca" },
-      { nama: "Bima Nugraha", nim: "21/487332/HK/77102", jurusan: "Hukum Administrasi", foto: "/fotorumah/Musholla.jpg.jpg", peran: "Divisi Pubdok & Legal", prokerUtama: "Legalitas Usaha & Arsip" }
+      {
+        nama: "Christopher Daniel Simbolon",
+        nim: "—",
+        jurusan: "Teknik Geomatika",
+        foto: "assets/images/kkn/christopher.jpg",
+        peran: "Ketua",
+        prokerUtama: "Koordinasi & Pemetaan Spasial"
+      },
+      {
+        nama: "Pashya Syachrila",
+        nim: "—",
+        jurusan: "Teknik Industri",
+        foto: "assets/images/kkn/pashya.jpg",
+        peran: "Sekretaris",
+        prokerUtama: "Dokumentasi & Administrasi"
+      },
+      {
+        nama: "Dini Aminarti",
+        nim: "—",
+        jurusan: "Akuntansi",
+        foto: "assets/images/kkn/dini.jpg",
+        peran: "Bendahara",
+        prokerUtama: "Pengelolaan Keuangan Tim"
+      },
+      {
+        nama: "Eka Putri Prabaningrum",
+        nim: "—",
+        jurusan: "Hubungan Masyarakat",
+        foto: "assets/images/kkn/eka.jpg",
+        peran: "Humas",
+        prokerUtama: "Komunikasi & Relasi Warga"
+      },
+      {
+        nama: "Hafshah Afifah Khairunnisa",
+        nim: "—",
+        jurusan: "Manajemen",
+        foto: "assets/images/kkn/hafshah.jpg",
+        peran: "Humas",
+        prokerUtama: "Sosialisasi & Publikasi"
+      },
+      {
+        nama: "Dwiatma Meilany Putri",
+        nim: "—",
+        jurusan: "Teknik Perminyakan",
+        foto: "assets/images/kkn/dwiatma.jpg",
+        peran: "PDD",
+        prokerUtama: "Publikasi, Dokumentasi & Desain"
+      },
+      {
+        nama: "Gregorius Dennis A",
+        nim: "—",
+        jurusan: "Manajemen",
+        foto: "assets/images/kkn/gregorius.jpg",
+        peran: "PDD",
+        prokerUtama: "Desain Grafis & Media"
+      },
+      {
+        nama: "Adhiimu Ayundha Artha Wijaya",
+        nim: "—",
+        jurusan: "Ekonomi Pembangunan",
+        foto: "assets/images/kkn/adhiimu.jpg",
+        peran: "Logistik",
+        prokerUtama: "Sarana & Prasarana"
+      },
+      {
+        nama: "Ferdy Adinata Prabaswara",
+        nim: "—",
+        jurusan: "Teknik Geofisika",
+        foto: "assets/images/kkn/ferdy.jpg",
+        peran: "Logistik",
+        prokerUtama: "Perlengkapan & Pengadaan"
+      },
+      {
+        nama: "Satria Rikhan Ganendra",
+        nim: "—",
+        jurusan: "Sistem Informasi",
+        foto: "assets/images/kkn/satria.jpg",
+        peran: "Logistik",
+        prokerUtama: "Sistem Informasi & Teknologi"
+      }
     ]
   }
 };

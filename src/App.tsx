@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Component, ErrorInfo, ReactNode } from 'react';
 import { Navbar } from './components/navigation/Navbar';
 import { StickyBottomNav } from './components/navigation/StickyBottomNav';
 import { Preloader } from './components/common/Preloader';
@@ -17,6 +17,25 @@ import { defaultVillageData } from './data/villageData';
 import { VillageData } from './types';
 import { getAssetUrl } from './utils/path';
 
+// Per-component Error Boundary for debugging
+interface EBState { hasError: boolean; error: Error | null }
+class EB extends Component<{ children: ReactNode; name: string }, EBState> {
+  state: EBState = { hasError: false, error: null };
+  static getDerivedStateFromError(error: Error) { return { hasError: true, error }; }
+  componentDidCatch(e: Error, i: ErrorInfo) { console.error('[EB]', this.props.name, e, i); }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: '1rem', margin: '0.5rem', background: '#1c1b18', border: '1px solid #c2593f', borderRadius: '8px', color: '#f9f6f0' }}>
+          <p style={{ color: '#c2593f', fontSize: '0.75rem', fontWeight: 'bold' }}>⚠️ Error di: {this.props.name}</p>
+          <pre style={{ fontSize: '0.65rem', color: '#999488', marginTop: '4px', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.error?.message}</pre>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('cerita');
   const [gisMode, setGisMode] = useState<boolean>(false);
@@ -32,15 +51,22 @@ export const App: React.FC = () => {
       })
       .then((data) => {
         if (data && data.dusun) {
-          setVillageData((prev: VillageData) => ({
-            ...prev,
-            dusun: { ...prev.dusun, ...data.dusun },
-            penduduk: data.penduduk ? { ...prev.penduduk, ...data.penduduk } : prev.penduduk,
-            fasilitas: data.fasilitas && data.fasilitas.length ? data.fasilitas : prev.fasilitas,
-            potensi: data.potensi && data.potensi.length ? data.potensi : prev.potensi,
-            prokerKKN: data.prokerKKN && data.prokerKKN.length ? data.prokerKKN : prev.prokerKKN,
-            timKKN: data.timKKN ? { ...prev.timKKN, ...data.timKKN } : prev.timKKN,
-          }));
+          setVillageData((prev: VillageData) => {
+            const hasRealTimKKN =
+              data.timKKN &&
+              data.timKKN.anggota &&
+              data.timKKN.anggota.length > 0 &&
+              !data.timKKN.anggota[0].nama.includes('Nama Mahasiswa');
+            return {
+              ...prev,
+              dusun: { ...prev.dusun, ...data.dusun },
+              penduduk: data.penduduk ? { ...prev.penduduk, ...data.penduduk } : prev.penduduk,
+              fasilitas: data.fasilitas && data.fasilitas.length ? data.fasilitas : prev.fasilitas,
+              potensi: data.potensi && data.potensi.length ? data.potensi : prev.potensi,
+              prokerKKN: data.prokerKKN && data.prokerKKN.length ? data.prokerKKN : prev.prokerKKN,
+              timKKN: hasRealTimKKN ? { ...prev.timKKN, ...data.timKKN } : prev.timKKN,
+            };
+          });
         }
       })
       .catch((err) => console.log('Using default inline village data fallback:', err));
@@ -62,87 +88,102 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-dawang-dark text-dawang-sand relative font-sans">
-      <Preloader />
+      <EB name="Preloader">
+        <Preloader />
+      </EB>
 
-      {/* Main Top Navigation Header */}
-      <Navbar
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        gisMode={gisMode}
-        setGisMode={setGisMode}
-      />
+      <EB name="Navbar">
+        <Navbar
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          gisMode={gisMode}
+          setGisMode={setGisMode}
+        />
+      </EB>
 
-      {/* Conditionally Render Fullscreen Interactive WebGIS Mode OR Narrative StoryMap Mode */}
       {gisMode ? (
         <main className="w-full h-[calc(100vh-64px)] relative">
-          <FullWebGIS
-            fasilitas={villageData.fasilitas}
-            initialFocusFile={selectedGeoJsonFile}
-            onCloseGis={() => setGisMode(false)}
-          />
+          <EB name="FullWebGIS">
+            <FullWebGIS
+              fasilitas={villageData.fasilitas}
+              initialFocusFile={selectedGeoJsonFile}
+              onCloseGis={() => setGisMode(false)}
+            />
+          </EB>
         </main>
       ) : (
         <main className="space-y-4 pb-16">
-          {/* Hero Section */}
-          <MobileHero
-            dusun={villageData.dusun}
-            onOpenGis={() => handleOpenGisWithFile()}
-            onExploreStory={handleExploreStory}
-          />
+          <EB name="MobileHero">
+            <MobileHero
+              dusun={villageData.dusun}
+              onOpenGis={() => handleOpenGisWithFile()}
+              onExploreStory={handleExploreStory}
+            />
+          </EB>
 
-          {/* Identity & Sejarah Summary */}
-          <IdentitySummaryCard
-            dusun={villageData.dusun}
-            penduduk={villageData.penduduk}
-          />
+          <EB name="IdentitySummaryCard">
+            <IdentitySummaryCard
+              dusun={villageData.dusun}
+              penduduk={villageData.penduduk}
+            />
+          </EB>
 
-          {/* Scroll Narrative Storymap Timeline */}
-          <StoryTimeline
-            onFocusMapLocation={(lat, lng, zoom) => {
-              setGisMode(true);
-            }}
-          />
+          <EB name="StoryTimeline">
+            <StoryTimeline
+              onFocusMapLocation={(lat, lng, zoom) => {
+                setGisMode(true);
+              }}
+            />
+          </EB>
 
-          {/* Thematic Map Gallery */}
-          <ThematicMapGrid
-            onSelectMapForGis={(file) => handleOpenGisWithFile(file)}
-          />
+          <EB name="ThematicMapGrid">
+            <ThematicMapGrid
+              onSelectMapForGis={(file) => handleOpenGisWithFile(file)}
+            />
+          </EB>
 
-          {/* Demographics & Monografi */}
-          <DemographicsModule
-            penduduk={villageData.penduduk}
-          />
+          <EB name="DemographicsModule">
+            <DemographicsModule
+              penduduk={villageData.penduduk}
+            />
+          </EB>
 
-          {/* Village Potential */}
-          <VillagePotentialModule
-            potensi={villageData.potensi}
-          />
+          <EB name="VillagePotentialModule">
+            <VillagePotentialModule
+              potensi={villageData.potensi}
+            />
+          </EB>
 
-          {/* KKN Team Members */}
-          <KKNProfileModule
-            timKKN={villageData.timKKN}
-          />
+          <EB name="KKNProfileModule">
+            <KKNProfileModule
+              timKKN={villageData.timKKN}
+            />
+          </EB>
 
-          {/* Digital Archive */}
-          <DigitalArchiveModule
-            prokerList={villageData.prokerKKN}
-          />
+          <EB name="DigitalArchiveModule">
+            <DigitalArchiveModule
+              prokerList={villageData.prokerKKN}
+            />
+          </EB>
 
-          {/* Visual Photography Gallery */}
-          <VisualGalleryModule />
+          <EB name="VisualGalleryModule">
+            <VisualGalleryModule />
+          </EB>
 
-          {/* Footer */}
-          <Footer dusun={villageData.dusun} />
+          <EB name="Footer">
+            <Footer dusun={villageData.dusun} />
+          </EB>
         </main>
       )}
 
-      {/* Thumb-Friendly Sticky Bottom Bar for Mobile Visitors */}
-      <StickyBottomNav
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        gisMode={gisMode}
-        setGisMode={setGisMode}
-      />
+      <EB name="StickyBottomNav">
+        <StickyBottomNav
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          gisMode={gisMode}
+          setGisMode={setGisMode}
+        />
+      </EB>
     </div>
   );
 };
