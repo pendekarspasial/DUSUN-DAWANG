@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Compass, Download, Eye, Layers, X, FileText, CheckCircle2 } from 'lucide-react';
 import { getAssetUrl } from '../../utils/path';
 
@@ -21,6 +21,18 @@ interface ThematicMapGridProps {
 
 export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapForGis }) => {
   const [selectedMap, setSelectedMap] = useState<ThematicMapItem | null>(null);
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (selectedMap) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedMap]);
 
   const maps: ThematicMapItem[] = [
     {
@@ -184,12 +196,17 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
 
         {/* Selected Map Modal */}
         {selectedMap && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-            <div className="glass-card-elevated rounded-3xl max-w-xl w-full p-6 border-2 border-cyan-400/50 shadow-2xl relative space-y-4">
-              
+          <div
+            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-fadeIn"
+            onClick={() => setSelectedMap(null)}
+          >
+            <div
+              className="glass-card-elevated rounded-3xl max-w-xl w-full p-6 border-2 border-cyan-400/50 shadow-2xl relative space-y-4 max-h-[85vh] overflow-y-auto my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setSelectedMap(null)}
-                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay"
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay shadow-md"
               >
                 <X className="w-4 h-4" />
               </button>

@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Camera, Eye, X, ZoomIn } from 'lucide-react';
 import { getAssetUrl } from '../../utils/path';
 
 export const VisualGalleryModule: React.FC = () => {
   const [activeImage, setActiveImage] = useState<{ src: string; title: string; category: string } | null>(null);
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (activeImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeImage]);
 
   const galleryItems = [
     { src: '/fotorumah/Kadus.jpg.jpg', title: 'Balai & Kantor Kepala Dusun Dawang', category: 'Fasilitas Dusun' },
@@ -73,12 +85,17 @@ export const VisualGalleryModule: React.FC = () => {
 
         {/* Image Preview Modal */}
         {activeImage && (
-          <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-            <div className="relative max-w-4xl w-full flex flex-col items-center">
-              
+          <div
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-fadeIn"
+            onClick={() => setActiveImage(null)}
+          >
+            <div
+              className="relative max-w-4xl w-full flex flex-col items-center max-h-[85vh] overflow-y-auto my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setActiveImage(null)}
-                className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-dawang-clay border border-white/30"
+                className="absolute top-2 right-2 z-10 w-10 h-10 rounded-full bg-black/70 text-white flex items-center justify-center hover:bg-dawang-clay border border-white/30 shadow-lg"
               >
                 <X className="w-5 h-5" />
               </button>

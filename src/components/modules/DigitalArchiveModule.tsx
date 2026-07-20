@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FolderArchive, Download, FileText, Calendar, Clock, CheckCircle, Search, Filter, X } from 'lucide-react';
 import { ProkerKKNItem } from '../../types';
 
@@ -10,6 +10,18 @@ export const DigitalArchiveModule: React.FC<DigitalArchiveModuleProps> = ({ prok
   const [query, setQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('semua');
   const [selectedProker, setSelectedProker] = useState<ProkerKKNItem | null>(null);
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (selectedProker) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedProker]);
 
   const categories = ['semua', 'Teknologi & GIS', 'Kesehatan', 'Pendidikan & Ekonomi', 'Lingkungan', 'Infrastruktur', 'Administrasi'];
 
@@ -114,18 +126,23 @@ export const DigitalArchiveModule: React.FC<DigitalArchiveModuleProps> = ({ prok
 
         {/* Detail Modal */}
         {selectedProker && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-            <div className="glass-card-elevated rounded-3xl max-w-lg w-full p-6 border-2 border-dawang-clay/60 shadow-2xl relative space-y-4">
-              
+          <div
+            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-fadeIn"
+            onClick={() => setSelectedProker(null)}
+          >
+            <div
+              className="glass-card-elevated rounded-3xl max-w-lg w-full p-6 border-2 border-dawang-clay/60 shadow-2xl relative space-y-4 max-h-[85vh] overflow-y-auto my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setSelectedProker(null)}
-                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay"
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay shadow-md"
               >
                 <X className="w-4 h-4" />
               </button>
 
               <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#141311] border-2 border-dawang-clay flex items-center justify-center text-3xl shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-[#141311] border-2 border-dawang-clay flex items-center justify-center text-3xl shadow-lg flex-shrink-0">
                   {selectedProker.emoji}
                 </div>
                 <div>
@@ -134,7 +151,7 @@ export const DigitalArchiveModule: React.FC<DigitalArchiveModuleProps> = ({ prok
                 </div>
               </div>
 
-              <p className="text-xs text-dawang-sandMuted leading-relaxed bg-[#141311]/90 p-4 rounded-2xl border border-white/10">
+              <p className="text-xs text-dawang-sandMuted leading-relaxed bg-[#141311]/90 p-4 rounded-2xl border border-white/10 shadow-inner">
                 {selectedProker.deskripsi}
               </p>
 
@@ -151,7 +168,7 @@ export const DigitalArchiveModule: React.FC<DigitalArchiveModuleProps> = ({ prok
 
               <button
                 onClick={() => setSelectedProker(null)}
-                className="w-full py-3 rounded-xl bg-dawang-clay text-white text-xs font-extrabold shadow-lg hover:brightness-110"
+                className="w-full py-3 rounded-xl bg-dawang-clay text-white text-xs font-extrabold shadow-lg hover:brightness-110 active:scale-95 transition-all"
               >
                 Tutup Arsip
               </button>

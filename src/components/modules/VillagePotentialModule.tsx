@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sparkles, ArrowRight, X, CheckCircle2 } from 'lucide-react';
 import { PotensiItem } from '../../types';
 
@@ -8,6 +8,18 @@ interface VillagePotentialModuleProps {
 
 export const VillagePotentialModule: React.FC<VillagePotentialModuleProps> = ({ potensi }) => {
   const [selectedPotensi, setSelectedPotensi] = useState<PotensiItem | null>(null);
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (selectedPotensi) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedPotensi]);
 
   return (
     <section id="potensi" className="relative py-20 px-4 sm:px-6 bg-gradient-to-b from-[#19150d] via-[#261f12] to-[#19150d] border-y-2 border-[#d4a359]/60 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
@@ -66,47 +78,52 @@ export const VillagePotentialModule: React.FC<VillagePotentialModuleProps> = ({ 
           ))}
         </div>
 
-        {/* Modal Detail */}
+        {/* Modal Detail - Locked body scroll, z-[100], max-h scrollable */}
         {selectedPotensi && (
-          <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-            <div className="glass-card-elevated rounded-3xl max-w-lg w-full p-6 border-2 border-dawang-gold/60 shadow-2xl relative space-y-4">
-              
+          <div
+            className="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-fadeIn"
+            onClick={() => setSelectedPotensi(null)}
+          >
+            <div
+              className="glass-card-elevated rounded-3xl max-w-lg w-full p-6 border-2 border-dawang-gold/60 shadow-2xl relative space-y-4 max-h-[85vh] overflow-y-auto my-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setSelectedPotensi(null)}
-                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay"
+                className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-dawang-clay shadow-md"
               >
                 <X className="w-4 h-4" />
               </button>
 
               <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-[#141311] border-2 border-dawang-gold flex items-center justify-center text-3xl shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-[#141311] border-2 border-dawang-gold flex items-center justify-center text-3xl shadow-lg flex-shrink-0">
                   {selectedPotensi.icon}
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-dawang-gold uppercase">Potensi Unggulan</span>
+                  <span className="text-xs font-bold text-dawang-gold uppercase tracking-wider">Potensi Unggulan</span>
                   <h3 className="font-serif font-bold text-xl text-dawang-sand">{selectedPotensi.judul}</h3>
                 </div>
               </div>
 
-              <p className="text-xs text-dawang-sandMuted leading-relaxed bg-[#141311]/90 p-4 rounded-2xl border border-white/10">
+              <p className="text-xs text-dawang-sandMuted leading-relaxed bg-[#141311]/90 p-4 rounded-2xl border border-white/10 shadow-inner">
                 {selectedPotensi.deskripsi}
               </p>
 
               <div className="space-y-2 pt-2">
                 <h4 className="text-xs font-bold text-dawang-sand flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-dawang-gold" />
-                  Rekomendasi Pengembangan
+                  Rencana Pengembangan Berkelanjutan
                 </h4>
                 <p className="text-xs text-dawang-sandDim leading-relaxed">
-                  Pengembangan lebih lanjut potensi ini dikolaborasikan bersama perangkat desa, Pokdarwis, serta tim KKN melalui pemetaan digital dan pemberdayaan masyarakat.
+                  Dukungan fasilitas infrastruktur spasial dan promosi WebGIS ditujukan untuk memperkuat daya saing kawasan desa wisata serta kesejahteraan ekonomi warga Dusun Dawang.
                 </p>
               </div>
 
               <button
                 onClick={() => setSelectedPotensi(null)}
-                className="w-full py-3 rounded-xl bg-dawang-gold text-slate-950 text-xs font-extrabold shadow-lg hover:brightness-110"
+                className="w-full py-3 rounded-xl bg-dawang-gold text-slate-950 text-xs font-extrabold shadow-lg hover:brightness-110 active:scale-95 transition-all"
               >
-                Tutup Modal Detail
+                Tutup Informasi Detail
               </button>
 
             </div>
