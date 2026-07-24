@@ -176,57 +176,93 @@
     {
       "id": 1,
       "judul": "Pemetaan & WebGIS Dusun Dawang",
-      "kategori": "Teknologi & Spasial",
+      "kategori": "Proker Utama",
       "emoji": "🗺️",
       "deskripsi": "Pembuatan peta cetak administrasi Dusun Dawang serta pengembangan WebGIS StoryMap interaktif berbasis QR Code.",
       "anggota": ["Christopher Daniel Simbolon", "Satria Rikhan Ganendra"],
       "tanggal": "Januari 2026",
       "durasi": "4 Minggu",
-      "output": "Peta Cetak A0 + Website WebGIS StoryMap"
+      "output": "Peta Cetak A0 + Website WebGIS StoryMap",
+      "foto": [],
+      "video": ""
     },
     {
       "id": 2,
       "judul": "Penyuluhan Kesehatan, PHBS & Pendampingan Posyandu",
-      "kategori": "Kesehatan",
+      "kategori": "Proker Utama",
       "emoji": "🏥",
       "deskripsi": "Pendampingan rutin posyandu balita & lansia, sosialisasi Perilaku Hidup Bersih & Sehat (PHBS), serta pemeriksaan kesehatan.",
       "anggota": ["Dini Aminarti", "Eka Putri Prabaningrum"],
       "tanggal": "Januari 2026",
       "durasi": "3 Minggu",
-      "output": "Buku Edukasi Kesehatan + Checking Kit"
+      "output": "Buku Edukasi Kesehatan + Checking Kit",
+      "foto": [],
+      "video": ""
     },
     {
       "id": 3,
       "judul": "Digitalisasi UMKM & Pelatihan Pemasaran Digital",
-      "kategori": "Pendidikan & Ekonomi",
+      "kategori": "Proker Utama",
       "emoji": "💻",
       "deskripsi": "Pelatihan fotografi produk HP, pembuatan akun Google Maps Business, serta pembuatan kemasan menarik untuk UMKM Dusun Dawang.",
       "anggota": ["Hafshah Afifah Khairunnisa", "Gregorius Dennis A"],
       "tanggal": "Januari 2026",
       "durasi": "2 Minggu",
-      "output": "Label Produk Baru + Pinning Google Maps"
+      "output": "Label Produk Baru + Pinning Google Maps",
+      "foto": [],
+      "video": ""
     },
     {
       "id": 4,
       "judul": "Penghijauan Dusun & Edukasi Pengelolaan Sampah",
-      "kategori": "Lingkungan",
+      "kategori": "Proker Utama",
       "emoji": "🌱",
       "deskripsi": "Penanaman bibit tanaman buah & pohon peneduh di sepanjang jalan dusun, serta sosialisasi pemilahan sampah organik.",
       "anggota": ["Ferdy Adinata Prabaswara", "Adhiimu Ayunda Artha Wijaya"],
       "tanggal": "Januari 2026",
       "durasi": "3 Minggu",
-      "output": "Bibit Ditanam + Tong Sampah Organik"
+      "output": "Bibit Ditanam + Tong Sampah Organik",
+      "foto": [],
+      "video": ""
     },
     {
       "id": 5,
       "judul": "Bimbingan Belajar & Pojok Baca Anak Dawang",
-      "kategori": "Pendidikan",
+      "kategori": "Proker Pendukung",
       "emoji": "📚",
       "deskripsi": "Program les gratis matematika & bahasa Inggris interaktif untuk anak SD, serta pengadaan koleksi buku di Balai Dusun Dawang.",
       "anggota": ["Pashya Syachrila", "Dwiatma Meilany Putri"],
       "tanggal": "Januari 2026",
       "durasi": "4 Minggu",
-      "output": "Pojok Baca Balai Dusun + Modul Les"
+      "output": "Pojok Baca Balai Dusun + Modul Les",
+      "foto": [],
+      "video": ""
+    },
+    {
+      "id": 6,
+      "judul": "Pemanfaatan Minyak Jelantah menjadi Lilin Aroma Terapi",
+      "kategori": "Proker Individu",
+      "emoji": "🕯️",
+      "deskripsi": "Program individu pemanfaatan limbah minyak jelantah dapur warga menjadi lilin aroma terapi bernilai ekonomis sebagai produk UMKM lokal.",
+      "anggota": ["Dwiatma Meilany Putri"],
+      "tanggal": "Januari 2026",
+      "durasi": "1 Minggu",
+      "output": "Lilin Aroma Terapi dari Limbah Jelantah",
+      "foto": [],
+      "video": ""
+    },
+    {
+      "id": 7,
+      "judul": "Mini Pabrik di SD Blongkeng",
+      "kategori": "Proker Individu",
+      "emoji": "🏭",
+      "deskripsi": "Program individu pengenalan konsep produksi sederhana kepada siswa SD Negeri Blongkeng melalui simulasi mini pabrik interaktif.",
+      "anggota": ["Pashya Syachrila"],
+      "tanggal": "Januari 2026",
+      "durasi": "1 Minggu",
+      "output": "Modul Edukasi Mini Pabrik SD",
+      "foto": [],
+      "video": ""
     }
   ],
   "timKKN": {
