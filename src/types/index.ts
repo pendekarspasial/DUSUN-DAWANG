@@ -81,6 +81,8 @@ export interface ProkerKKNItem {
   tanggal: string;
   durasi: string;
   output: string;
+  foto?: string[];
+  video?: string;
   laporanUrl?: string;
   posterUrl?: string;
 }

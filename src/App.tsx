@@ -8,7 +8,6 @@ import { StoryTimeline } from './components/storymap/StoryTimeline';
 import { ThematicMapGrid } from './components/storymap/ThematicMapGrid';
 import { FullWebGIS } from './components/gis/FullWebGIS';
 import { DemographicsModule } from './components/modules/DemographicsModule';
-import { VillagePotentialModule } from './components/modules/VillagePotentialModule';
 import { KKNProfileModule } from './components/modules/KKNProfileModule';
 import { DigitalArchiveModule } from './components/modules/DigitalArchiveModule';
 import { VisualGalleryModule } from './components/modules/VisualGalleryModule';
@@ -81,10 +80,9 @@ export const App: React.FC = () => {
       { id: 'alur-narasi', tab: 'cerita' },
       { id: 'peta-tematik', tab: 'cerita' },
       { id: 'demografi', tab: 'demografi' },
-      { id: 'potensi', tab: 'potensi' },
       { id: 'tim-kkn', tab: 'arsip-kkn' },
       { id: 'arsip-kkn', tab: 'arsip-kkn' },
-      { id: 'galeri', tab: 'arsip-kkn' },
+      { id: 'galeri', tab: 'galeri' },
     ];
 
     const handleScroll = () => {
@@ -181,12 +179,6 @@ export const App: React.FC = () => {
           <EB name="DemographicsModule">
             <DemographicsModule
               penduduk={villageData.penduduk}
-            />
-          </EB>
-
-          <EB name="VillagePotentialModule">
-            <VillagePotentialModule
-              potensi={villageData.potensi}
             />
           </EB>
 

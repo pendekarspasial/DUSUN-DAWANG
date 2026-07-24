@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Map, Users, Sparkles, FolderArchive } from 'lucide-react';
+import { BookOpen, Map, Users, Camera, FolderArchive } from 'lucide-react';
 
 interface StickyBottomNavProps {
   activeTab: string;
@@ -18,8 +18,8 @@ export const StickyBottomNav: React.FC<StickyBottomNavProps> = ({
     { id: 'cerita', label: 'Cerita', icon: BookOpen, action: () => { setGisMode(false); setActiveTab('cerita'); scrollToSection('cerita'); } },
     { id: 'gis', label: 'Peta', icon: Map, action: () => setGisMode(!gisMode) },
     { id: 'demografi', label: 'Demografi', icon: Users, action: () => { setGisMode(false); setActiveTab('demografi'); scrollToSection('demografi'); } },
-    { id: 'potensi', label: 'Potensi', icon: Sparkles, action: () => { setGisMode(false); setActiveTab('potensi'); scrollToSection('potensi'); } },
     { id: 'arsip-kkn', label: 'Arsip KKN', icon: FolderArchive, action: () => { setGisMode(false); setActiveTab('arsip-kkn'); scrollToSection('arsip-kkn'); } },
+    { id: 'galeri', label: 'Galeri', icon: Camera, action: () => { setGisMode(false); setActiveTab('galeri'); scrollToSection('galeri'); } },
   ];
 
   const scrollToSection = (id: string) => {

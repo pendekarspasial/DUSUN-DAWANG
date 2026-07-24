@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, Eye, X, ZoomIn } from 'lucide-react';
+import { Camera, X, ZoomIn } from 'lucide-react';
 import { getAssetUrl } from '../../utils/path';
 
 export const VisualGalleryModule: React.FC = () => {
-  const [activeImage, setActiveImage] = useState<{ src: string; title: string; category: string } | null>(null);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+
+  const galleryItems = [
+    '/fotorumah/Kadus.jpg.jpg',
+    '/fotorumah/Masjid.jpg.jpg',
+    '/fotorumah/RT1.jpg.jpg',
+    '/fotorumah/RT2.jpg.jpg',
+    '/fotorumah/RT3.jpg.jpg',
+    '/fotorumah/RT4.jpg.jpg',
+    '/fotorumah/RW.jpg.jpg',
+    '/fotorumah/Musholla.jpg.jpg',
+    '/fotorumah/Kades.jpeg.jpg',
+    '/fotorumah/Kades1.jpg',
+    '/fotorumah/makam.jpg.jpg',
+  ];
 
   // Lock body scroll when modal is active
   useEffect(() => {
@@ -17,19 +31,6 @@ export const VisualGalleryModule: React.FC = () => {
     };
   }, [activeImage]);
 
-  const galleryItems = [
-    { src: '/fotorumah/Kadus.jpg.jpg', title: 'Balai & Kantor Kepala Dusun Dawang', category: 'Fasilitas Dusun' },
-    { src: '/fotorumah/Masjid.jpg.jpg', title: 'Masjid Utama Al-Ikhlas Dawang', category: 'Keagamaan' },
-    { src: '/fotorumah/RT1.jpg.jpg', title: 'Persawahan & Lanskap RT 01', category: 'Pertanian & Alam' },
-    { src: '/fotorumah/RT2.jpg.jpg', title: 'Jalan Akses Dusun & Wilayah RT 02', category: 'Infrastruktur' },
-    { src: '/fotorumah/RT3.jpg.jpg', title: 'Pemukiman Warga & Area RT 03', category: 'Pemukiman' },
-    { src: '/fotorumah/RT4.jpg.jpg', title: 'Lingkungan Asri RT 04', category: 'Pemukiman' },
-    { src: '/fotorumah/RW.jpg.jpg', title: 'Kegiatan Warga RW Dawang', category: 'Masyarakat' },
-    { src: '/fotorumah/Musholla.jpg.jpg', title: 'Musholla RT 03 Dawang', category: 'Keagamaan' },
-    { src: '/fotorumah/Kades.jpeg.jpg', title: 'Kegiatan Posyandu & Kesehatan', category: 'Kesehatan' },
-    { src: '/fotorumah/Kades1.jpg', title: 'SD Negeri Blongkeng', category: 'Pendidikan' },
-    { src: '/fotorumah/makam.jpg.jpg', title: 'Makam Dusun Dawang', category: 'Fasilitas Umum' },
-  ];
 
   return (
     <section id="galeri" className="relative py-20 px-4 sm:px-6 bg-gradient-to-b from-[#090909] via-[#141414] to-[#090909] border-y-2 border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.9)] overflow-hidden">
@@ -53,29 +54,19 @@ export const VisualGalleryModule: React.FC = () => {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {galleryItems.map((item, idx) => (
+          {galleryItems.map((src, idx) => (
             <div
               key={idx}
-              onClick={() => setActiveImage(item)}
+              onClick={() => setActiveImage(src)}
               className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer border-2 border-white/15 shadow-[0_10px_20px_rgba(0,0,0,0.6)] hover:border-dawang-gold hover:scale-[1.03] transition-all duration-300 group"
             >
               <img
-                src={getAssetUrl(item.src)}
-                alt={item.title}
+                src={getAssetUrl(src)}
+                alt=""
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
-
-              <div className="absolute bottom-3 left-3 right-3 space-y-1">
-                <span className="text-[9px] font-extrabold text-dawang-gold bg-black/80 px-2 py-0.5 rounded-md border border-dawang-gold/30">
-                  {item.category}
-                </span>
-                <p className="text-xs font-bold text-white leading-tight line-clamp-1">
-                  {item.title}
-                </p>
-              </div>
-
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
               <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity border border-white/20">
                 <ZoomIn className="w-4 h-4" />
               </div>
@@ -86,11 +77,11 @@ export const VisualGalleryModule: React.FC = () => {
         {/* Image Preview Modal */}
         {activeImage && (
           <div
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto animate-fadeIn"
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
             onClick={() => setActiveImage(null)}
           >
             <div
-              className="relative max-w-4xl w-full flex flex-col items-center max-h-[85vh] overflow-y-auto my-auto"
+              className="relative max-w-4xl w-full flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -101,17 +92,10 @@ export const VisualGalleryModule: React.FC = () => {
               </button>
 
               <img
-                src={getAssetUrl(activeImage.src)}
-                alt={activeImage.title}
-                className="max-h-[75vh] w-auto rounded-3xl border-2 border-white/30 shadow-2xl object-contain"
+                src={getAssetUrl(activeImage)}
+                alt=""
+                className="max-h-[85vh] max-w-full rounded-3xl border-2 border-white/30 shadow-2xl object-contain"
               />
-
-              <div className="mt-4 text-center space-y-1">
-                <span className="text-xs font-extrabold text-dawang-gold bg-[#141311] px-3.5 py-1 rounded-full border border-dawang-gold/40 shadow-md">
-                  {activeImage.category}
-                </span>
-                <p className="font-serif font-bold text-xl text-dawang-sand mt-2">{activeImage.title}</p>
-              </div>
             </div>
           </div>
         )}

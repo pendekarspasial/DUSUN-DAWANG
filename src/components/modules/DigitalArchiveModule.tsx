@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { FolderArchive, Download, FileText, Calendar, Clock, CheckCircle, Search, Filter, X } from 'lucide-react';
+import { FolderArchive, CheckCircle, Search, X, Image, PlayCircle } from 'lucide-react';
 import { ProkerKKNItem } from '../../types';
+import { getAssetUrl } from '../../utils/path';
 
 interface DigitalArchiveModuleProps {
   prokerList: ProkerKKNItem[];
@@ -23,7 +24,7 @@ export const DigitalArchiveModule: React.FC<DigitalArchiveModuleProps> = ({ prok
     };
   }, [selectedProker]);
 
-  const categories = ['semua', 'Teknologi & GIS', 'Kesehatan', 'Pendidikan & Ekonomi', 'Lingkungan', 'Infrastruktur', 'Administrasi'];
+  const categories = ['semua', 'Proker Utama', 'Proker Pendukung', 'Proker Individu'];
 
   const filteredProker = prokerList.filter((item) => {
     const matchesCategory = selectedCategory === 'semua' || item.kategori.toLowerCase().includes(selectedCategory.toLowerCase());
@@ -165,6 +166,44 @@ export const DigitalArchiveModule: React.FC<DigitalArchiveModuleProps> = ({ prok
                   <span className="font-bold text-dawang-gold">{selectedProker.output}</span>
                 </div>
               </div>
+
+              {/* Foto Dokumentasi */}
+              {selectedProker.foto && selectedProker.foto.length > 0 && (
+                <div className="space-y-2">
+                  <h4 className="text-xs font-bold text-dawang-sandDim flex items-center gap-1.5">
+                    <Image className="w-3.5 h-3.5 text-dawang-gold" />
+                    Foto Dokumentasi
+                  </h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {selectedProker.foto.map((f, i) => (
+                      <img
+                        key={i}
+                        src={getAssetUrl(f)}
+                        alt={`Dokumentasi ${i + 1}`}
+                        className="w-full aspect-video object-cover rounded-xl border border-white/10"
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Video */}
+              {selectedProker.video && (
+                <div className="space-y-2">
+                  <h4 className="text-xs font-bold text-dawang-sandDim flex items-center gap-1.5">
+                    <PlayCircle className="w-3.5 h-3.5 text-dawang-gold" />
+                    Video Dokumentasi
+                  </h4>
+                  <div className="rounded-xl overflow-hidden border border-white/10">
+                    <video
+                      src={getAssetUrl(selectedProker.video)}
+                      controls
+                      className="w-full"
+                      preload="metadata"
+                    />
+                  </div>
+                </div>
+              )}
 
               <button
                 onClick={() => setSelectedProker(null)}

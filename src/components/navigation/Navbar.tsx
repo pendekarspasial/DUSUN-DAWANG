@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, BookOpen, Users, Sparkles, FolderArchive, Compass } from 'lucide-react';
+import { Map, BookOpen, Users, Camera, FolderArchive, Compass } from 'lucide-react';
 import { getAssetUrl } from '../../utils/path';
 
 interface NavbarProps {
@@ -19,8 +19,8 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'cerita', label: 'Cerita Dusun', icon: BookOpen },
     { id: 'peta-tematik', label: 'Peta Tematik', icon: Compass },
     { id: 'demografi', label: 'Demografi', icon: Users },
-    { id: 'potensi', label: 'Potensi & UMKM', icon: Sparkles },
     { id: 'arsip-kkn', label: 'Arsip KKN', icon: FolderArchive },
+    { id: 'galeri', label: 'Galeri', icon: Camera },
   ];
 
   const handleNavClick = (id: string) => {
