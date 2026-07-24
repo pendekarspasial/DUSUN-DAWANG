@@ -210,7 +210,14 @@
       "tanggal": "8, 10, 11 Juli 2026",
       "durasi": "3 Pertemuan",
       "output": "Pojok Baca TPA Masjid + Modul Les Interaktif",
-      "foto": [],
+      "foto": [
+        "assets/images/proker/bimbel/image1.jpeg",
+        "assets/images/proker/bimbel/image2.jpeg",
+        "assets/images/proker/bimbel/image3.jpeg",
+        "assets/images/proker/bimbel/image4.jpeg",
+        "assets/images/proker/bimbel/image5.jpeg",
+        "assets/images/proker/bimbel/image6.jpeg"
+      ],
       "video": ""
     },
     {
@@ -302,7 +309,11 @@
       "tanggal": "24 Juli 2026",
       "durasi": "1 Hari",
       "output": "Plang Kayu + Banner Rambu Peringatan Terpasang",
-      "foto": [],
+      "foto": [
+        "assets/images/proker/plangisasi/image1.jpg",
+        "assets/images/proker/plangisasi/image2.jpg",
+        "assets/images/proker/plangisasi/image3.jpg"
+      ],
       "video": ""
     },
     {
@@ -342,7 +353,18 @@
       "tanggal": "16 Juli 2026",
       "durasi": "1 Hari",
       "output": "Modul Simulasi Pabrik Mini + Karya Produk Siswa",
-      "foto": [],
+      "foto": [
+        "assets/images/proker/pabrik-mini/image1.jpeg",
+        "assets/images/proker/pabrik-mini/image2.jpeg",
+        "assets/images/proker/pabrik-mini/image3.jpeg",
+        "assets/images/proker/pabrik-mini/image4.jpeg",
+        "assets/images/proker/pabrik-mini/image5.jpeg",
+        "assets/images/proker/pabrik-mini/image6.jpeg",
+        "assets/images/proker/pabrik-mini/image7.jpeg",
+        "assets/images/proker/pabrik-mini/image8.jpeg",
+        "assets/images/proker/pabrik-mini/image9.jpeg",
+        "assets/images/proker/pabrik-mini/image10.jpeg"
+      ],
       "video": ""
     },
     {
@@ -356,7 +378,14 @@
       "tanggal": "16 Juli 2026",
       "durasi": "1 Hari",
       "output": "Siswa Mampu Prompting & Berinteraksi dengan AI",
-      "foto": [],
+      "foto": [
+        "assets/images/proker/melek-ai/image6.jpg",
+        "assets/images/proker/melek-ai/image7.jpg",
+        "assets/images/proker/melek-ai/image8.jpg",
+        "assets/images/proker/melek-ai/image9.jpg",
+        "assets/images/proker/melek-ai/image10.jpg",
+        "assets/images/proker/melek-ai/image11.jpg"
+      ],
       "video": ""
     },
     {
@@ -378,7 +407,18 @@
       "tanggal": "Januari 2026",
       "durasi": "1 Hari Produksi",
       "output": "Lilin Aroma Terapi dari Limbah Jelantah",
-      "foto": [],
+      "foto": [
+        "assets/images/proker/lilin-aroma/image1.jpeg",
+        "assets/images/proker/lilin-aroma/image2.jpeg",
+        "assets/images/proker/lilin-aroma/image3.jpeg",
+        "assets/images/proker/lilin-aroma/image4.jpeg",
+        "assets/images/proker/lilin-aroma/image5.jpeg",
+        "assets/images/proker/lilin-aroma/image6.jpeg",
+        "assets/images/proker/lilin-aroma/image7.jpeg",
+        "assets/images/proker/lilin-aroma/image8.jpeg",
+        "assets/images/proker/lilin-aroma/image9.jpeg",
+        "assets/images/proker/lilin-aroma/image10.jpeg"
+      ],
       "video": ""
     },
     {
