@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layers, Map as MapIcon, LocateFixed, Bookmark, Info, Eye, EyeOff, SlidersHorizontal, ShieldCheck } from 'lucide-react';
+import { Layers, Map as MapIcon, LocateFixed, Eye, EyeOff, SlidersHorizontal, ShieldCheck } from 'lucide-react';
 import { MapLayerConfig } from '../../types';
 
 interface FloatingMapControlsProps {
@@ -9,7 +9,6 @@ interface FloatingMapControlsProps {
   activeBasemap: string;
   onChangeBasemap: (basemap: string) => void;
   onLocateUser: () => void;
-  onSelectBookmark: (lat: number, lng: number, zoom: number) => void;
 }
 
 export const FloatingMapControls: React.FC<FloatingMapControlsProps> = ({
@@ -19,26 +18,18 @@ export const FloatingMapControls: React.FC<FloatingMapControlsProps> = ({
   activeBasemap,
   onChangeBasemap,
   onLocateUser,
-  onSelectBookmark,
 }) => {
-  const [activePanel, setActivePanel] = useState<'none' | 'layers' | 'basemaps' | 'bookmarks' | 'legend'>('none');
+  const [activePanel, setActivePanel] = useState<'none' | 'layers' | 'basemaps'>('none');
 
   const basemaps = [
     { id: 'satellite', name: 'Satelit Esri', desc: 'Foto Udara High Res' },
+    { id: 'google', name: 'Google Satellite', desc: 'Foto Udara Google' },
     { id: 'osm', name: 'OpenStreetMap', desc: 'Peta Jalan Standar' },
     { id: 'dark', name: 'CartoDB Dark', desc: 'Vektor Gelap Minimalis' },
     { id: 'topo', name: 'Esri Topografik', desc: 'Kontur & Ketinggian' },
   ];
 
-  const bookmarks = [
-    { name: 'Balai Dusun (Pusat)', lat: -7.6170, lng: 110.2780, zoom: 18 },
-    { name: 'Masjid Al-Ikhlas', lat: -7.6168, lng: 110.2775, zoom: 19 },
-    { name: 'Area RT 01 - RT 05', lat: -7.6172, lng: 110.2782, zoom: 17 },
-    { name: 'Persawahan Sisi Timur', lat: -7.6190, lng: 110.2790, zoom: 16 },
-    { name: 'Batas Desa Blongkeng', lat: -7.6170, lng: 110.2780, zoom: 14 },
-  ];
-
-  const togglePanel = (panel: 'layers' | 'basemaps' | 'bookmarks' | 'legend') => {
+  const togglePanel = (panel: 'layers' | 'basemaps') => {
     setActivePanel((prev) => (prev === panel ? 'none' : panel));
   };
 
@@ -65,16 +56,6 @@ export const FloatingMapControls: React.FC<FloatingMapControlsProps> = ({
           title="Pilihan Basemap"
         >
           <MapIcon className="w-4 h-4" />
-        </button>
-
-        <button
-          onClick={() => togglePanel('bookmarks')}
-          className={`p-2.5 rounded-xl transition-all ${
-            activePanel === 'bookmarks' ? 'bg-dawang-paddyGold text-dawang-dark shadow-2.5d-sm' : 'text-dawang-sand hover:bg-dawang-card'
-          }`}
-          title="Bookmark Titik"
-        >
-          <Bookmark className="w-4 h-4" />
         </button>
 
         <button
@@ -160,30 +141,6 @@ export const FloatingMapControls: React.FC<FloatingMapControlsProps> = ({
                   <p className="text-[10px] opacity-80">{b.desc}</p>
                 </div>
                 {activeBasemap === b.id && <ShieldCheck className="w-4 h-4" />}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Floating Panel: Bookmarks */}
-      {activePanel === 'bookmarks' && (
-        <div className="absolute top-24 right-14 w-64 glass-card-elevated rounded-2xl p-4 border border-white/15 shadow-2.5d-lg space-y-2 animate-in fade-in duration-200">
-          <h4 className="font-bold text-xs text-dawang-sand pb-2 border-b border-white/10">
-            Fokus Kamera Dusun
-          </h4>
-          <div className="space-y-1">
-            {bookmarks.map((bm, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  onSelectBookmark(bm.lat, bm.lng, bm.zoom);
-                  setActivePanel('none');
-                }}
-                className="w-full text-left p-2.5 rounded-xl bg-dawang-card/60 hover:bg-dawang-card text-xs font-semibold text-dawang-sand flex items-center justify-between transition-colors"
-              >
-                <span>{bm.name}</span>
-                <Bookmark className="w-3.5 h-3.5 text-dawang-gold" />
               </button>
             ))}
           </div>

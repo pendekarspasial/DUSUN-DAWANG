@@ -37,12 +37,12 @@ export const ThematicMapGrid: React.FC<ThematicMapGridProps> = ({ onSelectMapFor
   const maps: ThematicMapItem[] = [
     {
       id: 'batas-rt',
-      title: 'Peta Batas Administrasi & Wilayah RT 01-05',
+      title: 'Peta Batas Administrasi & Wilayah RT 01-04',
       category: 'Administrasi',
       scale: '1 : 2.500',
       year: '2026',
       author: 'Tim KKN UPN "Veteran" Yk',
-      description: 'Peta pembagian wilayah RT 01 hingga RT 05 Dusun Dawang beserta lokasi Balai Dusun dan titik strategis desa.',
+      description: 'Peta pembagian wilayah RT 01 hingga RT 04 Dusun Dawang beserta lokasi Rumah Kepala Dusun dan titik strategis desa.',
       thumbnail: '/fotorumah/Kadus.jpg.jpg',
       geojsonFile: 'wgs84_aoi_rt.geojson',
       format: 'GeoJSON / PNG / PDF'

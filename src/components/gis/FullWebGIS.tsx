@@ -25,20 +25,25 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
   const [activeBasemap, setActiveBasemap] = useState<string>('satellite');
   const [selectedFeature, setSelectedFeature] = useState<GeoJSONFeatureProperties | null>(null);
 
+  // Boundary layers first (rendered bottom), data layers last (rendered top)
   const [layers, setLayers] = useState<MapLayerConfig[]>([
+    { id: 'blongkeng', name: 'Batas Wilayah Desa Blongkeng', file: 'wgs84_area_blongkeng.geojson', color: '#36342e', type: 'polygon', visible: false, opacity: 0.4 },
     { id: 'aoi_dawang', name: 'Batas Dusun Dawang', file: 'wgs84_aoi_dawang.geojson', color: '#c2593f', type: 'polygon', visible: true, opacity: 0.9 },
-    { id: 'aoi_rt', name: 'Batas RT 01 - RT 05', file: 'wgs84_aoi_rt.geojson', color: '#d4a359', type: 'polygon', visible: true, opacity: 0.7 },
-    { id: 'rumah', name: 'Persil Rumah / Bangunan', file: 'wgs84_rumah.geojson', color: '#e5b869', type: 'polygon', visible: true, opacity: 0.8 },
+    { id: 'aoi_rt', name: 'Batas RT 01 - RT 04', file: 'wgs84_aoi_rt.geojson', color: '#d4a359', type: 'polygon', visible: true, opacity: 0.7 },
     { id: 'sawah', name: 'Area Persawahan Subur', file: 'wgs84_sawah.geojson', color: '#8cb369', type: 'polygon', visible: true, opacity: 0.6 },
+    { id: 'rumah', name: 'Persil Rumah / Bangunan', file: 'wgs84_rumah.geojson', color: '#e5b869', type: 'polygon', visible: true, opacity: 0.8 },
     { id: 'perangkat', name: 'Lokasi Perangkat & Fasilitas', file: 'wgs84_perangkatdesa.geojson', color: '#ffffff', type: 'point', visible: true, opacity: 1 },
     { id: 'pembagian', name: 'Pembagian Wilayah Dusun', file: 'wgs84_pembagian_dusun.geojson', color: '#d97757', type: 'polygon', visible: false, opacity: 0.5 },
-    { id: 'blongkeng', name: 'Batas Wilayah Desa Blongkeng', file: 'wgs84_area_blongkeng.geojson', color: '#36342e', type: 'polygon', visible: false, opacity: 0.4 },
   ]);
 
   const basemapUrls: { [key: string]: { url: string; attrib: string } } = {
     satellite: {
       url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
       attrib: 'Esri World Imagery & GIS KKN Dawang 2025'
+    },
+    google: {
+      url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+      attrib: '&copy; Google Satellite'
     },
     osm: {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -54,6 +59,21 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
     }
   };
 
+  // Per-RT color map
+  const RT_COLORS: { [key: string]: string } = {
+    'RT 01': '#d4a359',
+    'RT 02': '#8cb369',
+    'RT 03': '#5b8ab0',
+    'RT 04': '#c2593f',
+  };
+
+  // Layer pane assignment (controls z-order independent of load timing)
+  const getLayerPane = (id: string): string => {
+    if (id === 'perangkat') return 'pointPane';
+    if (['blongkeng', 'aoi_dawang', 'aoi_rt', 'pembagian'].includes(id)) return 'boundaryPane';
+    return 'dataPane';
+  };
+
   // Initialize Map
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) return;
@@ -64,6 +84,14 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
       zoomControl: false,
       attributionControl: false,
     });
+
+    // Create z-ordered panes: boundaries below tiles default (400), data above, points on top
+    const boundaryPane = map.createPane('boundaryPane');
+    boundaryPane.style.zIndex = '350';
+    const dataPane = map.createPane('dataPane');
+    dataPane.style.zIndex = '450';
+    const pointPane = map.createPane('pointPane');
+    pointPane.style.zIndex = '550';
 
     const initialTile = L.tileLayer(basemapUrls.satellite.url, {
       maxZoom: 20,
@@ -122,16 +150,28 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
         .then((data) => {
           if (!mapRef.current) return;
 
+          const pane = getLayerPane(cfg.id);
+
           const layer = L.geoJSON(data, {
-            style: (feature) => ({
-              color: cfg.color,
-              weight: cfg.id === 'aoi_dawang' ? 3 : 1.5,
-              fillColor: cfg.color,
-              fillOpacity: cfg.opacity * 0.5,
-              dashArray: cfg.id === 'aoi_rt' ? '4, 4' : undefined,
-            }),
+            style: (feature) => {
+              // Per-RT color based on STATUS property
+              let fillColor = cfg.color;
+              if (cfg.id === 'aoi_rt') {
+                const status = feature?.properties?.STATUS as string | undefined;
+                fillColor = (status && RT_COLORS[status]) ? RT_COLORS[status] : cfg.color;
+              }
+              return {
+                pane,
+                color: fillColor,
+                weight: cfg.id === 'aoi_dawang' ? 3 : 1.5,
+                fillColor,
+                fillOpacity: cfg.opacity * 0.5,
+                dashArray: cfg.id === 'aoi_rt' ? '6, 4' : undefined,
+              };
+            },
             pointToLayer: (feature, latlng) => {
               return L.circleMarker(latlng, {
+                pane,
                 radius: 7,
                 fillColor: cfg.color,
                 color: '#141311',
@@ -156,9 +196,15 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
                 mouseout: (e) => {
                   const target = e.target;
                   if (target.setStyle) {
+                    let fillColor = cfg.color;
+                    if (cfg.id === 'aoi_rt') {
+                      const status = feature?.properties?.STATUS as string | undefined;
+                      fillColor = (status && RT_COLORS[status]) ? RT_COLORS[status] : cfg.color;
+                    }
                     target.setStyle({
                       weight: cfg.id === 'aoi_dawang' ? 3 : 1.5,
                       fillOpacity: cfg.opacity * 0.5,
+                      fillColor,
                     });
                   }
                 },
@@ -170,8 +216,8 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
 
           if (initialFocusFile && cfg.file === initialFocusFile) {
             mapRef.current.fitBounds(layer.getBounds(), { padding: [20, 20] });
-          } else if (!initialFocusFile && cfg.id === 'aoi_dawang') {
-            mapRef.current.fitBounds(layer.getBounds(), { padding: [30, 30] });
+          } else if (!initialFocusFile && cfg.id === 'perangkat') {
+            mapRef.current.fitBounds(layer.getBounds(), { padding: [60, 60], maxZoom: 19 });
           }
         })
         .catch((err) => console.warn(`GeoJSON fetch warning [${cfg.file}]:`, err));
@@ -201,11 +247,6 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
     mapRef.current.locate({ setView: true, maxZoom: 18 });
   };
 
-  const handleSelectBookmark = (lat: number, lng: number, zoom: number) => {
-    if (!mapRef.current) return;
-    mapRef.current.setView([lat, lng], zoom, { animate: true });
-  };
-
   return (
     <div className="relative w-full h-screen bg-dawang-dark overflow-hidden">
       
@@ -223,7 +264,6 @@ export const FullWebGIS: React.FC<FullWebGISProps> = ({
         activeBasemap={activeBasemap}
         onChangeBasemap={setActiveBasemap}
         onLocateUser={handleLocateUser}
-        onSelectBookmark={handleSelectBookmark}
       />
 
       {/* Leaflet Map Canvas Container */}

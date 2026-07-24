@@ -17,10 +17,10 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
       icon: Landmark,
       badge: "Sejarah & Nilai",
       color: "from-dawang-clay to-dawang-clayLight",
-      coords: { lat: -7.6380, lng: 110.2480, zoom: 17 },
+      coords: { lat: -7.6386, lng: 110.2497, zoom: 19 },
       description: "Dusun Dawang berdiri kukuh dengan nilai kebersamaan dan tradisi Jawa. Istilah 'Dawang' menggambarkan tempat yang padhang (terang benderang), menandakan pandangan hidup warga yang senantiasa terbuka, guyub rukun, dan berdaya dalam suasana kehangatan desa.",
       image: "/fotorumah/Kadus.jpg.jpg",
-      details: ["Balai Dusun sebagai pusat musyawarah warga", "Tradisi Nyadran dan Gotong Royong bulanan", "Penjagaan nilai-nilai luhur Jawa sangkan paraning dumadi"]
+      details: ["Rumah Kepala Dusun sebagai pusat koordinasi warga", "Tradisi Nyadran dan Gotong Royong bulanan", "Penjagaan nilai-nilai luhur Jawa sangkan paraning dumadi"]
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
       coords: { lat: -7.6380, lng: 110.2480, zoom: 18 },
       description: "Dihuni oleh 375 jiwa yang tersebar di 4 RT dan 1 RW, mayoritas warga bergerak di bidang pertanian produktif, UMKM olahan pangan, dan perdagangan. Hubungan antar-RT terjalin sangat erat melalui kegiatan posyandu, pkk, dan kerja bakti rutin.",
       image: "/fotorumah/RT1.jpg.jpg",
-      details: ["124 Kepala Keluarga dalam 5 wilayah RT", "Posyandu aktif untuk anak & lansia", "Kegiatan keagamaan di Masjid Al-Ikhlas & Musholla RT 03"]
+      details: ["140 Kepala Keluarga dalam 4 wilayah RT", "Posyandu aktif untuk anak & lansia", "Kegiatan keagamaan di Masjid Al-Ikhlas & Musholla RT 03"]
     },
     {
       id: 3,
