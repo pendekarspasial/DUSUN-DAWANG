@@ -77,6 +77,8 @@ export interface ProkerKKNItem {
   kategori: string;
   emoji: string;
   deskripsi: string;
+  narasi?: string;
+  langkah?: string[];
   anggota: string[];
   tanggal: string;
   durasi: string;

@@ -50,7 +50,14 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
           <div className="space-y-2.5 text-xs text-dawang-sandMuted">
             <div className="flex items-start gap-2.5">
               <MapPin className="w-4 h-4 text-dawang-clay flex-shrink-0 mt-0.5" />
-              <span>Balai Dusun Dawang, Desa Blongkeng, Kec. Ngluwar, Kab. Magelang 56485</span>
+              <a
+                href="https://maps.app.goo.gl/BjhEzQ2qrcdS2qAM9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-dawang-clay transition-colors"
+              >
+                Rumah Kepala Dusun Dawang, Desa Blongkeng, Kec. Ngluwar, Kab. Magelang 56485
+              </a>
             </div>
 
             <div className="flex items-center gap-2.5">
@@ -73,6 +80,19 @@ export const Footer: React.FC<FooterProps> = ({ dusun }) => {
               >
                 <span>Instagram Tim KKN:</span>
                 <span className="text-pink-400 font-bold underline">@dailydawang</span>
+              </a>
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              <Instagram className="w-4 h-4 text-pink-400 flex-shrink-0" />
+              <a
+                href="https://www.instagram.com/fopda.official"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-300 transition-colors font-medium text-dawang-sand flex items-center gap-1"
+              >
+                <span>Instagram Karang Taruna:</span>
+                <span className="text-pink-400 font-bold underline">@fopda.official</span>
               </a>
             </div>
           </div>
