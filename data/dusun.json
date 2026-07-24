@@ -7,9 +7,9 @@
     "provinsi": "Jawa Tengah",
     "koordinat": { "lat": -7.617, "lng": 110.278 },
     "luasWilayah": "±85 Ha",
-    "jumlahRT": 5,
+    "jumlahRT": 4,
     "jumlahRW": 1,
-    "kepalaDusun": "Bapak Subardi",
+    "kepalaDusun": "Bapak Mundoni",
     "ketinggian": "±350 mdpl",
     "sejarah": "Dusun Dawang merupakan salah satu dusun yang berada di wilayah Desa Blongkeng, Kecamatan Ngluwar, Kabupaten Magelang, Jawa Tengah. Dusun ini terletak di kaki lereng Gunung Merapi yang subur, dikelilingi hamparan sawah dan kebun yang hijau. Nama 'Dawang' konon berasal dari bahasa Jawa kuno yang berarti tempat yang terang dan terbuka, mencerminkan karakter warganya yang ramah dan terbuka terhadap sesama.",
     "visiMisi": "Mewujudkan Dusun Dawang yang mandiri, sejahtera, dan berdaya saing dengan menjaga kearifan lokal serta memanfaatkan potensi alam secara berkelanjutan.",
@@ -21,42 +21,43 @@
     }
   },
   "penduduk": {
-    "total": 458,
-    "lakiLaki": 231,
-    "perempuan": 227,
-    "jumlahKK": 124,
+    "total": 375,
+    "lakiLaki": 185,
+    "perempuan": 190,
+    "jumlahKK": 140,
     "kelompokUmur": [
-      { "label": "0–4 th", "laki": 18, "perempuan": 17 },
-      { "label": "5–14 th", "laki": 35, "perempuan": 32 },
-      { "label": "15–24 th", "laki": 42, "perempuan": 40 },
-      { "label": "25–34 th", "laki": 38, "perempuan": 36 },
-      { "label": "35–44 th", "laki": 40, "perempuan": 39 },
-      { "label": "45–54 th", "laki": 32, "perempuan": 33 },
-      { "label": "55–64 th", "laki": 18, "perempuan": 20 },
-      { "label": "65+ th", "laki": 8, "perempuan": 10 }
+      { "label": "Balita", "jumlah": 26 },
+      { "label": "Anak-Anak", "jumlah": 37 },
+      { "label": "Remaja", "jumlah": 34 },
+      { "label": "Dewasa", "jumlah": 116 },
+      { "label": "Tua", "jumlah": 83 },
+      { "label": "Lansia", "jumlah": 79 }
     ],
     "mataPencaharian": [
-      { "label": "Petani", "jumlah": 142 },
-      { "label": "Buruh Tani", "jumlah": 67 },
-      { "label": "Wiraswasta", "jumlah": 48 },
-      { "label": "PNS / TNI / Polri", "jumlah": 12 },
-      { "label": "Pelajar / Mahasiswa", "jumlah": 89 },
-      { "label": "Ibu Rumah Tangga", "jumlah": 72 },
-      { "label": "Lainnya", "jumlah": 28 }
+      { "label": "Blm/Tdk Bekerja", "jumlah": 82 },
+      { "label": "IRT", "jumlah": 69 },
+      { "label": "Buruh", "jumlah": 51 },
+      { "label": "Petani", "jumlah": 47 },
+      { "label": "Pelajar/Mhs", "jumlah": 40 },
+      { "label": "Kary. Swasta", "jumlah": 26 },
+      { "label": "Wiraswasta", "jumlah": 24 },
+      { "label": "Pedagang", "jumlah": 22 },
+      { "label": "Lainnya", "jumlah": 14 }
     ],
     "pendidikan": [
-      { "label": "Belum Sekolah", "jumlah": 35 },
-      { "label": "SD / Sederajat", "jumlah": 138 },
-      { "label": "SMP / Sederajat", "jumlah": 102 },
-      { "label": "SMA / Sederajat", "jumlah": 119 },
-      { "label": "D3 / S1+", "jumlah": 64 }
+      { "label": "Blm/Tdk Sekolah", "jumlah": 20 },
+      { "label": "Blm Tamat SD", "jumlah": 43 },
+      { "label": "SD/Sederajat", "jumlah": 115 },
+      { "label": "SMP/Sederajat", "jumlah": 57 },
+      { "label": "SMA/Sederajat", "jumlah": 124 },
+      { "label": "Diploma III", "jumlah": 3 },
+      { "label": "S1/Sederajat", "jumlah": 10 }
     ],
     "perRT": [
-      { "rt": "RT 01", "kk": 24, "jiwa": 88 },
-      { "rt": "RT 02", "kk": 26, "jiwa": 95 },
-      { "rt": "RT 03", "kk": 25, "jiwa": 92 },
-      { "rt": "RT 04", "kk": 23, "jiwa": 85 },
-      { "rt": "RT 05", "kk": 26, "jiwa": 98 }
+      { "rt": "RT 01", "kk": 39, "jiwa": 102 },
+      { "rt": "RT 02", "kk": 32, "jiwa": 93 },
+      { "rt": "RT 03", "kk": 40, "jiwa": 105 },
+      { "rt": "RT 04", "kk": 29, "jiwa": 75 }
     ]
   },
   "fasilitas": [
