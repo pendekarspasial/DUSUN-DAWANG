@@ -72,12 +72,12 @@ export const MobileHero: React.FC<MobileHeroProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-2xl">
           <div className="glass-card rounded-xl p-3 text-center border border-white/10 shadow-2.5d-sm">
             <p className="text-[10px] text-dawang-sandDim uppercase tracking-wider font-semibold">Total Warga</p>
-            <p className="text-xl font-bold text-dawang-sand font-serif mt-0.5">458 Jiwa</p>
+            <p className="text-xl font-bold text-dawang-sand font-serif mt-0.5">375 Jiwa</p>
           </div>
 
           <div className="glass-card rounded-xl p-3 text-center border border-white/10 shadow-2.5d-sm">
             <p className="text-[10px] text-dawang-sandDim uppercase tracking-wider font-semibold">Kepala Keluarga</p>
-            <p className="text-xl font-bold text-dawang-sand font-serif mt-0.5">124 KK</p>
+            <p className="text-xl font-bold text-dawang-sand font-serif mt-0.5">140 KK</p>
           </div>
 
           <div className="glass-card rounded-xl p-3 text-center border border-white/10 shadow-2.5d-sm">

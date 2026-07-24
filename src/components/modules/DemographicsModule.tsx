@@ -28,7 +28,7 @@ export const DemographicsModule: React.FC<DemographicsModuleProps> = ({ penduduk
             Data Kependudukan Dusun
           </h2>
           <p className="text-xs sm:text-sm text-[#8cb369]/90 font-medium mt-2">
-            Struktur demografi, potensi tenaga kerja, dan profil pendidikan 458 warga Dusun Dawang.
+            Struktur demografi, potensi tenaga kerja, dan profil pendidikan 375 warga Dusun Dawang.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export const DemographicsModule: React.FC<DemographicsModuleProps> = ({ penduduk
             <div className="space-y-4">
               <h3 className="font-bold text-base text-dawang-sand flex items-center gap-2">
                 <Home className="w-5 h-5 text-dawang-paddyGold" />
-                Distribusi Penduduk & KK per RT (RT 01 - RT 05)
+                Distribusi Penduduk & KK per RT (RT 01 - RT 04)
               </h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs text-left text-dawang-sand">
@@ -208,8 +208,11 @@ export const DemographicsModule: React.FC<DemographicsModuleProps> = ({ penduduk
                     <XAxis dataKey="label" stroke="#999488" fontSize={11} />
                     <YAxis stroke="#999488" fontSize={11} />
                     <Tooltip contentStyle={{ backgroundColor: '#1c1b18', borderColor: '#36342e', borderRadius: '12px', color: '#f9f6f0' }} />
-                    <Bar dataKey="laki" name="Laki-laki" fill="#c2593f" radius={[4, 4, 0, 0]} />
-                    <Bar dataKey="perempuan" name="Perempuan" fill="#8cb369" radius={[4, 4, 0, 0]} />
+                    <Bar dataKey="jumlah" name="Jumlah" radius={[8, 8, 0, 0]}>
+                      {penduduk.kelompokUmur.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Bar>
                   </BarChart>
                 </ResponsiveContainer>
               </div>

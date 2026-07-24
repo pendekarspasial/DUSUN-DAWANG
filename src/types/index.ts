@@ -22,8 +22,7 @@ export interface DusunInfo {
 
 export interface KelompokUmur {
   label: string;
-  laki: number;
-  perempuan: number;
+  jumlah: number;
 }
 
 export interface MataPencaharian {

@@ -30,7 +30,7 @@ export const StoryTimeline: React.FC<StoryTimelineProps> = ({ onFocusMapLocation
       badge: "Masyarakat",
       color: "from-dawang-gold to-dawang-goldLight",
       coords: { lat: -7.6380, lng: 110.2480, zoom: 18 },
-      description: "Dihuni oleh 458 jiwa yang tersebar di 5 RT dan 1 RW, mayoritas warga bergerak di bidang pertanian produktif, UMKM olahan pangan, dan perdagangan. Hubungan antar-RT terjalin sangat erat melalui kegiatan posyandu, pkk, dan kerja bakti rutin.",
+      description: "Dihuni oleh 375 jiwa yang tersebar di 4 RT dan 1 RW, mayoritas warga bergerak di bidang pertanian produktif, UMKM olahan pangan, dan perdagangan. Hubungan antar-RT terjalin sangat erat melalui kegiatan posyandu, pkk, dan kerja bakti rutin.",
       image: "/fotorumah/RT1.jpg.jpg",
       details: ["124 Kepala Keluarga dalam 5 wilayah RT", "Posyandu aktif untuk anak & lansia", "Kegiatan keagamaan di Masjid Al-Ikhlas & Musholla RT 03"]
     },
