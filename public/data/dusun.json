@@ -3,38 +3,38 @@
     {
       "warna": "hijau", 
       "deskripsi": "Lahan subur di kaki Merapi menghasilkan padi, sayuran, dan palawija berkualitas tinggi yang menjadi sumber pendapatan utama warga.", 
-      "icon": "🌾", 
-      "judul": "Pertanian & Perkebunan"
+      "judul": "Pertanian & Perkebunan", 
+      "icon": "🌾"
     }, 
     {
       "warna": "biru", 
       "deskripsi": "Pemandangan alam yang indah dengan latar Gunung Merapi, hamparan sawah hijau, dan udara segar berpotensi dikembangkan sebagai desa wisata.", 
-      "icon": "🏔️", 
-      "judul": "Wisata Alam"
+      "judul": "Wisata Alam", 
+      "icon": "🏔️"
     }, 
     {
       "warna": "orange", 
       "deskripsi": "Berbagai usaha mikro warga seperti kerajinan tangan, olahan pangan lokal, dan jasa yang berpotensi untuk dikembangkan lebih lanjut.", 
-      "icon": "🏪", 
-      "judul": "UMKM Lokal"
+      "judul": "UMKM Lokal", 
+      "icon": "🏪"
     }, 
     {
       "warna": "ungu", 
       "deskripsi": "Kearifan lokal berupa gotong royong, kesenian tradisional Jawa, dan tradisi adat yang masih terjaga dengan baik oleh warga.", 
-      "icon": "🎭", 
-      "judul": "Budaya & Tradisi"
+      "judul": "Budaya & Tradisi", 
+      "icon": "🎭"
     }, 
     {
       "warna": "merah", 
       "deskripsi": "Generasi muda Dusun Dawang yang aktif dan bersemangat, siap menjadi motor penggerak kemajuan dusun di era digital.", 
-      "icon": "👨‍👩‍👧‍👦", 
-      "judul": "SDM Muda Potensial"
+      "judul": "SDM Muda Potensial", 
+      "icon": "👨‍👩‍👧‍👦"
     }, 
     {
       "warna": "cyan", 
       "deskripsi": "Ketersediaan air yang melimpah dari aliran sungai dan sumber mata air menjadi aset penting untuk pertanian dan kebutuhan sehari-hari.", 
-      "icon": "💧", 
-      "judul": "Sumber Daya Air"
+      "judul": "Sumber Daya Air", 
+      "icon": "💧"
     }
   ], 
   "dusun": {
@@ -100,6 +100,7 @@
       "kategori": "Proker Pendukung", 
       "output": "Kegiatan Edukasi Lingkungan Anak", 
       "id": 2, 
+      "narasi": "Program kerja \"Eco Kids Craft: Kreasi Seru dari Barang Bekas\" dibagi menjadi 2 kegiatan yaitu sosialisasi \"Pentingnya Pemanfaatan Barang Bekas\" kepada siswa MI Ma'arif Blongkeng dan praktik memanfaatkan barang bekas menjadi nilai guna kepada anak-anak Dusun Dawang.\n\nSosialisasi dilaksanakan pada Jumat, 17 Juli 2026. Kegiatan diawali dengan pengenalan tentang barang bekas, pentingnya menjaga kebersihan lingkungan, manfaat daur ulang, serta berbagai contoh hasil kreasi dari barang bekas kepada siswa kelas 2 dan 3 MI Ma'arif Blongkeng. Pembelajaran dikemas dengan konsep belajar sambil bermain — anak-anak diajak mengklasifikasikan berbagai jenis gambar sampah ke dalam kategori organik, nonorganik, kaca, dan kertas. Selama kegiatan, anak-anak menunjukkan antusiasme yang tinggi dengan aktif menjawab pertanyaan, berdiskusi, dan berpartisipasi dalam setiap permainan.\n\nSebagai bentuk penerapan materi, kegiatan dilanjutkan dengan praktik membuat gantungan kunci dari tutup botol plastik bekas bersama anak-anak Dusun Dawang pada hari Minggu, 19 Juli 2026. Tim KKN mendampingi anak-anak dalam proses pengolahan barang bekas menjadi kerajinan yang memiliki nilai guna, melatih kreativitas sekaligus memberikan pemahaman bahwa barang bekas dapat diolah kembali menjadi produk yang bermanfaat dan bernilai ekonomi.", 
       "emoji": "🌿"
     }, 
     {
@@ -164,6 +165,7 @@
       "kategori": "Proker Pendukung", 
       "output": "Pendampingan MPLS Siswa Baru", 
       "id": 5, 
+      "narasi": "Program Pendampingan Masa Pengenalan Lingkungan Sekolah (MPLS) di MI Ma'arif Blongkeng dilaksanakan pada Jumat, 17 Juli 2026 sebagai salah satu program kerja pendukung KKN Dusun Dawang. Kegiatan ini bertujuan untuk membantu menciptakan suasana MPLS yang edukatif, interaktif, dan menyenangkan melalui aktivitas yang disesuaikan dengan jenjang kelas siswa.\n\nKegiatan dilaksanakan dengan pembagian aktivitas berdasarkan tingkat kelas. Pada TK dan kelas I, siswa mengikuti kegiatan mewarnai untuk melatih kreativitas dan kemampuan motorik. Pada kelas II dan III, mahasiswa KKN memberikan sosialisasi Eco Kids Craft dilengkapi sesi ice breaking dan tanya jawab untuk mengenalkan kepedulian terhadap lingkungan. Sementara itu, kelas IV hingga VI mendapatkan materi wawasan kebangsaan dan kebudayaan Indonesia.\n\nSelama kegiatan berlangsung, siswa menunjukkan antusiasme melalui keaktifan dalam mengikuti setiap sesi. Mahasiswa KKN juga memberikan reward berupa jajanan sebagai bentuk apresiasi kepada siswa yang aktif berpartisipasi. Melalui kegiatan ini, siswa memperoleh pengalaman belajar yang lebih kreatif sekaligus meningkatkan kreativitas, keberanian berkomunikasi, dan wawasan mengenai lingkungan serta budaya Indonesia.", 
       "emoji": "🏫"
     }, 
     {
@@ -188,6 +190,7 @@
       "kategori": "Proker Pendukung", 
       "output": "Pendampingan Rutin TPA Anak-Anak", 
       "id": 6, 
+      "narasi": "Kegiatan Pendampingan TPA menjadi salah satu program kerja pendukung yang dilaksanakan selama KKN di Dusun Dawang. Program ini dilakukan dengan mendampingi anak-anak Dusun Dawang dalam mengikuti pembelajaran di Taman Pendidikan Al-Qur'an (TPA). Tim KKN mendampingi jalannya proses pembelajaran yang dipandu oleh ustaz dan ustazah, membantu menciptakan suasana belajar yang tertib, serta berinteraksi langsung dengan anak-anak selama kegiatan berlangsung.\n\nMeskipun berperan sebagai pendamping, kehadiran tim KKN memberikan semangat dan pengalaman belajar yang lebih menyenangkan bagi anak-anak. Kegiatan berlangsung dengan lancar dan mendapat sambutan yang baik dari anak-anak Dusun Dawang. Melalui program ini, tim KKN turut mendukung pelaksanaan kegiatan TPA serta mempererat hubungan dengan masyarakat sebagai bagian dari pengabdian kepada masyarakat selama pelaksanaan KKN.", 
       "emoji": "📖"
     }, 
     {
@@ -216,7 +219,16 @@
       "video": "", 
       "kategori": "Proker Pendukung", 
       "output": "Screening Kesehatan Dasar Warga", 
+      "langkah": [
+        "Pengukuran berat badan warga", 
+        "Pengukuran tinggi badan warga", 
+        "Pengukuran tekanan darah (tensi)", 
+        "Pengukuran lingkar perut", 
+        "Pemeriksaan kadar gula darah", 
+        "Pencatatan hasil pemeriksaan dan pelaporan kepada kader kesehatan"
+      ], 
       "id": 7, 
+      "narasi": "Pada tanggal 6 dan 8 Juli 2026, kelompok KKN turut berpartisipasi dalam mendampingi dan membantu ibu-ibu kader kesehatan dalam kegiatan pencatatan dan pemeriksaan kesehatan warga Dusun Dawang. Kegiatan ini bertujuan untuk mendukung upaya deteksi dini kondisi kesehatan masyarakat, khususnya terkait penyakit tidak menular seperti hipertensi dan diabetes.\n\nScreening dilaksanakan secara bergilir di setiap RT, dimulai pukul 15.30 WIB hingga sekitar pukul 18.00 WIB. Tim KKN bersama ibu-ibu kader menetap di salah satu rumah warga yang menjadi lokasi pemeriksaan, kemudian menunggu warga dari RT tersebut berdatangan secara bertahap untuk mengikuti pemeriksaan. Jenis pemeriksaan yang dilakukan meliputi pengukuran berat badan, tinggi badan, tekanan darah, lingkar perut, dan kadar gula darah.\n\nMahasiswa KKN berperan aktif membantu proses pencatatan hasil pemeriksaan, mengarahkan alur warga yang datang, serta memberikan dukungan teknis kepada ibu-ibu kader agar kegiatan berjalan lebih efektif dan efisien. Melalui kegiatan ini, diharapkan terjalin sinergi yang baik antara mahasiswa KKN dan kader kesehatan setempat dalam mendukung program kesehatan masyarakat di Dusun Dawang.", 
       "emoji": "🩺"
     }, 
     {
@@ -291,6 +303,7 @@
       "kategori": "Proker Pendukung", 
       "output": "Pendampingan Posyandu Balita & Lansia", 
       "id": 11, 
+      "narasi": "Pendampingan Kegiatan Posyandu oleh Mahasiswa KKN merupakan salah satu program kerja pendukung yang dilaksanakan sebagai bentuk partisipasi dalam mendukung pelayanan kesehatan masyarakat di Dusun Dawang. Kegiatan ini dilaksanakan pada Selasa, 21 Juli 2026, bertempat di rumah Kepala Dusun Dawang. Posyandu merupakan kegiatan rutin yang diselenggarakan setiap satu bulan sekali pada hari Selasa di minggu ketiga, dengan melibatkan petugas Puskesmas dan kader Posyandu Dusun Dawang.\n\nKegiatan diawali dengan persiapan tempat dan registrasi peserta. Mahasiswa KKN membantu kader Posyandu dalam mendampingi proses pemeriksaan kesehatan, meliputi penimbangan berat badan dan pengukuran tinggi badan bagi ibu, anak, dan lansia. Khusus bagi lansia dan orang tua, dilakukan pengukuran lingkar perut serta pemeriksaan tekanan darah sebagai bagian dari pemantauan kondisi kesehatan. Balita dan anak juga memperoleh pemberian vitamin sesuai arahan petugas Puskesmas untuk mendukung pertumbuhan dan perkembangan.\n\nSelama kegiatan berlangsung, mahasiswa KKN juga membantu pencatatan hasil pemeriksaan, mengarahkan peserta sesuai alur pelayanan, serta menjaga kelancaran pelaksanaan Posyandu hingga kegiatan selesai. Program ini bertujuan mempererat sinergi antara mahasiswa KKN, tenaga kesehatan, kader Posyandu, dan masyarakat Dusun Dawang.", 
       "emoji": "👶"
     }, 
     {
@@ -417,7 +430,16 @@
       "video": "", 
       "kategori": "Proker Individu", 
       "output": "Peta Zona Rawan Tanah Bergerak", 
+      "langkah": [
+        "Persiapan alat SRI (Seismograph Rakyat Indonesia) dan penentuan 25 titik pengukuran yang tersebar di Desa Blongkeng", 
+        "Pengukuran lapangan selama 6 hari (6–11 Juli 2026): pengambilan data getaran tanah di titik-titik yang telah ditentukan", 
+        "Pengolahan data menggunakan software Geopsy selama 4 hari (13–16 Juli 2026) untuk menghasilkan grafik HVSR", 
+        "Analisis grafik HVSR untuk mendapatkan nilai frekuensi natural (f0) dan amplifikasi (A0) di setiap titik", 
+        "Penyusunan dan visualisasi peta zona kerentanan tanah Desa Blongkeng skala 1:4.000", 
+        "Presentasi hasil dan penyerahan peta kepada pemerintah desa sebagai referensi mitigasi bencana"
+      ], 
       "id": 16, 
+      "narasi": "Program Kerja Individu Pemetaan Karakteristik Dinamik Tanah dan Batuan Desa Blongkeng menggunakan metode HVSR (Horizontal to Vertical Spectral Ratio) sebagai pendukung mitigasi risiko bencana geologi. Program ini dilatarbelakangi oleh pentingnya mengetahui kondisi bawah permukaan tanah di suatu wilayah, mengingat Indonesia termasuk daerah rawan gempa bumi dan bencana geologi lainnya. Dengan mengetahui karakteristik dinamik tanah, diharapkan warga dan pemerintah desa dapat lebih siap dalam menghadapi potensi bencana serta mempertimbangkan aspek kebencanaan dalam perencanaan pembangunan.\n\nTahap pengukuran lapangan berlangsung selama enam hari, yaitu dari tanggal 6 hingga 11 Juli 2026. Tim turun langsung ke 25 titik pengukuran yang tersebar di beberapa dusun: Sabrangkali, Tegalwungu, Karangasem, Dawang, Caruban, dan Karangrejo, menggunakan alat SRI (Seismograph Rakyat Indonesia). Pemilihan titik dilakukan agar data mewakili kondisi geologi seluruh wilayah desa, dari area permukiman padat hingga perbukitan dan lahan pertanian.\n\nPengolahan data dilaksanakan selama empat hari (13–16 Juli 2026) menggunakan software Geopsy untuk menghasilkan grafik HVSR. Analisis menghasilkan nilai frekuensi natural (f0) dan amplifikasi (A0) di setiap titik pengukuran. Hasil akhir berupa peta zona kerentanan tanah Desa Blongkeng skala 1:4.000 — sebagian besar wilayah masuk kategori kerentanan rendah, namun sebagian kecil wilayah di Dusun Dawang dan Caruban masuk kategori kerentanan sedang, sehingga perlu perhatian lebih dalam hal mitigasi bencana.", 
       "emoji": "🌍"
     }, 
     {
@@ -497,7 +519,16 @@
       "video": "", 
       "kategori": "Proker Individu", 
       "output": "Database Administrasi & Profil Warga", 
+      "langkah": [
+        "Koordinasi dengan kepala dusun dan perangkat dusun untuk mengetahui kebutuhan serta data yang perlu diperbarui", 
+        "Mengumpulkan dan memverifikasi data yang tersedia: data kependudukan, UMKM, sosial, keagamaan, infrastruktur, dan potensi dusun", 
+        "Melengkapi data yang masih kurang serta menyusun data berdasarkan kategori agar lebih rapi dan mudah digunakan", 
+        "Menginput data yang telah diperbarui ke dalam format digital menggunakan Microsoft Excel atau Google Spreadsheet", 
+        "Melakukan pengecekan kembali untuk memastikan data sudah lengkap dan sesuai", 
+        "Menyerahkan hasil pendataan kepada pemerintah Dusun Dawang sebagai arsip dan pendukung administrasi dusun"
+      ], 
       "id": 21, 
+      "narasi": "Kegiatan Pendataan, Pembaruan, dan Digitalisasi Data Dusun Dawang bertujuan membantu perangkat dusun dalam mengelola data kependudukan agar lebih tertata, sistematis, dan mudah diakses. Kegiatan dilaksanakan mulai dari koordinasi dengan perangkat dusun, pengumpulan dan verifikasi data, hingga proses digitalisasi menggunakan Microsoft Excel dan Google Spreadsheet.\n\nManfaat dari kegiatan ini meliputi: tersedianya data kependudukan yang akurat dan terbaru, kemudahan penyimpanan, pencarian, dan pembaruan data secara digital, serta mempermudah pelaporan dengan data yang tertata rapi. Data digital dapat diakses kembali dengan cepat tanpa harus mencari arsip fisik yang mungkin sudah usang atau rusak.\n\nHasil akhir kegiatan ini adalah database digital Dusun Dawang yang berisi data penduduk, UMKM, pendidikan, sosial, keagamaan, infrastruktur, dan potensi dusun. Data yang telah dikumpulkan diperiksa, dirapikan, dan disimpan dalam bentuk digital, kemudian diserahkan kepada pemerintah Dusun Dawang untuk dijadikan arsip dan membantu dalam penyusunan program dusun.", 
       "emoji": "📋"
     }, 
     {
@@ -520,8 +551,8 @@
     {
       "nama": "Balai Dusun Dawang", 
       "deskripsi": "Pusat kegiatan warga dan pemerintahan dusun", 
-      "lat": -7.617, 
       "kategori": "pemerintahan", 
+      "lat": -7.617, 
       "lng": 110.278, 
       "id": 1, 
       "icon": "building"
@@ -529,8 +560,8 @@
     {
       "nama": "Masjid Al-Ikhlas", 
       "deskripsi": "Masjid utama Dusun Dawang", 
-      "lat": -7.6168, 
       "kategori": "ibadah", 
+      "lat": -7.6168, 
       "lng": 110.2775, 
       "id": 2, 
       "icon": "mosque"
@@ -538,8 +569,8 @@
     {
       "nama": "Mushola RT 03", 
       "deskripsi": "Mushola untuk warga RT 03", 
-      "lat": -7.6183, 
       "kategori": "ibadah", 
+      "lat": -7.6183, 
       "lng": 110.2788, 
       "id": 3, 
       "icon": "mosque"
@@ -547,8 +578,8 @@
     {
       "nama": "Posyandu Dawang", 
       "deskripsi": "Pos pelayanan terpadu untuk balita dan ibu hamil", 
-      "lat": -7.6175, 
       "kategori": "kesehatan", 
+      "lat": -7.6175, 
       "lng": 110.2785, 
       "id": 4, 
       "icon": "health"
@@ -556,8 +587,8 @@
     {
       "nama": "SD Negeri Blongkeng", 
       "deskripsi": "Sekolah Dasar untuk warga Dusun Dawang", 
-      "lat": -7.6162, 
       "kategori": "pendidikan", 
+      "lat": -7.6162, 
       "lng": 110.2792, 
       "id": 5, 
       "icon": "school"
@@ -565,8 +596,8 @@
     {
       "nama": "Embung / Sumber Air", 
       "deskripsi": "Sumber irigasi untuk lahan pertanian warga", 
-      "lat": -7.6185, 
       "kategori": "infrastruktur", 
+      "lat": -7.6185, 
       "lng": 110.2765, 
       "id": 6, 
       "icon": "water"
@@ -574,8 +605,8 @@
     {
       "nama": "Lahan Pertanian Utama", 
       "deskripsi": "Area persawahan dan kebun produktif warga", 
-      "lat": -7.619, 
       "kategori": "pertanian", 
+      "lat": -7.619, 
       "lng": 110.279, 
       "id": 7, 
       "icon": "farm"
@@ -583,8 +614,8 @@
     {
       "nama": "Makam Dusun", 
       "deskripsi": "Pemakaman warga Dusun Dawang", 
-      "lat": -7.6158, 
       "kategori": "umum", 
+      "lat": -7.6158, 
       "lng": 110.2768, 
       "id": 8, 
       "icon": "cemetery"
