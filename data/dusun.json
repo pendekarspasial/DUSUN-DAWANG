@@ -477,7 +477,11 @@
     }, 
     {
       "deskripsi": "Pendampingan manajemen pemasaran dan pengelolaan media sosial untuk pelaku UMKM Dusun Dawang agar produk lokal dapat menjangkau pasar yang lebih luas secara digital.", 
-      "foto": [], 
+      "foto": [
+        "assets/images/proker/umkm-branding/image1.png", 
+        "assets/images/proker/umkm-branding/image2.png", 
+        "assets/images/proker/umkm-branding/image3.png"
+      ], 
       "judul": "Manajemen Pemasaran & Media Sosial UMKM", 
       "anggota": [
         "Hafshah Afifah Khairunnisa"
@@ -615,11 +619,11 @@
       "anggota": [
         "Adhiimu"
       ], 
-      "tanggal": "09 Juli 2026", 
-      "id": 23, 
-      "emoji": "🛍", 
-      "durasi": "17 hari", 
       "laporanUrl": "assets/docs/proker/adhiimu-snack.docx", 
+      "durasi": "17 hari", 
+      "tanggal": "09 Juli 2026", 
+      "kategori": "Proker Individu", 
+      "output": "Banner/Spanduk usaha + Katalog produk digital & cetak", 
       "langkah": [
         "Survey awal dan observasi kondisi UMKM Adhiimu Snack (9 Juli 2026)", 
         "Observasi dan diskusi mendalam bersama pelaku UMKM (10–11 Juli 2026)", 
@@ -628,9 +632,9 @@
         "Penyusunan katalog produk lengkap dengan varian dan informasi ringkas", 
         "Serah terima banner dan katalog digital/cetak kepada pelaku UMKM"
       ], 
-      "kategori": "Proker Individu", 
-      "output": "Banner/Spanduk usaha + Katalog produk digital & cetak", 
-      "narasi": "Program kerja UMKM Berdaya: Pendampingan Digitalisasi dan Legalitas UMKM bertujuan membantu pelaku UMKM meningkatkan kualitas promosi usaha melalui media pemasaran yang lebih menarik sekaligus mendorong kesiapan usaha dalam menghadapi perkembangan era digital.\n\nKegiatan diawali dengan observasi dan diskusi bersama pelaku UMKM untuk mengidentifikasi kebutuhan usaha, khususnya pada aspek promosi produk. Berdasarkan hasil pendampingan, tim KKN merealisasikan pembuatan banner/spanduk usaha untuk salah satu UMKM makanan ringan (Adhiimu Snack) sebagai media identitas usaha yang lebih profesional dan mudah dikenali oleh konsumen. Desain banner disesuaikan dengan karakteristik produk sehingga mampu menampilkan informasi usaha secara lebih menarik, mulai dari nama usaha, jenis produk, hingga identitas media sosial.\n\nSelain pembuatan banner, tim KKN juga menyusun katalog produk yang memuat berbagai varian makanan ringan beserta informasi produk secara ringkas. Katalog ini dirancang sebagai media promosi yang dapat digunakan baik dalam bentuk cetak maupun digital, sehingga memudahkan pelaku usaha dalam memperkenalkan produknya kepada calon pelanggan.\n\nMelalui pendampingan ini, pelaku UMKM memperoleh sarana promosi yang lebih modern dan representatif, sehingga diharapkan dapat meningkatkan daya tarik produk, memperluas jangkauan pemasaran, serta memperkuat citra usaha di tengah persaingan pasar."
+      "id": 23, 
+      "narasi": "Program kerja UMKM Berdaya: Pendampingan Digitalisasi dan Legalitas UMKM bertujuan membantu pelaku UMKM meningkatkan kualitas promosi usaha melalui media pemasaran yang lebih menarik sekaligus mendorong kesiapan usaha dalam menghadapi perkembangan era digital.\n\nKegiatan diawali dengan observasi dan diskusi bersama pelaku UMKM untuk mengidentifikasi kebutuhan usaha, khususnya pada aspek promosi produk. Berdasarkan hasil pendampingan, tim KKN merealisasikan pembuatan banner/spanduk usaha untuk salah satu UMKM makanan ringan (Adhiimu Snack) sebagai media identitas usaha yang lebih profesional dan mudah dikenali oleh konsumen. Desain banner disesuaikan dengan karakteristik produk sehingga mampu menampilkan informasi usaha secara lebih menarik, mulai dari nama usaha, jenis produk, hingga identitas media sosial.\n\nSelain pembuatan banner, tim KKN juga menyusun katalog produk yang memuat berbagai varian makanan ringan beserta informasi produk secara ringkas. Katalog ini dirancang sebagai media promosi yang dapat digunakan baik dalam bentuk cetak maupun digital, sehingga memudahkan pelaku usaha dalam memperkenalkan produknya kepada calon pelanggan.\n\nMelalui pendampingan ini, pelaku UMKM memperoleh sarana promosi yang lebih modern dan representatif, sehingga diharapkan dapat meningkatkan daya tarik produk, memperluas jangkauan pemasaran, serta memperkuat citra usaha di tengah persaingan pasar.", 
+      "emoji": "🛍"
     }
   ], 
   "fasilitas": [
