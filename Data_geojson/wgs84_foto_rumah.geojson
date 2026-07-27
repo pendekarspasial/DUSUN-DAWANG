@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "FOTO_RUMAH",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 1, "PEMILIK": "Masjid Nurul Huda", "Status": "Rumah Ibadah" }, "geometry": { "type": "Point", "coordinates": [ 110.247678244357786, -7.638229282246273 ] } },
+{ "type": "Feature", "properties": { "Id": 2, "PEMILIK": "Mundoni (Kepala Dusun)", "Status": "Perangkat Warga" }, "geometry": { "type": "Point", "coordinates": [ 110.247898754219904, -7.638356342499568 ] } },
+{ "type": "Feature", "properties": { "Id": 3, "PEMILIK": "RT 01", "Status": "Perangkat Warga" }, "geometry": { "type": "Point", "coordinates": [ 110.248620860920099, -7.637607285228373 ] } },
+{ "type": "Feature", "properties": { "Id": 4, "PEMILIK": "RW 07", "Status": "Perangkat Warga" }, "geometry": { "type": "Point", "coordinates": [ 110.248925556463846, -7.637625354797095 ] } },
+{ "type": "Feature", "properties": { "Id": 5, "PEMILIK": "RT 02", "Status": "Perangkat Warga" }, "geometry": { "type": "Point", "coordinates": [ 110.249469693908694, -7.638115466026302 ] } },
+{ "type": "Feature", "properties": { "Id": 6, "PEMILIK": "RT 04", "Status": "Perangkat Warga" }, "geometry": { "type": "Point", "coordinates": [ 110.248901935158742, -7.638847253341572 ] } },
+{ "type": "Feature", "properties": { "Id": 7, "PEMILIK": "Yuliyanta (Kepala Desa)", "Status": "Perangkat Warga" }, "geometry": { "type": "Point", "coordinates": [ 110.25082463804425, -7.638985060091032 ] } },
+{ "type": "Feature", "properties": { "Id": 8, "PEMILIK": "RT 03", "Status": "Perangkat Warga" }, "geometry": { "type": "Point", "coordinates": [ 110.251317415259976, -7.638822905377546 ] } },
+{ "type": "Feature", "properties": { "Id": 9, "PEMILIK": "Makam Pangeran Haryo Kusumo", "Status": "Makam" }, "geometry": { "type": "Point", "coordinates": [ 110.25171016259273, -7.638467294670804 ] } },
+{ "type": "Feature", "properties": { "Id": 10, "PEMILIK": "Mushola", "Status": "Rumah Ibadah" }, "geometry": { "type": "Point", "coordinates": [ 110.249129195036403, -7.637776371008822 ] } }
+]
+}
