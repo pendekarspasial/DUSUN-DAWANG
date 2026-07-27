@@ -3,38 +3,38 @@
     {
       "warna": "hijau", 
       "deskripsi": "Lahan subur di kaki Merapi menghasilkan padi, sayuran, dan palawija berkualitas tinggi yang menjadi sumber pendapatan utama warga.", 
-      "judul": "Pertanian & Perkebunan", 
-      "icon": "🌾"
+      "icon": "🌾", 
+      "judul": "Pertanian & Perkebunan"
     }, 
     {
       "warna": "biru", 
       "deskripsi": "Pemandangan alam yang indah dengan latar Gunung Merapi, hamparan sawah hijau, dan udara segar berpotensi dikembangkan sebagai desa wisata.", 
-      "judul": "Wisata Alam", 
-      "icon": "🏔️"
+      "icon": "🏔️", 
+      "judul": "Wisata Alam"
     }, 
     {
       "warna": "orange", 
       "deskripsi": "Berbagai usaha mikro warga seperti kerajinan tangan, olahan pangan lokal, dan jasa yang berpotensi untuk dikembangkan lebih lanjut.", 
-      "judul": "UMKM Lokal", 
-      "icon": "🏪"
+      "icon": "🏪", 
+      "judul": "UMKM Lokal"
     }, 
     {
       "warna": "ungu", 
       "deskripsi": "Kearifan lokal berupa gotong royong, kesenian tradisional Jawa, dan tradisi adat yang masih terjaga dengan baik oleh warga.", 
-      "judul": "Budaya & Tradisi", 
-      "icon": "🎭"
+      "icon": "🎭", 
+      "judul": "Budaya & Tradisi"
     }, 
     {
       "warna": "merah", 
       "deskripsi": "Generasi muda Dusun Dawang yang aktif dan bersemangat, siap menjadi motor penggerak kemajuan dusun di era digital.", 
-      "judul": "SDM Muda Potensial", 
-      "icon": "👨‍👩‍👧‍👦"
+      "icon": "👨‍👩‍👧‍👦", 
+      "judul": "SDM Muda Potensial"
     }, 
     {
       "warna": "cyan", 
       "deskripsi": "Ketersediaan air yang melimpah dari aliran sungai dan sumber mata air menjadi aset penting untuk pertanian dan kebutuhan sehari-hari.", 
-      "judul": "Sumber Daya Air", 
-      "icon": "💧"
+      "icon": "💧", 
+      "judul": "Sumber Daya Air"
     }
   ], 
   "dusun": {
@@ -461,28 +461,41 @@
       "emoji": "🌍"
     }, 
     {
-      "deskripsi": "Analisis potensi ekonomi dan pemetaan UMKM lokal Dusun Dawang dari sudut pandang ekonomi pembangunan untuk mengidentifikasi peluang pengembangan usaha yang berkelanjutan.", 
-      "foto": [], 
-      "judul": "Analisis Ekonomi & Potensi UMKM Lokal Dawang", 
-      "anggota": [
-        "Adhiimu Ayunda Artha Wijaya"
+      "deskripsi": "Pendampingan digitalisasi UMKM makanan ringan (Adhiimu Snack) melalui pembuatan banner/spanduk profesional dan katalog produk digital-cetak untuk memperkuat identitas dan jangkauan pemasaran usaha.", 
+      "foto": [
+        "assets/images/proker/adhiimu-snack/image1.jpg", 
+        "assets/images/proker/adhiimu-snack/image2.jpg"
       ], 
-      "durasi": "Beberapa Hari", 
-      "tanggal": "Juli 2026", 
+      "judul": "Pembuatan Banner & Katalog Digital UMKM Adhiimu Snack", 
+      "anggota": [
+        "Adhiimu"
+      ], 
+      "laporanUrl": "assets/docs/proker/adhiimu-snack.docx", 
+      "durasi": "17 hari", 
+      "tanggal": "09 Juli 2026", 
       "video": "", 
       "kategori": "Proker Individu", 
-      "output": "Laporan Analisis Potensi UMKM Dawang", 
+      "output": "Banner/Spanduk usaha + Katalog produk digital & cetak", 
+      "langkah": [
+        "Survey awal dan observasi kondisi UMKM Adhiimu Snack (9 Juli 2026)", 
+        "Observasi dan diskusi mendalam bersama pelaku UMKM (10–11 Juli 2026)", 
+        "Identifikasi kebutuhan: belum ada banner profesional dan katalog produk", 
+        "Pembuatan desain banner/spanduk usaha sesuai karakteristik produk (12–25 Juli 2026)", 
+        "Penyusunan katalog produk lengkap dengan varian dan informasi ringkas", 
+        "Serah terima banner dan katalog digital/cetak kepada pelaku UMKM"
+      ], 
       "id": 17, 
-      "emoji": "📊"
+      "narasi": "Program kerja UMKM Berdaya: Pendampingan Digitalisasi dan Legalitas UMKM bertujuan membantu pelaku UMKM meningkatkan kualitas promosi usaha melalui media pemasaran yang lebih menarik sekaligus mendorong kesiapan usaha dalam menghadapi perkembangan era digital.\n\nKegiatan diawali dengan observasi dan diskusi bersama pelaku UMKM untuk mengidentifikasi kebutuhan usaha, khususnya pada aspek promosi produk. Berdasarkan hasil pendampingan, tim KKN merealisasikan pembuatan banner/spanduk usaha untuk salah satu UMKM makanan ringan (Adhiimu Snack) sebagai media identitas usaha yang lebih profesional dan mudah dikenali oleh konsumen. Desain banner disesuaikan dengan karakteristik produk sehingga mampu menampilkan informasi usaha secara lebih menarik, mulai dari nama usaha, jenis produk, hingga identitas media sosial.\n\nSelain pembuatan banner, tim KKN juga menyusun katalog produk yang memuat berbagai varian makanan ringan beserta informasi produk secara ringkas. Katalog ini dirancang sebagai media promosi yang dapat digunakan baik dalam bentuk cetak maupun digital, sehingga memudahkan pelaku usaha dalam memperkenalkan produknya kepada calon pelanggan.\n\nMelalui pendampingan ini, pelaku UMKM memperoleh sarana promosi yang lebih modern dan representatif, sehingga diharapkan dapat meningkatkan daya tarik produk, memperluas jangkauan pemasaran, serta memperkuat citra usaha di tengah persaingan pasar.", 
+      "emoji": "🛍"
     }, 
     {
-      "deskripsi": "Pendampingan manajemen pemasaran dan pengelolaan media sosial untuk pelaku UMKM Dusun Dawang agar produk lokal dapat menjangkau pasar yang lebih luas secara digital.", 
+      "deskripsi": "Penguatan identitas dan pemasaran digital UMKM Rengginan Evan Jaya melalui pembuatan banner usaha, pendaftaran Google Maps, dan penyusunan company profile sebagai media promosi yang profesional.", 
       "foto": [
         "assets/images/proker/umkm-branding/image1.png", 
         "assets/images/proker/umkm-branding/image2.png", 
         "assets/images/proker/umkm-branding/image3.png"
       ], 
-      "judul": "Manajemen Pemasaran & Media Sosial UMKM", 
+      "judul": "Branding & Pemasaran Digital UMKM Rengginan Evan Jaya", 
       "anggota": [
         "Hafshah Afifah Khairunnisa"
       ], 
@@ -608,41 +621,14 @@
       "output": "Platform WebGIS StoryMap Online Dawang", 
       "id": 22, 
       "emoji": "💻"
-    }, 
-    {
-      "deskripsi": "Pendampingan digitalisasi dan penguatan branding UMKM makanan ringan (Adhiimu Snack) melalui pembuatan banner/spanduk usaha dan katalog produk sebagai media promosi yang profesional.", 
-      "foto": [
-        "assets/images/proker/adhiimu-snack/image1.jpg", 
-        "assets/images/proker/adhiimu-snack/image2.jpg"
-      ], 
-      "judul": "UMKM Berdaya: Digitalisasi & Branding Produk Lokal", 
-      "anggota": [
-        "Adhiimu"
-      ], 
-      "laporanUrl": "assets/docs/proker/adhiimu-snack.docx", 
-      "durasi": "17 hari", 
-      "tanggal": "09 Juli 2026", 
-      "kategori": "Proker Individu", 
-      "output": "Banner/Spanduk usaha + Katalog produk digital & cetak", 
-      "langkah": [
-        "Survey awal dan observasi kondisi UMKM Adhiimu Snack (9 Juli 2026)", 
-        "Observasi dan diskusi mendalam bersama pelaku UMKM (10–11 Juli 2026)", 
-        "Identifikasi kebutuhan: belum ada banner profesional dan katalog produk", 
-        "Pembuatan desain banner/spanduk usaha sesuai karakteristik produk (12–25 Juli 2026)", 
-        "Penyusunan katalog produk lengkap dengan varian dan informasi ringkas", 
-        "Serah terima banner dan katalog digital/cetak kepada pelaku UMKM"
-      ], 
-      "id": 23, 
-      "narasi": "Program kerja UMKM Berdaya: Pendampingan Digitalisasi dan Legalitas UMKM bertujuan membantu pelaku UMKM meningkatkan kualitas promosi usaha melalui media pemasaran yang lebih menarik sekaligus mendorong kesiapan usaha dalam menghadapi perkembangan era digital.\n\nKegiatan diawali dengan observasi dan diskusi bersama pelaku UMKM untuk mengidentifikasi kebutuhan usaha, khususnya pada aspek promosi produk. Berdasarkan hasil pendampingan, tim KKN merealisasikan pembuatan banner/spanduk usaha untuk salah satu UMKM makanan ringan (Adhiimu Snack) sebagai media identitas usaha yang lebih profesional dan mudah dikenali oleh konsumen. Desain banner disesuaikan dengan karakteristik produk sehingga mampu menampilkan informasi usaha secara lebih menarik, mulai dari nama usaha, jenis produk, hingga identitas media sosial.\n\nSelain pembuatan banner, tim KKN juga menyusun katalog produk yang memuat berbagai varian makanan ringan beserta informasi produk secara ringkas. Katalog ini dirancang sebagai media promosi yang dapat digunakan baik dalam bentuk cetak maupun digital, sehingga memudahkan pelaku usaha dalam memperkenalkan produknya kepada calon pelanggan.\n\nMelalui pendampingan ini, pelaku UMKM memperoleh sarana promosi yang lebih modern dan representatif, sehingga diharapkan dapat meningkatkan daya tarik produk, memperluas jangkauan pemasaran, serta memperkuat citra usaha di tengah persaingan pasar.", 
-      "emoji": "🛍"
     }
   ], 
   "fasilitas": [
     {
       "nama": "Balai Dusun Dawang", 
       "deskripsi": "Pusat kegiatan warga dan pemerintahan dusun", 
-      "kategori": "pemerintahan", 
       "lat": -7.617, 
+      "kategori": "pemerintahan", 
       "lng": 110.278, 
       "id": 1, 
       "icon": "building"
@@ -650,8 +636,8 @@
     {
       "nama": "Masjid Al-Ikhlas", 
       "deskripsi": "Masjid utama Dusun Dawang", 
-      "kategori": "ibadah", 
       "lat": -7.6168, 
+      "kategori": "ibadah", 
       "lng": 110.2775, 
       "id": 2, 
       "icon": "mosque"
@@ -659,8 +645,8 @@
     {
       "nama": "Mushola RT 03", 
       "deskripsi": "Mushola untuk warga RT 03", 
-      "kategori": "ibadah", 
       "lat": -7.6183, 
+      "kategori": "ibadah", 
       "lng": 110.2788, 
       "id": 3, 
       "icon": "mosque"
@@ -668,8 +654,8 @@
     {
       "nama": "Posyandu Dawang", 
       "deskripsi": "Pos pelayanan terpadu untuk balita dan ibu hamil", 
-      "kategori": "kesehatan", 
       "lat": -7.6175, 
+      "kategori": "kesehatan", 
       "lng": 110.2785, 
       "id": 4, 
       "icon": "health"
@@ -677,8 +663,8 @@
     {
       "nama": "SD Negeri Blongkeng", 
       "deskripsi": "Sekolah Dasar untuk warga Dusun Dawang", 
-      "kategori": "pendidikan", 
       "lat": -7.6162, 
+      "kategori": "pendidikan", 
       "lng": 110.2792, 
       "id": 5, 
       "icon": "school"
@@ -686,8 +672,8 @@
     {
       "nama": "Embung / Sumber Air", 
       "deskripsi": "Sumber irigasi untuk lahan pertanian warga", 
-      "kategori": "infrastruktur", 
       "lat": -7.6185, 
+      "kategori": "infrastruktur", 
       "lng": 110.2765, 
       "id": 6, 
       "icon": "water"
@@ -695,8 +681,8 @@
     {
       "nama": "Lahan Pertanian Utama", 
       "deskripsi": "Area persawahan dan kebun produktif warga", 
-      "kategori": "pertanian", 
       "lat": -7.619, 
+      "kategori": "pertanian", 
       "lng": 110.279, 
       "id": 7, 
       "icon": "farm"
@@ -704,8 +690,8 @@
     {
       "nama": "Makam Dusun", 
       "deskripsi": "Pemakaman warga Dusun Dawang", 
-      "kategori": "umum", 
       "lat": -7.6158, 
+      "kategori": "umum", 
       "lng": 110.2768, 
       "id": 8, 
       "icon": "cemetery"
